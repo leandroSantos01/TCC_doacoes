@@ -1,7 +1,7 @@
 import {Link} from 'react-router'
 
 import './index.scss'
-import logo from '/src/assets/images/logo.png'
+import logo from '/src/assets/images/logos.png'
 
 
 
