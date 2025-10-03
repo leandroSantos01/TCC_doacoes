@@ -5,9 +5,9 @@ const connection = await mysql.createConnection({
     user:'root',
     password:'1234',
     database:'donnet_DB'
-})
+});
 
 console.log('-----Banco conectado-----');
 
 
-export {connection}
+export {connection};

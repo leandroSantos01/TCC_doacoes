@@ -1,6 +1,12 @@
 import { Router } from "express";
 
-const endpoints = Router()
+const endpoints = Router();
 
+endpoints.post('/login/conta', async (req, resp) => {
+    let novoLogin = req.body;
 
-export default endpoints
+    let id = await repo.criarLogin(novoLogin);
+    resp.send({ novoId: id });
+})
+
+export default endpoints;
