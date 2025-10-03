@@ -3,8 +3,8 @@ import {Link} from 'react-router'
 import './index.scss'
 import '/src/scss/global.scss'
 import '/src/scss/fonts.scss'
+import Cabecalho from '../../components/Cabecalho.jsx'
 
-import logo from '/src/assets/images/logos.png'
 import caixa from '/src/assets/images/caixa.jpg'
 
 
@@ -12,24 +12,9 @@ import caixa from '/src/assets/images/caixa.jpg'
 export default function App(){
     return(
         <div>
-        <header>
-        <div className="cabecalho">
-        <img src={logo}alt="logo" className='logo' />
-
-        <div className="Area_link">
-            <Link to={'/'} className='link'> INICIO</Link>
-            <Link to={'/doar'} className='link'>DOAR</Link>
-            <Link to={'/ongs'} className='link'>PARCEIRAS</Link>
-            <Link to={'/sobre'}className='link'>SOBRE NÓS</Link>
-
-
-
-
-        </div>
-        </div>
-
-        </header>
-
+            
+            <Cabecalho/>
+        
         <main >
 
         <div className="container_central">   
