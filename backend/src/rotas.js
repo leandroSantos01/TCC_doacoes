@@ -1,8 +1,7 @@
-import cadastroController from './controller/cadastroController.js'
-import loginController from './controller/loginController.js'
+import loginController from './controllers/loginController.js';
+import cadastroController from './controllers/cadastroController.js';
 
-
-export default function Rotas(api){
-    api.use(cadastroController);
+export function adicionarRotas (api) {
     api.use(loginController);
+    api.use(cadastroController);
 }

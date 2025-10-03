@@ -1,13 +1,11 @@
-import express from 'express'
-import cors from 'cors'
-import Rotas from './rotas.js'
+import { adicionarRotas } from './rotas.js';
+import express from 'express';
+import cors from 'cors';
 
+const api = express();
+api.use(express.json());
+api.use(cors());
 
-const api = express()
-api.use(express.json())
-api.use(cors())
+adicionarRotas(api);
 
-Rotas(api)
-
-
-api.listen(5010,()=>console.log('..api subiu'))
+api.listen(3010, () => console.log('A api subiu na porta 3010'));
