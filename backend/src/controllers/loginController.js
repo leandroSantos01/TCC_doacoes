@@ -26,7 +26,24 @@ api.post('/login', async (req, resp) => {
         resp.send({
             token: generateToken(credenciais)
         });
-        }
+    }
 });
 
+api.post('/login/admin/istrador', async (req, resp) => {
+    let email = req.body.email;
+    let senha = req.body.senha;                                                          
+
+    let credenciais = await repo.consultarCredenciaisADM(email, senha);
+
+    if (!credenciais) {
+        resp.status(401).send({
+            erro: 'Credenciais inválidas'
+        });
+    }
+    else {
+        resp.send({
+            token: generateToken(credenciais)
+        });
+    }
+})
 export default api;

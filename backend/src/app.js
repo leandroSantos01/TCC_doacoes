@@ -8,4 +8,4 @@ api.use(cors());
 
 adicionarRotas(api);
 
-api.listen(3010, () => console.log('A api subiu na porta 3010'));
+api.listen(3010, () => console.log('A api subiu na porta 3010!'));

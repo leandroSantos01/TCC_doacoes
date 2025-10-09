@@ -2,7 +2,7 @@ import { connection } from "./connection.js";
 
 export async function consultarCredenciais(email, senha) {
     const comando = `
-    SELECT id
+    SELECT id_login
         email
     FROM login 
     WHERE email = ?
@@ -15,13 +15,27 @@ export async function consultarCredenciais(email, senha) {
 
 export async function criarLogin(novoLogin) {
     const comando = `
-    INSERT INTO login_tb (email, senha)
-    VALUES (?, MD5(?));
+    INSERT INTO login (username, email, senha, dt_criacao, nr_doacoes)
+    VALUES (?, ?, MD5(?), NOW(), 0);
     `;
 
     const [info] = await connection.query(comando, [
+        novoLogin.username,
         novoLogin.email,
         novoLogin.senha
     ]);
     return info.insertId;
+}
+
+export async function consultarCredenciaisADM(email, senha) {
+    const comando = `
+    SELECT id_admin
+        email
+    FROM loginADM
+    WHERE email = "admdonnet@net.org"
+        AND senha = MD5("grupo5!starwars")
+    `;
+
+    const [registros] = await connection.query(comando, [email, senha]);
+    return registros[0];    
 }
