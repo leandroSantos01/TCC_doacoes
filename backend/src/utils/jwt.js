@@ -14,7 +14,7 @@ export function getTokenInfo(req) {
   try {
     let token = req.headers['x-access-token'];
 
-    if (token === undefined)
+    if (token === undefined)        
       token = req.query['x-access-token']
 
     let signd = jwt.verify(token, KEY);
