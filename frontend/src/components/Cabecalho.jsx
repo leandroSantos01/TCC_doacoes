@@ -8,7 +8,9 @@ export default function Cabecalho(){
     return(
         <header>
         <div className="cabecalho">
-        <img src={logo}alt="logo" className='logo' />
+        <Link to={"/"}>
+            <img src={logo}alt="logo" className='logo' />
+        </Link>
 
         <div className="Area_link">
             <Link to={'/'} className='link'> INICIO</Link>

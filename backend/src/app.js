@@ -1,4 +1,3 @@
-import 'dotenv/config.js'
 import { adicionarRotas } from './rotas.js';
 import express from 'express';
 import cors from 'cors';
