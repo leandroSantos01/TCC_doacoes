@@ -1,4 +1,4 @@
-import Cabecalho from "../../components/Cabecalho";
+import Cabecalho from "../../components/cabecalho/Cabecalho.jsx";
 import './cadastro.scss';
 
 export default function Cadastro(){

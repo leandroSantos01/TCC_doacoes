@@ -3,7 +3,7 @@ import {Link} from 'react-router'
 import './index.scss'
 import '/src/scss/global.scss'
 import '/src/scss/fonts.scss'
-import Cabecalho from '../../components/Cabecalho.jsx'
+import Cabecalho from '../../components/cabecalho/Cabecalho.jsx'
 
 import caixa from '/src/assets/images/caixa.jpg'
 
@@ -15,9 +15,11 @@ export default function App(){
             
             <Cabecalho/>
         
-        <main >
+        <main className='container_pagPrincipal'>
 
-        <div className="container_central">   
+        <div className="container_central">  
+
+        <div className="container_informativo">
        
         <div className="container_img">
             <img src={caixa} />
@@ -30,18 +32,12 @@ export default function App(){
         Nossa plataforma nasceu para conectar pessoas que querem ajudar a causas que precisam ser ouvidas. Com ética, transparência e compromisso social, criamos um ambiente seguro onde cada doação se transforma em impacto positivo.
         
         </p>
+        </div>
 
+        
 
 
         </div>
-
-        </div> 
-
-
-
-        </main>
-
-
         <section >
 
             <div className="container_conteudo">
@@ -55,6 +51,17 @@ export default function App(){
 
             </div>
         </section>
+
+        </div> 
+
+        
+
+
+
+
+        </main>
+
+
 
          <section >
 
