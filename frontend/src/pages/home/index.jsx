@@ -4,6 +4,7 @@ import './index.scss'
 import '/src/scss/global.scss'
 import '/src/scss/fonts.scss'
 import Cabecalho from '../../components/cabecalho/Cabecalho.jsx'
+import Rodape from '../../components/Rodape/Rodape.jsx'
 
 import caixa from '/src/assets/images/caixa.jpg'
 
@@ -63,23 +64,9 @@ export default function App(){
 
 
 
-         <section >
+         
 
-            <div className="carrossel">
-
-
-            </div>
-        </section>
-
-
-        <footer>
-
-            <div className="contatos">
-
-
-
-            </div>
-        </footer>
+        <Rodape/>
         </div>
     )
 }
