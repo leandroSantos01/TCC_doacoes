@@ -7,7 +7,8 @@ export default function Rodape() {
     <>
 
     
-      <footer className="rodape">
+      <footer >
+        <div className="rodape">
         <nav>
           <img src={Imagem}/>
           <div className="inicio">
@@ -30,6 +31,8 @@ export default function Rodape() {
             </div>
         </nav>
 
+        
+        </div>
         <p>© 2024 Curso Info. Todos os direitos reservados.</p>
 
       </footer>

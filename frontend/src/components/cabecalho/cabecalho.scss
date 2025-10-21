@@ -17,9 +17,10 @@
 
     .cabecalho {
       display: flex;
-      width: 100%;
-      max-width: 1300px;
-      padding: 0 20px;
+      width: 98%;
+      
+      max-width: 1400px;
+      padding: 0 35px;
       align-items: center;
       justify-content: space-between;
       background-color: transparent;
@@ -40,13 +41,14 @@
   
         a{
           text-decoration: none;
-          color: rgb(255, 255, 255);
+          color: rgb(0, 0, 0);
           padding: 5px 15px;
           border-radius: 5px;
           font-weight: bolder;
           transition: all 0.9s;
           font-size: 15px;
-          background-color: #F0743E;
+          
+         
 
   
   

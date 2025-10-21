@@ -13,12 +13,13 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+   
     
 
     
 
     .container_central{
-        width: 100%;
+        width: 98%;
         background-color: #ffff;
         height: auto;
         max-width: 1300px;
@@ -27,8 +28,9 @@
         flex-direction: column;
         justify-content: space-between;
         padding: 100px 40px;
-        border-radius: 25px 2;
+        border-radius: 20px 20px 0 0  ;
         gap: 150px;
+        
 
         
 
