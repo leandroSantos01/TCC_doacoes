@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import './cabecalho.scss'
-import logo from '/src/assets/images/logos.png'
+import logo from '/src/assets/images/logo.png'
 
 
 

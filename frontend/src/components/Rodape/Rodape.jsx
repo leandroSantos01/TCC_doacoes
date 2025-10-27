@@ -1,5 +1,5 @@
 import './rodape.scss'
-import Imagem from '/src/assets/images/logos.png'
+import logo from '/src/assets/images/logo.png'
 
 export default function Rodape() {
 
@@ -10,7 +10,7 @@ export default function Rodape() {
       <footer >
         <div className="rodape">
         <nav>
-          <img src={Imagem}/>
+          <img src={logo}/>
           <div className="inicio">
             <h2>Início</h2>
             <a>Home</a>
