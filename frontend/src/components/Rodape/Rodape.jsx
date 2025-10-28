@@ -1,6 +1,9 @@
 import './rodape.scss'
 import logo from '/src/assets/images/logo.png'
 
+import { FaInstagram } from "react-icons/fa";
+
+
 export default function Rodape() {
 
   return (
@@ -28,6 +31,11 @@ export default function Rodape() {
             <h2>Contato</h2>
             <a>Telefone/WhatsApp: (11) 91234-5678</a>
             <a>E-mail: contato@seuprojeto.org</a>
+            <div className='contatos_imgs'>
+           
+            <FaInstagram size={50}/> 
+            </div>
+            
             </div>
         </nav>
 

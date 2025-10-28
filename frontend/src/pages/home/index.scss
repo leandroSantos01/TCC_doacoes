@@ -18,17 +18,24 @@
 
 
 
+
+
     .container_central {
         width: 100%;
-        background-color: #ffff;
-        height: auto;
+        background: linear-gradient(to top, #5AA6D8,#ffff);;
+        height: 700px;
         max-width: 1400px;
         display: flex;
         align-items: center;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: space-evenly;
         justify-content: center;
-        padding: 100px 40px;
+ 
 
+        & div{
+            display: flex;
+            flex-direction: row;
+        }
 
 
 
@@ -48,13 +55,14 @@
 
             h1 {
                 line-height: 1.5cm;
+                
             }
 
 
             .destaque {
                 font-weight: bold;
                 font-family: "Archivo Black", sans-serif;
-                color: #ff3c00cc;
+                color: #007aff;
 
             }
 
@@ -67,24 +75,22 @@
 
                 .doar {
                     text-decoration: none;
-                    border: 2px solid white;
                     padding: 5px 35px;
                     border-radius: 20px;
                     color: aliceblue;
-                    background: #B899EE;
-                    transition: all 0.5s ease-in-out;
+                    background: #007aff;
+                    transition: all 0.3s ease-in-out;
+                    font-weight: bolder;
                 }
 
                 .login {
-                    text-decoration: none;
-                    border: 2px solid rgb(0, 0, 0);
+                    text-decoration: none;  
                     padding: 5px 35px;
                     border-radius: 20px;
                     color: rgb(0, 0, 0);
-                    background: transparent;
-                    transition: all 0.5s ease-in-out;
-
-
+                    background:white;
+                    font-weight: bolder;
+                    transition: all 0.3s ease-in-out;
 
 
                 }
@@ -92,7 +98,7 @@
 
 
                 .doar:hover {
-                    background-color: #B899EE;
+                    background-color: #036bdb;
                     color: white;
                     transform: scale(1.1);
 
@@ -100,9 +106,10 @@
 
 
                 .login:hover {
-                    background-color: #B899EE;
+                    background-color: #036bdb;
                     color: white;
                     transform: scale(1.1);
+                    border:none;
 
                 }
 
