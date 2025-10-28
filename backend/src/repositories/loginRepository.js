@@ -13,16 +13,16 @@ export async function consultarCredenciais(email, senha) {
     return registros[0];
 }
 
-export async function criarLogin(novoLogin) {
+export async function criarCadastro(novoCadastro) {
     const comando = `
     INSERT INTO login (username, email, senha, dt_criacao, nr_doacoes)
     VALUES (?, ?, MD5(?), NOW(), 0);
     `;
 
     const [info] = await connection.query(comando, [
-        novoLogin.username,
-        novoLogin.email,
-        novoLogin.senha
+        novoCadastro.username,
+        novoCadastro.email,
+        novoCadastro.senha
     ]);
     return info.insertId;
 }

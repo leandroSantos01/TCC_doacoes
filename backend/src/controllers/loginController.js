@@ -4,10 +4,10 @@ import { generateToken } from '../utils/jwt.js';
 import { Router } from 'express';
 const api = Router();
 
-api.post('/login/conta', async (req, resp) => {
-    let novoLogin = req.body;
+api.post('/cadastro/conta', async (req, resp) => {
+    let novoCadastro = req.body;
 
-    let id = await repo.criarLogin(novoLogin);
+    let id = await repo.criarCadastro(novoCadastro);
     resp.send({ novoId: id });
 })
 
