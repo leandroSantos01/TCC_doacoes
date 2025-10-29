@@ -1,6 +1,8 @@
 import Cabecalho from "../../components/cabecalho/Cabecalho.jsx";
 import { useState } from "react";
 import * as api from '../../api.js';
+
+import boneco from '/src/assets/images/boneco.png';
 import './cadastro.scss';
 
 export default function Cadastro(){
@@ -31,11 +33,13 @@ export default function Cadastro(){
 
 return(
     <div>
-
-        <Cabecalho/>
+        
+        <Cabecalho />
+     
 
         <main>
             <div className="container-mae">
+                <div className="irmas">
                 <div className="container-filha1">
                     <form onSubmit={handleSubmit}>
 
@@ -62,13 +66,16 @@ return(
                             <label>Declaro que li e concordo com os <a href="">Termos de Uso.</a></label>
                         </div>
 
-                        <button type="submit" className="cadastrar-se">Cadastrar</button>
+                        <button type="submit" className="cadastrar-se">CADASTRAR-SE</button>
                     </form>
 
                 </div>
 
                 <div className="container-filha2">
+                    <img src={boneco} alt="" />
                     
+                </div>
+
                 </div>
 
             </div>
@@ -76,4 +83,5 @@ return(
         </main>
     </div>
 )
+
 }

@@ -26,27 +26,27 @@ import amigos from '/src/assets/images/amigos.png'
 export default function App() {
     return (
         <div>
-         
+
 
             <main className='container_pagPrincipal'>
-            
-                <div className="container_central">
-                <Cabecalho/>
-                <div>
-                    <div className="container_infromacao">
-                        <h1><span className='destaque'>DonNet</span> faça do mundo um lugar melhor</h1>
 
-                        <div className="Botoes_central">
-                            <Link className='doar'>DOAR</Link>
-                            <Link className='login'>LOGIN</Link>
+                <div className="container_central">
+                    <Cabecalho />
+                    <div>
+                        <div className="container_infromacao">
+                            <h1><span className='destaque'>DonNet</span> faça do mundo um lugar melhor</h1>
+
+                            <div className="Botoes_central">
+                                <Link className='doar'>DOAR</Link>
+                                <Link className='login'>LOGIN</Link>
+                            </div>
+                        </div>
+
+                        <div className="container_img">
+                            <img src={informacao} alt="Informação" />
                         </div>
                     </div>
 
-                    <div className="container_img">
-                        <img src={informacao} alt="Informação" />
-                    </div>
-                </div>
-                
                 </div>
             </main>
 
@@ -56,13 +56,13 @@ export default function App() {
                     <h1>Para quem doar</h1>
                     <Swiper
                         modules={[Navigation]}
-                        navigation 
+                        navigation
                         spaceBetween={20}
                         slidesPerView={3.6}
                         loop
                         breakpoints={{
                             1024: { slidesPerView: 3.6 },
-                            768: { slidesPerView: 2 },
+                            768: { slidesPerView: 1 },
                             480: { slidesPerView: 1 },
                         }}
                     >
@@ -109,11 +109,37 @@ export default function App() {
                         </SwiperSlide>
                     </Swiper>
                 </div>
+
+
+                <div className="sobre">
+                    <h1></h1>
+
+                    <p>
+
+                    </p>
+                </div>
+
             </section>
 
-            <Rodape/>
+            <section>
+                <div className="pag_sobre">
+                    <h1>Sobre</h1>
+                    <p>
+                        Esta Central de Doações foi concebida e desenvolvida como o principal produto do nosso Trabalho de Conclusão de Curso (TCC), integralmente realizado no contexto do curso de [Nome do Seu Curso] do [Nome do Instituto/Faculdade].
 
-         
+                        A gênese deste projeto reside na identificação de [mencionar a lacuna ou o problema que o TCC resolve, ex: ineficiência na gestão de bens doados ou a falta de visibilidade das necessidades locais]. Nosso principal objetivo é estabelecer uma ponte digital robusta e transparente, que não apenas simplifique o processo de contribuição para o doador, mas também garanta que os recursos cheguem de forma eficaz e segura às entidades e indivíduos necessitados.
+
+                        Ao longo desta pesquisa e desenvolvimento, aplicamos metodologias de [Mencionar brevemente a área de estudo, ex: Engenharia de Software, Gestão de Projetos ou Ciências Sociais Aplicadas] para construir uma solução escalável e sustentável. Esta central é, portanto, a materialização da nossa dedicação acadêmica, servindo como um modelo prático de como a inovação tecnológica pode impulsionar a responsabilidade social corporativa e comunitária.
+                    </p>
+
+
+                </div>
+            </section>
+
+
+            <Rodape />
+
+
         </div>
     )
 }

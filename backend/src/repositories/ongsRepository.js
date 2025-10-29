@@ -29,6 +29,6 @@ export async function buscaPorFiltro(categoria) {
                 WHERE categoria = ?;
    `
 
-   const [registros] = await connection.query(comando);
+   const [registros] = await connection.query(comando,[categoria]);
    return registros;
 }

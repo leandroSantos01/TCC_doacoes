@@ -2,6 +2,8 @@ import './rodape.scss'
 import logo from '/src/assets/images/logo.png'
 
 import { FaInstagram } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 
 export default function Rodape() {
@@ -11,9 +13,10 @@ export default function Rodape() {
 
     
       <footer >
-        <div className="rodape">
-        <nav>
+        <div className="rodape"> 
           <img src={logo}/>
+        <nav>
+         
           <div className="inicio">
             <h2>Início</h2>
             <a>Home</a>
@@ -33,7 +36,9 @@ export default function Rodape() {
             <a>E-mail: contato@seuprojeto.org</a>
             <div className='contatos_imgs'>
            
-            <FaInstagram size={50}/> 
+            <FaInstagram size={30}/> 
+            <FaFacebookSquare  size={30}/>
+            <FaSquareXTwitter size={30}/>
             </div>
             
             </div>

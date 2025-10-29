@@ -13,10 +13,9 @@ export default function Cabecalho(){
         </Link>
 
         <div className="Area_link">
-            <Link to={'/'} > INICIO</Link>
-            <Link to={'/doar'} >DOAR</Link>
-            <Link to={'/ongs'} >PARCEIRAS</Link>
-            <Link to={'/sobre'}>SOBRE NÓS</Link>
+            <Link to={'/ongs'} > ONGS</Link>
+            <Link to={'/login'} >LOGIN</Link>
+            <Link to={'/cadastro'}>CADASTRO</Link>
 
 
 
