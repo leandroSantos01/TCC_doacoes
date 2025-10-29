@@ -12,6 +12,12 @@ api.post('/cadastro/ong', async (req, resp) => {
     resp.send({ novoId: id});
 })
 
+api.get('/listar/ongs', async (req, resp) => {
+    const registros = await repo.listarOngs();
+
+    resp.send(registros);
+})
+
 api.get('/busca/categoria', async (req, resp) => {
     let categoria = req.body;
 

@@ -1,6 +1,5 @@
 import { connection } from "./connection.js";
 
-
 export async function cadastrarOng(novoCadastro) {
     const comando = `
         INSERT INTO
@@ -21,6 +20,15 @@ export async function cadastrarOng(novoCadastro) {
     return info.insertId;  
 } 
 
+export async function listarOngs(){
+    const comando = `
+          SELECT nome, endereco, categoria
+            FROM ongs; 
+    `
+
+    const [registros] = await connection.query(comando);
+    return registros;
+}
 
 export async function buscaPorFiltro(categoria) {
    const comando = `
