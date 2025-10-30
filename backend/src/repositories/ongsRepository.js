@@ -20,7 +20,28 @@ export async function cadastrarOng(novoCadastro) {
     return info.insertId;  
 }
 
-export async function listarOngs(){
+export async function consultarCredenciaisOng(email, senha) {
+    const comando = `
+    SELECT nome, email
+        FROM ongs 
+    WHERE email = ?
+        AND senha = MD5(?)
+    `;
+
+    const [registros] = await connection.query(comando, [email, senha]);
+    return registros[0];
+}
+
+
+
+
+export async function alterarImagem(id, caminho) {
+    const comando = `
+        
+    `
+}
+
+export async function listarOngs() {
     const comando = `
           SELECT nome, endereco, categoria
             FROM ongs; 
