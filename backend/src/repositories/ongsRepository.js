@@ -18,7 +18,7 @@ export async function cadastrarOng(novoCadastro) {
         novoCadastro.doacoes_recebidas
     ]);
     return info.insertId;  
-} 
+}
 
 export async function listarOngs(){
     const comando = `
@@ -30,13 +30,35 @@ export async function listarOngs(){
     return registros;
 }
 
-export async function buscaPorFiltro(categoria) {
+export async function buscaPorCategoria(categoria) {
    const comando = `
-        SELECT categoria
+        SELECT nome, endereco, categoria
             FROM ongs
                 WHERE categoria = ?;
    `
 
    const [registros] = await connection.query(comando,[categoria]);
    return registros;
+}
+
+export async function buscaPorNome(nome) {
+    const comando = `
+         SELECT nome, endereco, categoria
+             FROM ongs
+                 WHERE nome LIKE ?;
+    `
+ 
+    const [registros] = await connection.query(comando,['%'+nome+'%']);
+    return registros;
+}
+
+export async function buscaPorCnpj(cnpj) {
+    const comando = `
+         SELECT nome, endereco, categoria
+             FROM ongs
+                 WHERE cnpj = ?;
+    `
+
+    const [registros] = await connection.query(comando,[cnpj]);
+    return registros;
 }

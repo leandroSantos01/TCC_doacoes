@@ -18,10 +18,24 @@ api.get('/listar/ongs', async (req, resp) => {
     resp.send(registros);
 })
 
-api.get('/busca/categoria', async (req, resp) => {
-    let categoria = req.body;
+api.get('/listar/ongs/categoria', async (req, resp) => {
+    let categoria = req.body.categoria;
 
-    const registros = await repo.buscaPorFiltro(categoria);
+    const registros = await repo.buscaPorCategoria(categoria);
+    resp.send(registros);
+})
+
+api.get('/listar/ongs/nome', async (req, resp) => {
+    let nome = req.body.nome;
+
+    const registros = await repo.buscaPorNome(nome);
+    resp.send(registros);
+})
+
+api.get('/listar/ongs/cnpj', async (req, resp) => {
+    let cnpj = req.body.cnpj;
+
+    const registros = await repo.buscaPorCnpj(cnpj);
     resp.send(registros);
 })
 
