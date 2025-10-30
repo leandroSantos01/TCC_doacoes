@@ -22,9 +22,11 @@ api.post('/login', async (req, resp) => {
             erro: 'Credenciais inválidas'
         });
     }
+
     else {
+        let token = generateToken(credenciais)
         resp.send({
-            token: generateToken(credenciais)
+            token: token
         });
     }
 });

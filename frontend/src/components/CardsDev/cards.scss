@@ -1,0 +1,49 @@
+
+
+
+
+    .conteiner-card {
+        display: flex;
+        width: 860px;
+        max-width: 1400px;
+        background-color: rgb(236, 236, 209);
+        height: auto;
+        padding: 20px;
+        border-radius: 20px;
+        margin: 10px 0;
+
+
+        .desc {
+            display: grid;
+            grid-template-columns: repeat(1,100px);
+            flex-direction: column;
+            padding: 20px;
+            width: 90%;
+            flex-wrap: wrap;
+            gap: 20px;
+            line-height: 0.6cm;
+
+             
+                 p {
+                    min-width: 500px;
+                    overflow-wrap: break-word;
+                  }
+                   
+              
+              
+
+     
+        }
+
+
+        img {
+            width: 200px;
+            border-radius: 20px;
+        }
+
+
+        .virar {
+            order: 1;
+        }
+    }
+

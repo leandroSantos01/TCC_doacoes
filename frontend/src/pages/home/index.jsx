@@ -1,4 +1,4 @@
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 
 import './swiper.scss'
 import './index.scss'
@@ -16,14 +16,28 @@ import 'swiper/css/navigation';
 import Cabecalho from '../../components/cabecalho/Cabecalho.jsx'
 import Rodape from '../../components/Rodape/Rodape.jsx'
 
+
+
 import informacao from '/src/assets/images/imageInfo.png'
 import cao from '/src/assets/images/cao.png'
 import doar from '/src/assets/images/doar.png'
 import caramelo from '/src/assets/images/caramelo.png'
 import crianca from '/src/assets/images/crianca.png'
 import amigos from '/src/assets/images/amigos.png'
+import { useEffect, useState } from 'react'
 
 export default function App() {
+    const [usuario, setUsuario] = useState("")
+    const navigate = useNavigate()
+    useEffect(() => {
+        let nomeUser = localStorage.getItem("USUARIO")
+
+        if (nomeUser == undefined || nomeUser == null) {
+            navigate('/login')
+
+        }
+        else { setUsuario(nomeUser) }
+    }, [])
     return (
         <div>
 
@@ -57,8 +71,8 @@ export default function App() {
                     <Swiper
                         modules={[Navigation]}
                         navigation
-                        spaceBetween={20}
-                        slidesPerView={3.6}
+                        spaceBetween={-20}
+                        slidesPerView={3.8}
                         loop
                         breakpoints={{
                             1024: { slidesPerView: 3.6 },
@@ -111,17 +125,9 @@ export default function App() {
                 </div>
 
 
-                <div className="sobre">
-                    <h1></h1>
-
-                    <p>
-
-                    </p>
-                </div>
-
             </section>
 
-            <section>
+            <section className='secao_sobre'>
                 <div className="pag_sobre">
                     <h1>Sobre</h1>
                     <p>
@@ -135,6 +141,8 @@ export default function App() {
 
                 </div>
             </section>
+
+
 
 
             <Rodape />

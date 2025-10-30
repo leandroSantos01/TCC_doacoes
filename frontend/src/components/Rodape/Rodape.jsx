@@ -1,6 +1,7 @@
 import './rodape.scss'
 import logo from '/src/assets/images/logo.png'
 
+import { Link } from 'react-router';
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -27,7 +28,7 @@ export default function Rodape() {
           <div className="sobre">
             <h2>Sobre Nós</h2>
             <a>Informações do site</a>
-            <a>Quem Somos</a>
+            <Link to={"/desenvolvedores"}><a>Quem Somos</a></Link>
           </div>
 
           <div className="contatos">

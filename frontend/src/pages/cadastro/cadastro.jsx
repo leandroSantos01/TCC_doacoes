@@ -4,6 +4,7 @@ import * as api from '../../api.js';
 
 import boneco from '/src/assets/images/boneco.png';
 import './cadastro.scss';
+import Rodape from "../../components/Rodape/Rodape.jsx";
 
 export default function Cadastro(){
 
@@ -81,6 +82,8 @@ return(
             </div>
 
         </main>
+
+        <Rodape/>
     </div>
 )
 

@@ -3,6 +3,7 @@ import Index from './pages/home/index.jsx'
 import Cadastro from './pages/cadastro/cadastro.jsx'
 import Login from './pages/login/login.jsx'
 import Ongs from './pages/Ongs/Ongs.jsx'
+import Dev from './pages/Dev/index.jsx'
 
 export default function Navegacao(){
     return(
@@ -12,6 +13,8 @@ export default function Navegacao(){
             <Route path='/cadastro' element={<Cadastro/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/ongs' element={<Ongs/>}/>
+            <Route path='/desenvolvedores' element={<Dev/>}/>
+            
         </Routes>
         </BrowserRouter>
     )

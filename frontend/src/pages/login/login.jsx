@@ -1,80 +1,98 @@
 import Cabecalho from "../../components/cabecalho/Cabecalho.jsx";
-import { useState } from "react";
-import * as api from '../../api.js';
+import Rodape from "../../components/Rodape/Rodape.jsx";
+
+
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
+import api from '../../api.js';
 
 import boneco from '/src/assets/images/boneco.png';
+
+import '/src/scss/global.scss'
+import '/src/scss/fonts.scss'
 import './login.scss';
 
-export default function Cadastro(){
+export default function Cadastro() {
 
-    const [formData, setFormData] = useState({
-        email: '',
-        usuario: '',
-        senha: ''
-    });
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
+    const navigate = useNavigate()
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    useEffect(() => {
+        let userName = localStorage.getItem("USUARIO")
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const dataToSend = {
-            ...formData,
-        };
-        try {
-            await api.post('/login', dataToSend);
-            alert('Logado!');
-            console.log(formData);
-        } catch (err) {
-            console.log(err);
+        if (userName != undefined && userName != null) {
+            navigate('/')
         }
-    };
-
-return(
-    <div>
-        
-        <Cabecalho />
-     
-
-        <main>
-            <div className="container-login">
-                <div className="irmas-login">
-                <div className="container-filha1-login">
-                    <form onSubmit={handleSubmit}>
-
-                        <h1>Login</h1>
-                        <p>Venha fazer parte da nossa comunidade.</p>
-
-                        <div className="container-input-login">
-                            <label>Email</label>
-                            <input type="email" placeholder='Email' name='email' value={formData.email} onChange={handleChange} />
-                        </div>
+    }, [])
 
 
-                        <div className="container-input-login">
-                            <label>Senha</label>
-                            <input type="password" placeholder='Inserir senha' name='senha' value={formData.senha} onChange={handleChange} />
-                        </div>
+    async function Login(e) {
+        e.preventDefault()
 
-                   
+        let body = {
+            email: email,
+            senha: senha
+        }
+    
+        try {
+            let response = await api.post("/login", body);
+            let token = response.data.token;
+    
+            localStorage.setItem("TOKEN", token);
+            localStorage.setItem("USUARIO", email); // ou apenas algo simples
+            navigate('/');
+        } catch (err) {
+            alert("Credenciais inválidas");
+        }
+    }
 
-                        <button type="submit" className="cadastrar-se">LOGAR</button>
-                    </form>
+    return (
+        <div>
 
+            <Cabecalho />
+
+
+    <main>
+    <div className="container-login">
+        <div className="irmas-login">
+            <div className="container-filha1-login">
+            <form>
+                <h1>Login</h1>
+                <p>Venha fazer parte da nossa comunidade.</p>
+
+                <div className="container-input-login">
+                    <label>Email</label>
+                    <input type="email" placeholder='Email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
 
-                <div className="container-filha2">
-                    <img src={boneco} alt="" />
-                    
+
+                <div className="container-input-login">
+                    <label>Senha</label>
+                    <input type="password" placeholder='Inserir senha' name='senha' value={senha} onChange={(e) => setSenha(e.target.value)} />
                 </div>
 
-                </div>
+
+
+                <button type="submit" className="cadastrar-se" onClick={Login}>LOGAR</button>
+                </form>
+            </div>
+
+            <div className="container-filha2">
+                <img src={boneco} alt="" />
 
             </div>
 
-        </main>
+        </div>
+
     </div>
-)
+
+    </main>
+
+            <Rodape />
+
+
+        </div>
+    )
 
 }
