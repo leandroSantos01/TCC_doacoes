@@ -1,5 +1,5 @@
 import * as repo from '../repositories/ongsRepository.js';
-import { getAuthentication } from '../utils/jwt.js';
+import { generateToken, getAuthentication } from '../utils/jwt.js';
 
 import { Router } from 'express';
 const api = Router();
@@ -8,8 +8,26 @@ const api = Router();
 api.post('/cadastro/ong', async (req, resp) => {
     let novoCadastro = req.body;
 
-    let id = await repo.cadastrarOng(novoCadastro);
+    const id = await repo.cadastrarOng(novoCadastro);
     resp.send({ novoId: id});
+})
+
+api.post('/login/ong', async (req, resp) => {
+    let email = req.body.email;
+    let senha = req.body.senha;
+
+    const credenciais = await repo.consultarCredenciaisOng(email, senha);
+    
+    if(!credenciais) {
+        resp.status(401).send({
+            erro: "Credenciais inválidas"
+        });
+    } 
+    else {
+        resp.send({
+            token: generateToken(credenciais)
+        });
+    }
 })
 
 api.get('/listar/ongs', async (req, resp) => {
