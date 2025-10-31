@@ -1,0 +1,44 @@
+.page_ongs{
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+
+    .central_ongs{
+        width: 100%;
+        height: auto;
+        max-width: 1400px;
+        display: flex;
+        flex-direction: column;
+
+        .btn{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+
+            button{
+                padding: 10px;
+                border-radius: 20px;
+                color:white;
+                font-weight: 800;
+                background-color: #007aff;
+                border-color:transparent;
+                transition: all 0.5s;
+
+
+          
+            }
+
+            button:hover{
+                transform: scale(1.1);
+
+            }
+
+
+        }
+
+
+    }
+}
