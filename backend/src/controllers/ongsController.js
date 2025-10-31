@@ -1,18 +1,21 @@
 import * as repo from '../repositories/ongsRepository.js';
 import { generateToken, getAuthentication } from '../utils/jwt.js';
 
+import { multer } from 'multer';
+const upload = multer({ dest: 'public/storage' })
+
 import { Router } from 'express';
-const api = Router();
+const endpoints = Router();
 
 
-api.post('/cadastro/ong', async (req, resp) => {
+endpoints.post('/cadastro/ong', async (req, resp) => {
     let novoCadastro = req.body;
 
     const id = await repo.cadastrarOng(novoCadastro);
     resp.send({ novoId: id});
 })
 
-api.post('/login/ong', async (req, resp) => {
+endpoints.post('/login/ong', async (req, resp) => {
     let email = req.body.email;
     let senha = req.body.senha;
 
@@ -30,31 +33,39 @@ api.post('/login/ong', async (req, resp) => {
     }
 })
 
-api.get('/listar/ongs', async (req, resp) => {
+endpoints.get('/listar/ongs', async (req, resp) => {
     const registros = await repo.listarOngs();
 
     resp.send(registros);
 })
 
-api.get('/listar/ongs/categoria', async (req, resp) => {
+endpoints.get('/listar/ongs/categoria', async (req, resp) => {
     let categoria = req.body.categoria;
 
     const registros = await repo.buscaPorCategoria(categoria);
     resp.send(registros);
 })
 
-api.get('/listar/ongs/nome', async (req, resp) => {
+endpoints.get('/listar/ongs/nome', async (req, resp) => {
     let nome = req.body.nome;
 
     const registros = await repo.buscaPorNome(nome);
     resp.send(registros);
 })
 
-api.get('/listar/ongs/cnpj', async (req, resp) => {
+endpoints.get('/listar/ongs/cnpj', async (req, resp) => {
     let cnpj = req.body.cnpj;
 
     const registros = await repo.buscaPorCnpj(cnpj);
     resp.send(registros);
 })
 
-export default api;
+endpoints.put('/imagem/:id', upload.single('img'), async (req, resp) => {
+    let caminho = req.file.path;
+    let id = req.params.id;
+
+    await repo.alterarImagem(id, caminho);
+    resp.send();
+})
+
+export default endpoints;
