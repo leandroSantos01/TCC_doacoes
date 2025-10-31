@@ -2,16 +2,16 @@ import * as repo from '../repositories/loginRepository.js';
 import { generateToken } from '../utils/jwt.js';
 
 import { Router } from 'express';
-const api = Router();
+const endpoints = Router();
 
-api.post('/cadastro/conta', async (req, resp) => {
+endpoints.post('/cadastro/conta', async (req, resp) => {
     let novoCadastro = req.body;
 
     let id = await repo.criarCadastro(novoCadastro);
     resp.send({ novoId: id });
 })
 
-api.post('/login', async (req, resp) => {
+endpoints.post('/login', async (req, resp) => {
     let email = req.body.email;
     let senha = req.body.senha;
 
@@ -31,7 +31,7 @@ api.post('/login', async (req, resp) => {
     }
 });
 
-api.post('/login/admin/istrador', async (req, resp) => {
+endpoints.post('/login/admin/istrador', async (req, resp) => {
     let email = req.body.email;
     let senha = req.body.senha;                                                          
 
@@ -48,4 +48,4 @@ api.post('/login/admin/istrador', async (req, resp) => {
         });
     }
 })
-export default api;
+export default endpoints;
