@@ -45,6 +45,8 @@ export async function alterarImagem(id, caminho) {
     const [info] = await connection.query(comando, [caminho, id])
 }
 
+
+
 export async function listarOngs() {
     const comando = `
           SELECT nome, endereco, categoria

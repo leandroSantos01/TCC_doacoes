@@ -15,7 +15,7 @@ export default function ModalOngs({aberto , fechado,titulo}){
     <div className="caixa_esquerda">
     
     <div>
-    <label htmlFor="">nome</label>
+    <label >Nome</label>
     <input placeholder='nome' type='text'/>
     </div>
    

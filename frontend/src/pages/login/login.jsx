@@ -60,7 +60,7 @@ export default function Cadastro() {
         
                 <h1>Login</h1>
                 <p>Venha fazer parte da nossa comunidade.</p>
-            <div className="caixa_login">
+
                 <div className="container-input-login">
                     <label>Email</label>
                     <input type="email" placeholder='Email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -77,7 +77,7 @@ export default function Cadastro() {
                 <button type="submit" className="cadastrar-se" onClick={Login}>LOGAR</button>
                 </div>
                 
-            </div>
+  
 
             <div className="container-filha2-login">
                 <img src={boneco} alt="" />

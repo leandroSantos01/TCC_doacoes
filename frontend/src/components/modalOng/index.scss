@@ -3,14 +3,16 @@
     height: auto;
     display: flex;
     justify-self: center;
-    top: 200px;
+    top: 100px;
     position: fixed;
     flex-direction: column;
     background-color: azure;  
     border-radius: 20px;
     padding: 10px;
     transition: all 1s ease-in-out;
-    filter: blur(160%);
+    filter: opacity(90%);
+
+
 
     .titulo_modal{
         width: 100%;
@@ -28,7 +30,6 @@
         width: 100%;
         height: auto;
         padding: 5px;
-
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -62,7 +63,7 @@
                     height: 25px;
                     padding: 0 5px;
                     border-radius: 10px;
-                    border-color: transparent;
+                    border: 2px solid rgba(0, 0, 0, 0.467);
                     transition: all 0.3s ease-in-out;
 
                     &:focus {
@@ -83,7 +84,6 @@
         .caixa_direita{
             width: 45%;
             height: 280px;
-
             display: flex;
             flex-direction: column;
             padding: 5px;
@@ -109,7 +109,7 @@
                     border-radius: 10px;
                     padding: 0 5px;
                     transition: all 0.3s ease-in-out;
-                    border-color: transparent;
+                    border: 2px solid rgba(0, 0, 0, 0.467);
 
                     &:focus {
                         border-color: #007bff97;
