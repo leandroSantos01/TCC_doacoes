@@ -34,11 +34,60 @@ export default function Ongs() {
            
             <Rodape/>
 
-
 <ModalOngs
-aberto={modalOngs}
-titulo={'Cadastro de Ongs'}
-fechado={()=> setModalOngs(false)}/>
+  aberto={modalOngs}
+  titulo={'Cadastro de Ongs'}
+  fechado={() => setModalOngs(false)}
+  cadastrar={'ola'}
+  conteudo={
+    <div>
+        
+      <div>
+        <label>Nome</label>
+        <input placeholder='nome' type='text' />
+      </div>
+
+      <div>
+        <label>Email</label>
+        <input placeholder='email' type='email' />
+      </div>
+
+      <div>
+        <label>Senha</label>
+        <input type="password" placeholder='senha' />
+      </div>
+
+       <div>
+        <label>Endereço</label>
+        <input type="text" placeholder='endereço' />
+      </div>
+
+
+    </div>
+  }
+
+conteudo2={
+    <div>
+       
+      <div>
+        <label>CNPJ</label>
+        <input type="text" placeholder='CNPJ' />
+      </div>
+  <div>
+        <label>Categoria</label>
+        <select>
+          <option disabled selected hidden>Selecione um tipo</option>
+          <option>Ambiental</option>
+          <option>Assistência social</option>
+          <option>Educação</option>
+          <option>Saúde</option>
+          <option>Proteção animal</option>
+        </select>
+      </div>
+
+      </div>
+}/>
+
 
 
 
