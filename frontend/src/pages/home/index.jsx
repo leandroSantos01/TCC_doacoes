@@ -28,19 +28,29 @@ import { useEffect, useState } from 'react'
 
 export default function App() {
     const [usuario, setUsuario] = useState("")
-    const navigate = useNavigate()
+    const [logado,setLogado] = useState(false)
+
+
     useEffect(() => {
         let nomeUser = localStorage.getItem("USUARIO")
 
-        if (nomeUser == undefined || nomeUser == null) {
-            navigate('/login')
+
+        if(nomeUser == undefined || nomeUser == null){
+            setLogado(false)
 
         }
-        else { setUsuario(nomeUser) }
-    }, [])
+
+        else{
+            setLogado(true)
+        }
+    },[])
+
+
+
     return (
         <div>
 
+            
 
             <main className='container_pagPrincipal'>
 
@@ -51,8 +61,8 @@ export default function App() {
                             <h1><span className='destaque'>DonNet</span> faça do mundo um lugar melhor</h1>
 
                             <div className="Botoes_central">
-                                <Link className='doar'>DOAR</Link>
-                                <Link className='login'>LOGIN</Link>
+                                <Link className='doar' to={'/cadastro'}>CADASTRAR</Link>
+                                <Link className='login' to={'/login'}>LOGIN</Link>
                             </div>
                         </div>
 
@@ -131,11 +141,11 @@ export default function App() {
                 <div className="pag_sobre">
                     <h1>Sobre</h1>
                     <p>
-                        Esta Central de Doações foi concebida e desenvolvida como o principal produto do nosso Trabalho de Conclusão de Curso (TCC), integralmente realizado no contexto do curso de [Nome do Seu Curso] do [Nome do Instituto/Faculdade].
+                        Esta Central de Doações foi concebida e desenvolvida como o principal produto do nosso Trabalho de Conclusão de Curso , integralmente realizado no contexto do curso de Informatica do Instituto Nossa Senhora de Fatima.
 
-                        A gênese deste projeto reside na identificação de [mencionar a lacuna ou o problema que o TCC resolve, ex: ineficiência na gestão de bens doados ou a falta de visibilidade das necessidades locais]. Nosso principal objetivo é estabelecer uma ponte digital robusta e transparente, que não apenas simplifique o processo de contribuição para o doador, mas também garanta que os recursos cheguem de forma eficaz e segura às entidades e indivíduos necessitados.
+                        A gênese deste projeto reside na identificação e criação de ongs . Nosso principal objetivo é estabelecer uma ponte digital robusta e transparente, que não apenas simplifique o processo de contribuição para o doador, mas também garanta que os recursos cheguem de forma eficaz e segura às entidades e indivíduos necessitados.
 
-                        Ao longo desta pesquisa e desenvolvimento, aplicamos metodologias de [Mencionar brevemente a área de estudo, ex: Engenharia de Software, Gestão de Projetos ou Ciências Sociais Aplicadas] para construir uma solução escalável e sustentável. Esta central é, portanto, a materialização da nossa dedicação acadêmica, servindo como um modelo prático de como a inovação tecnológica pode impulsionar a responsabilidade social corporativa e comunitária.
+                        Ao longo desta pesquisa e desenvolvimento, aplicamos metodologias de Engenharia de Software para construir uma solução escalável e sustentável. Esta central é, portanto, a materialização da nossa dedicação acadêmica, servindo como um modelo prático de como a inovação tecnológica pode impulsionar a responsabilidade social corporativa e comunitária.
                     </p>
 
 

@@ -47,7 +47,7 @@ export default function Rodape() {
 
         
         </div>
-        <p>© 2024 Curso Info. Todos os direitos reservados.</p>
+        <p>© 2025 Curso Info. Todos os direitos reservados.</p>
 
       </footer>
 

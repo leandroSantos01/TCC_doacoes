@@ -61,6 +61,7 @@ endpoints.get('/listar/ongs/cnpj', async (req, resp) => {
     resp.send(registros);
 })
 
+
 endpoints.put('/upload/:id/image', upload.single('file'), async (req, resp) =>{
     let caminho = req.file.path;
 
@@ -69,5 +70,6 @@ endpoints.put('/upload/:id/image', upload.single('file'), async (req, resp) =>{
     await repo.alterarImagem(caminho, id);
     resp.send();
 })
+
 
 export default endpoints;
