@@ -1,8 +1,7 @@
 import * as repo from '../repositories/ongsRepository.js';
 import { generateToken, getAuthentication } from '../utils/jwt.js';
 
-import { multer } from 'multer';
-const upload = multer({ dest: 'public/storage' })
+
 
 import { Router } from 'express';
 const endpoints = Router();
@@ -60,12 +59,5 @@ endpoints.get('/listar/ongs/cnpj', async (req, resp) => {
     resp.send(registros);
 })
 
-endpoints.put('/imagem/:id', upload.single('img'), async (req, resp) => {
-    let caminho = req.file.path;
-    let id = req.params.id;
-
-    await repo.alterarImagem(id, caminho);
-    resp.send();
-})
 
 export default endpoints;

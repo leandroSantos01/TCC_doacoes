@@ -1,6 +1,6 @@
 import Cabecalho from "../../components/cabecalho/Cabecalho.jsx";
 import { useState } from "react";
-import * as api from '../../api.js';
+import api from '../../api.js';
 
 import boneco from '/src/assets/images/boneco.png';
 import './cadastro.scss';
@@ -24,7 +24,7 @@ export default function Cadastro(){
             ...formData,
         };
         try {
-            await api.post('/login', dataToSend);
+            await api.post('/cadastro/conta', dataToSend);
             alert('Logado!');
             console.log(formData);
         } catch (err) {

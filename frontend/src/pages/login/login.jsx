@@ -13,7 +13,8 @@ import '/src/scss/fonts.scss'
 import './login.scss';
 
 export default function Cadastro() {
-
+    
+    //
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
     const navigate = useNavigate()
@@ -31,8 +32,8 @@ export default function Cadastro() {
         e.preventDefault()
 
         let body = {
-            email: email,
-            senha: senha
+            "email": email,
+            "senha": senha
         }
     
         try {
@@ -40,12 +41,37 @@ export default function Cadastro() {
             let token = response.data.token;
     
             localStorage.setItem("TOKEN", token);
-            localStorage.setItem("USUARIO", email); // ou apenas algo simples
+            localStorage.setItem("USUARIO", response.data.credenciais); // ou apenas algo simples
             navigate('/');
         } catch (err) {
             alert("Credenciais inválidas");
         }
     }
+    //
+
+    const [formData, setFormData] = useState({
+        email: '',
+        usuario: '',
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const dataToSend = {
+            ...formData,
+        };
+        try {
+            await api.post('/login', dataToSend);
+            alert('Logado!');
+            console.log(formData);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
 
     return (
         <div>
@@ -56,33 +82,35 @@ export default function Cadastro() {
     <main>
     <div className="container-login">
         <div className="irmas-login">
-            <div className="container-filha1-login">
-        
-                <h1>Login</h1>
-                <p>Venha fazer parte da nossa comunidade.</p>
+            
+                <div className="container-filha1-login">
+            
+                    <h1>Login</h1>
+                    <p>Venha fazer parte da nossa comunidade.</p>
 
-                <div className="container-input-login">
-                    <label>Email</label>
-                    <input type="email" placeholder='Email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <div className="container-input-login">
+                        <label>Email</label>
+                        <input type="email" placeholder='Email' name='email' value={email} onChange={handleChange} />
+                    </div>
+
+
+                    <div className="container-input-login">
+                        <label>Senha</label>
+                        <input type="password" placeholder='Inserir senha' name='senha' value={senha} onChange={handleChange} />
+                    </div>
+
+
+
+                    <button type="submit" className="cadastrar-se">LOGAR</button>
+                    </div>
+                    
+    
+
+                    <div className="container-filha2-login">
+                    <img src={boneco} alt="" />
+
                 </div>
-
-
-                <div className="container-input-login">
-                    <label>Senha</label>
-                    <input type="password" placeholder='Inserir senha' name='senha' value={senha} onChange={(e) => setSenha(e.target.value)} />
-                </div>
-
-
-
-                <button type="submit" className="cadastrar-se" onClick={Login}>LOGAR</button>
-                </div>
-                
-  
-
-            <div className="container-filha2-login">
-                <img src={boneco} alt="" />
-
-            </div>
+            
 
         </div>
 
