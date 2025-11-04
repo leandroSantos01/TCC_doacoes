@@ -23,7 +23,7 @@
 
     .container_central {
         width: 100%;
-        background: linear-gradient(to top, #5AA6D8,#ffffff);
+        background: linear-gradient(to top, #5AA6D8, #ffffff);
         height: 700px;
         max-width: 1400px;
         display: flex;
@@ -31,9 +31,9 @@
         flex-direction: column;
         justify-content: space-evenly;
         justify-content: center;
- 
 
-        & div{
+
+        & div {
             display: flex;
             flex-direction: row;
         }
@@ -56,7 +56,7 @@
 
             h1 {
                 line-height: 1.5cm;
-                
+
             }
 
 
@@ -85,11 +85,11 @@
                 }
 
                 .login {
-                    text-decoration: none;  
+                    text-decoration: none;
                     padding: 5px 35px;
                     border-radius: 20px;
                     color: rgb(0, 0, 0);
-                    background:white;
+                    background: white;
                     font-weight: bolder;
                     transition: all 0.3s ease-in-out;
 
@@ -110,7 +110,7 @@
                     background-color: #036bdb;
                     color: white;
                     transform: scale(1.1);
-                    border:none;
+                    border: none;
 
                 }
 
@@ -138,7 +138,8 @@
 
 
 }
-.secao_sobre{
+
+.secao_sobre {
     padding: 10px 0;
     width: 100%;
     height: auto;
@@ -150,21 +151,21 @@
 
 
 
-.pag_sobre{
-    width: 100%;
-    max-width: 1400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    border-radius: 20px;
-    box-shadow: 2px 2px 15px 4px rgb(170, 170, 170);
-    line-height: 1cm;
-    padding: 40px;
-    
+    .pag_sobre {
+        width: 100%;
+        max-width: 1400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 15px 4px rgb(170, 170, 170);
+        line-height: 1cm;
+        padding: 40px;
 
-    p{
-        text-align: left;
+
+        p {
+            text-align: left;
+        }
     }
-}
 }

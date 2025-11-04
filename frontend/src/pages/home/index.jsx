@@ -28,29 +28,29 @@ import { useEffect, useState } from 'react'
 
 export default function App() {
     const [usuario, setUsuario] = useState("")
-    const [logado,setLogado] = useState(false)
+    const [logado, setLogado] = useState(false)
 
 
     useEffect(() => {
         let nomeUser = localStorage.getItem("USUARIO")
 
 
-        if(nomeUser == undefined || nomeUser == null){
+        if (nomeUser == undefined || nomeUser == null) {
             setLogado(false)
 
         }
 
-        else{
+        else {
             setLogado(true)
         }
-    },[])
+    }, [])
 
 
 
     return (
         <div>
 
-            
+
 
             <main className='container_pagPrincipal'>
 
