@@ -121,12 +121,12 @@ conteudo2={
   <div>
         <label>Categoria</label>
         <select value={categoria} onChange={e => setCategoria(e.target.value)}>
-          <option disabled selected hidden>Selecione um tipo</option>
+          <option disabled selected hidden>Selecione uma categoria</option>
           <option>Ambiental</option>
           <option>Assistência social</option>
           <option>Educação</option>
           <option>Saúde</option>
-          <option>Proteção animal</option>
+          <option>Causa animal</option>
         </select>
       </div>
 

@@ -1,5 +1,6 @@
 .caixa_blur {
     backdrop-filter: blur(1px);
+    background-color: rgba(0, 0, 0, 0.568);
     width: 100%;
     justify-content: center;
     display: flex;
@@ -11,14 +12,14 @@
 
 
     .central_modal {
-        width: 40%;
+        width: 50%;
         height: auto;
         display: flex;
         justify-self: center;
         top: 150px;
         position: fixed;
         flex-direction: column;
-        background-color: azure;
+        background-color: rgb(223, 237, 255);
         border-radius: 20px;
         padding: 10px;
         transition: all 1s ease-in-out;
@@ -144,7 +145,7 @@
             height: auto;
             display: flex;
             justify-content: flex-end;
-            gap: 5px;
+            gap: 15px;
 
             button {
                 text-decoration: none;
@@ -161,13 +162,26 @@
                 font-size: 12px;
                 cursor: pointer;
 
+                
+                     
+            &:hover{
+                transform: scale(1.1);
+
+            }
+
             }
 
 
             .diferente {
-                color: rgb(255, 255, 255);
-                background-color: grey;
+                color: rgb(0, 0, 0);
+                background-color: rgb(255, 255, 255);
+
+                     
+   
             }
+
+                 
+       
 
 
         }

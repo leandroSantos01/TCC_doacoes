@@ -101,7 +101,7 @@ export default function Cadastro() {
 
 
 
-                    <button type="submit" className="cadastrar-se">LOGAR</button>
+                    <button type="submit" className="cadastrar-se">ENTRAR</button>
                     </div>
                     
     
