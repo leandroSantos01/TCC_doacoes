@@ -48,4 +48,5 @@ endpoints.post('/login/admin/istrador', async (req, resp) => {
         });
     }
 })
+
 export default endpoints;

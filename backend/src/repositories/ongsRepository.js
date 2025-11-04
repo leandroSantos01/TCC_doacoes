@@ -32,20 +32,15 @@ export async function consultarCredenciaisOng(email, senha) {
     return registros[0];
 }
 
-
-
-
-export async function alterarImagem(id, caminho) {
+export async function alterarImagem(caminho, id) {
     const comando = `
         UPDATE ongs
         SET url_image = ?
-        WHERE id = ?
+        WHERE id_ong = ?
   `
 
     const [info] = await connection.query(comando, [caminho, id])
 }
-
-
 
 export async function listarOngs() {
     const comando = `

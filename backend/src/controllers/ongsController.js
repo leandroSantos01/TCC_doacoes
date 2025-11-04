@@ -1,14 +1,15 @@
 import * as repo from '../repositories/ongsRepository.js';
 import { generateToken, getAuthentication } from '../utils/jwt.js';
+const autenticador = getAuthentication();
 
-import { multer } from 'multer';
-const upload = multer({ dest: 'public/storage' })
+import multer from 'multer';
+const upload = multer({ dest: 'public/storage '});
 
 import { Router } from 'express';
 const endpoints = Router();
 
 
-endpoints.post('/cadastro/ong', async (req, resp) => {
+endpoints.post('/cadastro/ong', autenticador, async (req, resp) => {
     let novoCadastro = req.body;
 
     const id = await repo.cadastrarOng(novoCadastro);
@@ -60,11 +61,12 @@ endpoints.get('/listar/ongs/cnpj', async (req, resp) => {
     resp.send(registros);
 })
 
-endpoints.put('/imagem/:id', upload.single('img'), async (req, resp) => {
+endpoints.put('/upload/:id/image', upload.single('file'), async (req, resp) =>{
     let caminho = req.file.path;
+
     let id = req.params.id;
 
-    await repo.alterarImagem(id, caminho);
+    await repo.alterarImagem(caminho, id);
     resp.send();
 })
 
