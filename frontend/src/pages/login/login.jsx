@@ -14,40 +14,34 @@ import './login.scss';
 
 export default function Cadastro() {
     
-    //
-    const [email, setEmail] = useState("")
-    const [senha, setSenha] = useState("")
-    const navigate = useNavigate()
+    // const [email, setEmail] = useState("")
+    // const [senha, setSenha] = useState("")
+    // const navigate = useNavigate()
 
-    useEffect(() => {
-        let userName = localStorage.getItem("USUARIO")
-
-        if (userName != undefined && userName != null) {
-            navigate('/')
-        }
-    }, [])
+    // useEffect(() => {
+    //     let userName = localStorage.getItem("USUARIO")
+    // }, [])
 
 
-    async function Login(e) {
-        e.preventDefault()
+    // async function Login(e) {
+    //     e.preventDefault()
 
-        let body = {
-            "email": email,
-            "senha": senha
-        }
+    //     let body = {
+    //         "email": email,
+    //         "senha": senha
+    //     }
     
-        try {
-            let response = await api.post("/login", body);
-            let token = response.data.token;
+    //     try {
+    //         let response = await api.post("/login", body);
+    //         let token = response.data.token;
     
-            localStorage.setItem("TOKEN", token);
-            localStorage.setItem("USUARIO", response.data.credenciais); // ou apenas algo simples
-            navigate('/');
-        } catch (err) {
-            alert("Credenciais inválidas");
-        }
-    }
-    //
+    //         localStorage.setItem("TOKEN", token);
+    //         localStorage.setItem("USUARIO", response.data.credenciais);
+    //         navigate('/');
+    //     } catch (err) {
+    //         alert("Credenciais inválidas");
+    //     }
+    // }
 
     const [formData, setFormData] = useState({
         email: '',
@@ -82,34 +76,29 @@ export default function Cadastro() {
     <main>
     <div className="container-login">
         <div className="irmas-login">
-            
+            <form onSubmit={handleSubmit}>
                 <div className="container-filha1-login">
-            
+
                     <h1>Login</h1>
                     <p>Venha fazer parte da nossa comunidade.</p>
 
                     <div className="container-input-login">
                         <label>Email</label>
-                        <input type="email" placeholder='Email' name='email' value={email} onChange={handleChange} />
+                        <input type="email" placeholder='Email' name='email' value={formData.email} onChange={handleChange} />
                     </div>
-
 
                     <div className="container-input-login">
                         <label>Senha</label>
-                        <input type="password" placeholder='Inserir senha' name='senha' value={senha} onChange={handleChange} />
+                        <input type="password" placeholder='Inserir senha' name='senha' value={formData.senha} onChange={handleChange} />
                     </div>
-
-
 
                     <button type="submit" className="cadastrar-se">ENTRAR</button>
-                    </div>
-                    
-    
-
-                    <div className="container-filha2-login">
-                    <img src={boneco} alt="" />
-
                 </div>
+            </form>
+
+            <div className="container-filha2-login">
+                <img src={boneco} alt="" />
+            </div>
             
 
         </div>
@@ -117,7 +106,6 @@ export default function Cadastro() {
     </div>
 
     </main>
-
             <Rodape />
 
 

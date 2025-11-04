@@ -25,7 +25,7 @@ export default function Cadastro(){
         };
         try {
             await api.post('/cadastro/conta', dataToSend);
-            alert('Logado!');
+            alert('Usuário cadastrado!');
             console.log(formData);
         } catch (err) {
             console.log(err);
