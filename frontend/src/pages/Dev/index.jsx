@@ -21,7 +21,7 @@ export default function Dev() {
                     imagem={cao}
                     nome={"Leandro"}
                     desc={"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOloremloremlooass099999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999OOOOOOOOOOO"}
-                    
+
                 />
 
 
