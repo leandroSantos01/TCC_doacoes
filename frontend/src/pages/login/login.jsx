@@ -51,8 +51,8 @@ export default function Cadastro() {
     <main>
     <div className="container-login">
         <div className="irmas-login">
-            <form className="" onSubmit={handleSubmit}>
-                <div className="container-filha1-login">
+            <form className="caixa_form" onSubmit={handleSubmit}>
+                <div className="container-filha1-login">    
 
                     <h1>Login</h1>
                     <p>Venha fazer parte da nossa comunidade.</p>
