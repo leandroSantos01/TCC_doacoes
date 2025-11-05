@@ -88,8 +88,10 @@ export default function App() {
                         loop
                         breakpoints={{
                             1024: { slidesPerView: 3.6 },
-                            768: { slidesPerView: 1 },
+                            768: { slidesPerView: 2 },
+                            300: { slidesPerView: 1 },
                             480: { slidesPerView: 1 },
+                            800: { slidesPerView: 2 },
                         }}
                     >
                         <SwiperSlide>

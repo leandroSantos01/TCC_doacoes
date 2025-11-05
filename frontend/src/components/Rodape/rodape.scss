@@ -57,11 +57,6 @@ footer {
 
       }
 
-
-
-
-
-      ;
     }
 
 
@@ -89,8 +84,8 @@ footer {
 
 
   }
-  
-  a{
+
+  a {
     text-decoration: none;
     color: black;
   }
@@ -102,4 +97,43 @@ footer {
     max-width: 1400PX;
   }
 
+}
+
+
+
+@media (max-width: 1024px) {
+  footer .rodape {
+    margin-top: 50px;
+    flex-direction: column;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    padding: 0 20px;
+
+
+
+    nav {
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 80%;
+      margin: 0 20px;
+      border-radius: 10px;
+      padding: 20px;
+
+
+    }
+  }
+
+  footer p {
+    font-size: 14px;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+
+  }
 }

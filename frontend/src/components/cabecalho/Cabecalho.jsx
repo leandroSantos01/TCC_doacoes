@@ -1,15 +1,16 @@
 import { Link } from 'react-router'
 import './cabecalho.scss'
 import logo from '/src/assets/images/logo.png'
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router'
+import { FaBars, FaTimes } from 'react-icons/fa'
 
 
 
-export default function Cabecalho(){
-    const [user,setUser] = useState('');
-    const [logado,setLogado] = useState(false);
-    const navigate = useNavigate();
+export default function Cabecalho() {
+  const [user, setUser] = useState('');
+  const [logado, setLogado] = useState(false);
+  const navigate = useNavigate();
 
 
 
@@ -20,52 +21,60 @@ export default function Cabecalho(){
     }
 
 
-    useEffect(()=>{
-        let nomeUser  = localStorage.getItem("USUARIO")
-        if(nomeUser ==undefined || nomeUser ==null){
-            setLogado(false)
+  useEffect(() => {
+    let nomeUser = localStorage.getItem("USUARIO")
+    if (nomeUser == undefined || nomeUser == null) {
+      setLogado(false)
 
-        }
-        else{
-            setLogado(true)
-            setUser(nomeUser)
-        }
-    })
-
-
+    }
+    else {
+      setLogado(true)
+      setUser(nomeUser)
+    }
+  })
 
 
-    return(
-        <header>
-        <div className="cabecalho">
+
+  const [menuAberto, setMenuAberto] = useState(false);
+  const toggleMenu = () => { setMenuAberto(!menuAberto) }
+  const fecharMenu = () => { setMenuAberto(false) }
+
+
+  return (
+
+    <header>
+      <div className="cabecalho">
         <Link to={"/"}>
-            <img src={logo}alt="logo" className='logo' />
+          <img src={logo} alt="logo" className="logo" />
         </Link>
 
-        <div className="Area_link">
+        <div className="menu-icon" onClick={toggleMenu}>
 
-            {logado ? null:null}
+        <button
+          className={`menu-icon ${menuAberto ? 'aberto' : ''}`}
+          aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
+          onClick={toggleMenu}
+        >
+          {menuAberto ? <FaTimes size={26} /> : <FaBars size={26} />}
+        </button>  
+        </div>
 
-            {logado && <div>
-                <Link to={'/ongs'} > ONGS</Link>    
-                <button onClick={Logout}>sair</button>
-            </div>}
+        <nav className={`Area_link ${menuAberto ? 'ativo' : ''}`}>
 
-            {!logado && 
+          {logado && (
             <div>
-                <Link to={'/login'} >LOGIN</Link>
-                <Link to={'/cadastro'}>CADASTRO</Link>
-            </div>}
-            
+              <Link to={'/ongs'} onClick={fecharMenu}>ONGS</Link>
+            </div>
+          )}
 
-
-
-
-
-        </div>
-        </div>
-
-        </header>
-
-    )
+          {!logado && (
+            <div>
+              <Link to={'/login'} onClick={fecharMenu}>LOGIN</Link>
+              <Link to={'/cadastro'} onClick={fecharMenu}>CADASTRO</Link>
+            </div>
+          )}
+        </nav>
+      </div>
+    </header>
+  )
 }
