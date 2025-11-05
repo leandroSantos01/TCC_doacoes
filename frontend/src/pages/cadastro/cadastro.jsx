@@ -5,12 +5,16 @@ import api from '../../api.js';
 import boneco from '/src/assets/images/boneco.png';
 import './cadastro.scss';
 import Rodape from "../../components/Rodape/Rodape.jsx";
+import { useNavigate } from "react-router";
+
 
 export default function Cadastro() {
+    const navigate = useNavigate();
+
 
     const [formData, setFormData] = useState({
         email: '',
-        usuario: '',
+        username: '',
         senha: ''
     });
 
@@ -24,8 +28,10 @@ export default function Cadastro() {
             ...formData,
         };
         try {
-            await api.post('/cadastro/conta', dataToSend);
-            alert('Usuário cadastrado!');
+            let response = await api.post('/cadastro/conta', dataToSend);
+            localStorage.setItem("TOKEN",response.data.token)
+            localStorage.setItem("USUARIO",response.data.usuario)
+            navigate('/')
             console.log(formData);
         } catch (err) {
             console.log(err);
@@ -54,7 +60,7 @@ export default function Cadastro() {
 
                                 <div className="container-input">
                                     <label>Usuário</label>
-                                    <input type="text" placeholder='Usuário' name='usuario' value={formData.usuario} onChange={handleChange} />
+                                    <input type="text" placeholder='Usuário' name='username' value={formData.username} onChange={handleChange} />
                                 </div>
 
                                 <div className="container-input">

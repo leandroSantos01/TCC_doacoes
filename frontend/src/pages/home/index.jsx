@@ -29,6 +29,7 @@ import { useEffect, useState } from 'react'
 export default function App() {
     const [usuario, setUsuario] = useState("")
     const [logado, setLogado] = useState(false)
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -37,6 +38,7 @@ export default function App() {
 
         if (nomeUser == undefined || nomeUser == null) {
             setLogado(false)
+            
 
         }
 

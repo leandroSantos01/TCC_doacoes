@@ -26,7 +26,7 @@ export default function Ongs() {
   
 
     async function Cadastrar() {
-      if(!nome|| !email || !senha || !endereco || !cnpj ||categoria){
+      if(!nome|| !email || !senha || !endereco || !cnpj ||!categoria){
         alert('precisa de nome')
       }
 
@@ -39,10 +39,11 @@ export default function Ongs() {
         "categoria":categoria
        }
        try {
-        const resp = await api.post("/cadastro/ong", body);
-        setSalvarongs([...salvaongs, resp.data]); // adiciona a nova ONG à lista
-        alert("ONG cadastrada com sucesso!");
-        setModalOngs(false);
+        const resp = await api.post("/cadastro/ong", body)
+        .then(() => alert('criado'))
+        .catch((e) => e.resp.error)
+
+        
       } catch (e) {
         alert(e.response?.data?.erro || "Erro ao cadastrar ONG.");
       }

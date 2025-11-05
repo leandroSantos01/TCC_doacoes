@@ -13,6 +13,11 @@ export default function Cabecalho(){
 
 
 
+    function Logout(){
+        localStorage.removeItem("TOKEN")
+        localStorage.removeItem("USUARIO")
+        navigate('/')
+    }
 
 
     useEffect(()=>{
@@ -39,10 +44,11 @@ export default function Cabecalho(){
 
         <div className="Area_link">
 
-            {logado ? 'logado':''}
+            {logado ? null:null}
 
             {logado && <div>
                 <Link to={'/ongs'} > ONGS</Link>    
+                <button onClick={Logout}>sair</button>
             </div>}
 
             {!logado && 
