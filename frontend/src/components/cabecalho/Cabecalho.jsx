@@ -14,6 +14,11 @@ export default function Cabecalho() {
 
 
 
+    function Logout(){
+        localStorage.removeItem("TOKEN")
+        localStorage.removeItem("USUARIO")
+        navigate('/')
+    }
 
 
   useEffect(() => {
@@ -36,37 +41,6 @@ export default function Cabecalho() {
 
 
   return (
-    /* <header>
-            <div className="cabecalho">
-            <Link to={"/"}>
-                <img src={logo}alt="logo" className='logo' />
-            </Link>
-            
-
-            <div className="Area_link">
-
-                {logado ? 'logado':''}
-
-                {logado && <div>
-                    <Link to={'/ongs'} > ONGS</Link>    
-                </div>}
-
-                {!logado && 
-                <div>
-                    <Link to={'/login'} >LOGIN</Link>
-                    <Link to={'/cadastro'}>CADASTRO</Link>
-                </div>}
-                
-
-
-
-
-
-            </div>
-            </div>
-
-            </header>
-                */
 
     <header>
       <div className="cabecalho">

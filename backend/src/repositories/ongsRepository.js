@@ -4,7 +4,7 @@ export async function cadastrarOng(novoCadastro) {
     const comando = `
         INSERT INTO
             ongs (nome, email, senha, endereco, cnpj, categoria, dt_criacao, doacoes_recebidas) 
-                VALUES(?, ?, MD5(?), ?, ?, ?, ?, ?);
+                VALUES(?, ?, MD5(?), ?, ?, ?, NOW(), 0);
     `
 
     const [info] = await connection.query(comando, [
@@ -14,8 +14,7 @@ export async function cadastrarOng(novoCadastro) {
         novoCadastro.endereco,
         novoCadastro.cnpj,
         novoCadastro.categoria,
-        novoCadastro.dt_criacao,
-        novoCadastro.doacoes_recebidas
+
     ]);
     return info.insertId;  
 }
