@@ -32,7 +32,7 @@ export default function Cadastro() {
         try {
             let response = await api.post('/login', dataToSend);
             localStorage.setItem("TOKEN", response.data.token);
-            localStorage.setItem("USUARIO", response.data.usuario);
+            localStorage.setItem("USUARIO", response.data.credenciais);
             navigate('/');
             console.log(formData);
         } catch (err) {
@@ -51,12 +51,8 @@ export default function Cadastro() {
     <main>
     <div className="container-login">
         <div className="irmas-login">
-<<<<<<< Updated upstream
-                <div onSubmit={handleSubmit} className="container-filha1-login">
-=======
-            <form className="caixa_form" onSubmit={handleSubmit}>
+            <form className="" onSubmit={handleSubmit}>
                 <div className="container-filha1-login">
->>>>>>> Stashed changes
 
                     <h1>Login</h1>
                     <p>Venha fazer parte da nossa comunidade.</p>
@@ -74,11 +70,8 @@ export default function Cadastro() {
                     <button type="submit" className="cadastrar-se">ENTRAR</button>
                     
                 </div>
-<<<<<<< Updated upstream
-=======
                 </form>
                 
->>>>>>> Stashed changes
 
             <div className="container-filha2-login">
                 <img src={boneco} alt="" />
