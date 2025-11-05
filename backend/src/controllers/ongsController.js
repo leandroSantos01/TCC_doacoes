@@ -62,7 +62,7 @@ endpoints.get('/listar/ongs/cnpj', async (req, resp) => {
 })
 
 
-endpoints.put('/upload/:id/image', upload.single('file'), async (req, resp) =>{
+endpoints.put('/upload/:id/image', autenticador,upload.single('file'), async (req, resp) =>{
     let caminho = req.file.path;
 
     let id = req.params.id;

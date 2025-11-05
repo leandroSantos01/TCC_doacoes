@@ -31,16 +31,6 @@ export async function consultarCredenciaisOng(email, senha) {
     return registros[0];
 }
 
-export async function alterarImagem(caminho, id) {
-    const comando = `
-        UPDATE ongs
-        SET url_image = ?
-        WHERE id_ong = ?
-  `
-
-    const [info] = await connection.query(comando, [caminho, id])
-}
-
 export async function listarOngs() {
     const comando = `
           SELECT nome, endereco, categoria
@@ -82,4 +72,14 @@ export async function buscaPorCnpj(cnpj) {
 
     const [registros] = await connection.query(comando,[cnpj]);
     return registros;
+}
+
+export async function alterarImagem(caminho, id) {
+    const comando = `
+        UPDATE ongs
+        SET url_image = ?
+        WHERE id_ong = ?
+  `
+
+    const [info] = await connection.query(comando, [caminho, id])
 }

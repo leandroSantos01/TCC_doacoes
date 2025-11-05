@@ -45,7 +45,14 @@ export async function alterarImagemCurso(id, caminho) {
        WHERE id = ?
     `
   
-    const [info] = await conection.query(comando, [caminho, id])
+    const [info] = await connection.query(comando, [caminho, id]);
   }
 
-export async function deletarConta() {}
+export async function deletarConta(id) {
+    const comando = `
+      DELETE FROM login
+        WHERE id_login = ?;  
+    `
+
+    const [info] = await connection.query(comando, id);
+}

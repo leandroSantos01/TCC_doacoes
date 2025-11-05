@@ -52,4 +52,11 @@ endpoints.post('/login/admin/istrador', async (req, resp) => {
     }
 })
 
+endpoints.delete('/excluir/login/:id', autenticador, async (req, resp)=> {
+    let id = req.params.id;
+
+    await repo.deletarConta(id);
+    resp.send(id+': user deleted');
+})
+
 export default endpoints;
