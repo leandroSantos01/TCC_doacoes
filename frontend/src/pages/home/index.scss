@@ -168,5 +168,149 @@
         p {
             text-align: left;
         }
+
+        h1 {
+            font-size: 2rem;
+            color: #1d1d1d;
+
+            strong {
+                color: #2a68d8;
+            }
+        }
+
+
+
+        .blocos-info {
+            display: flex;
+            width: 100%;
+            gap: 2rem;
+            margin-top: 3rem;
+            justify-content: center;
+
+
+            .bloco {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 30%;
+                height: auto;
+                background: #fff;
+                border-radius: 20px;
+                padding: 25px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.267);
+                transition: transform 0.3s ease;
+
+                p {
+                    text-align: center;
+                }
+
+
+                &:hover {
+                    transform: translateY(-6px);
+                }
+
+                .icone {
+                    color: #2a68d8;
+                    font-size: 50px;
+                    margin-bottom: 1rem;
+                }
+
+                h3 {
+                    color: #1d1d1d;
+                    font-size: 20px;
+                    margin-bottom: 0.5cm;
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        margin: 6px 0;
+                        font-size: 0.95rem;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+
+@media (max-width: 700px) {
+
+    .container_pagPrincipal {
+        height: auto;
+
+
+        .container_central {
+            height: auto;
+            margin-top: 90px;
+            gap: 0;
+
+            & div {
+                height: auto;
+
+
+
+
+
+                .container_infromacao {
+                    width: 90%;
+                    height: auto;
+                    background: transparent;
+                    z-index: 2;
+
+
+                    .Botoes_central {
+                        width: 100%;
+                        justify-content: center;
+                        display: flex;
+                        padding: 0;
+
+
+                        .doar {
+                            display: flex;
+                            justify-self: flex-start;
+                            font-size: 10px;
+                            padding: 3px 15px;
+
+                        }
+
+                        .login {
+                            display: flex;
+                            font-size: 10px;
+                            padding: 3px 15px;
+                        }
+
+
+
+
+
+
+                    }
+
+                }
+
+            }
+
+
+            .container_img {
+                
+                width: 100%;
+
+                height: auto;
+                z-index: 1;
+
+                img {
+                    width: 100%;
+                    opacity: 0.3;
+                }
+            }
+
+        }
+
     }
 }
