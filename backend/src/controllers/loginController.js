@@ -16,7 +16,6 @@ endpoints.post('/cadastro/conta', async (req, resp) => {
         token:generateToken(novoCadastro),
      });
 
-    resp.send({ usuario: novoCadastro.username });
 
 })
 

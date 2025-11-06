@@ -2,18 +2,23 @@
         display: flex;
         width: 1000px;
         max-width: 1400px;
-        background-color: rgb(75, 147, 255);
+        background-color: rgb(255, 255, 255);
         height: 300px;
         padding: 20px;
-        border-radius: 0px 20px 0px 20px;
+        border-radius:20px;
         margin: 40px 0;
-        box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.285);
+        box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.285);
         justify-content: center;
-         border: 1px solid black;
-                 
-
         
-
+                 
+  
+.fotos{
+  border-radius: 50%;
+  object-fit: cover;
+  height: 250px;
+  width: 250px;
+}
+      
 
         .desc {
             display: flex;
@@ -22,20 +27,24 @@
             width: 90%;
             height: auto;
             line-height: 0.6cm;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            
            
            
+
+            .links{
+              display: flex;
+              width: 89%;
+              height: 100px;
+              margin-left: 10px;
+
+            }
             
           
 
-
-             img {
-            width: 240px;
-            border-radius: 20px;
-            height: 240px;
-            opacity: 0%;
-            object-fit: cover;
-         
-        }
 
         
         
@@ -44,24 +53,36 @@
             
 
              
-                 p {
-                   
-                    opacity: 0%;
-                    width: 90%;
-
-                  }
+                 
         
                   h3{
-                    font-size: 40px;
+                    font-size: 50px;
                     margin-left: 40px;
                     opacity: 100%;
                     margin-left: 70px;
                     display: flex;
                     align-items: center;
-                    width: 30%;
+                    width: 90%;
                     height: auto;
                     text-align: center;
                     font-family:  sans-serif;
+                    margin-bottom: 30px;
+                    text-decoration: underline;
+                    margin-top: 30px;
+                  }
+                  p{
+                    font-size: 20px;
+                    margin-left: 40px;
+                    opacity: 100%;
+                    margin-left: 70px;
+                    display: flex;
+                    align-items: center;
+                    width: 90%;
+                    height: auto;
+                    text-align: center;
+                    font-family:  sans-serif;
+                    margin-bottom: 30px;
+                    margin-top: 30px;
                     
                   }
      
@@ -71,34 +92,5 @@
        
 
 
-        
-    }
-
-
-    
-          .conteiner-card:hover{
-            box-shadow: 0px 10px 20px 0px black;
-            transition: all 1.5s;
-            background-color: rgb(255, 255, 255);
-          .img{
-                opacity: 100%;
-              }
-             h3{
-                display: none;
-                }
-                p{
-                    opacity: 100%;
-                    font-size: 25px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-left: 60px;
-                    
-                }
-        
-
-        
-   
-       
         
     }

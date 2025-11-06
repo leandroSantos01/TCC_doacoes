@@ -12,7 +12,7 @@ import { FaSearch } from "react-icons/fa";
 
 import api from "../../api"
 
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
 import ModalOngs from "../../components/modalOng/Index"
 
 
@@ -21,7 +21,6 @@ import Cao from '/src/assets/images/cao.png'
 
 
 export default function Ongs() {
- 
   const [modalOngs, setModalOngs] = useState(false)
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -29,32 +28,42 @@ export default function Ongs() {
   const [cnpj, setCnpj] = useState("");
   const [categoria, setCategoria] = useState("");
   const [listaOng, setListaOng] = useState([]);
- const [usuario, setUsuario] = useState("")
- const [logado, setLogado] = useState(false)
+  const [user, setUser] = useState('');
+  const [logado, setLogado] = useState(false);
 
+  useEffect(() => {
+    let nomeUser = localStorage.getItem("USUARIO")
 
+    if (nomeUser == undefined || nomeUser == null) {
+      setLogado(false)
 
-    useEffect(() => {
-        let nomeUser = localStorage.getItem("USUARIO")
-        if (nomeUser == undefined || nomeUser == null) {
-            setLogado(false)
-        }
-
-        else {
-            setLogado(true)
-            setUsuario(nomeUser)
-        }
-
-    }, [])
+    }
+    else {
+      setLogado(true)
+      setUser(nomeUser)
+    }
+  })
 
 
 
   async function Cadastrar() {
 
-   if (nome.length <= 1 && email.length <= 1 && endereco.length <= 1 && cnpj.length <= 1 && categoria.length <= 1) {
-    toast.error('Preencha todos os campos corretamente');
-    return;
-  }
+
+
+
+    let body = {
+      nome,
+      email,
+      endereco,
+      cnpj,
+      categoria
+    };
+
+
+    if (nome.length <= 1 && email.length <= 1 && endereco.length <= 1 && cnpj.length <= 1 && categoria.length <= 1) {
+      toast.error('Preencha todos os campos corretamente');
+      return;
+    }
 
     if (nome.length <= 1) {
       toast.error('Nome inválido');
@@ -81,30 +90,30 @@ export default function Ongs() {
       return;
     }
 
+    try {
+      await api.post("/cadastro/ong", body)
+      toast.success('Ong criada com sucesso')
+      setNome("");
+      setEmail("");
+      setEndereco("");
+      setCnpj("");
+      setCategoria("");
+      setModalOngs(false)
+    }
 
-  try {
-    await api.post("/cadastro/ong", {
-      nome,
-      email,
-      endereco,
-      cnpj,
-      categoria
-    });
-
-    toast.success("Ong criada com sucesso");
-    setModalOngs(false);
-
-  } catch (e) {
-    toast.error(e.response?.data?.error || "Erro ao cadastrar ONG");
+    catch (e) {
+      toast.error(e.response?.data?.error || 'Erro ao cadastrar ong ');
+    }
   }
-}
+
+
+
+
 
 
   return (
     <div>
-
-      {logado? null :null}
-
+      {logado ? null : null}
       <Cabecalho />
 
       <main className="page_ongs">
@@ -118,9 +127,7 @@ export default function Ongs() {
               <button className="btn_pesquisa"><FaSearch /></button>
             </div>
 
-            <button className="cadastrar_ong" onClick={() => { if(!logado){ toast.error('Você precisa ser um usuário'); return} setModalOngs(true )}}>  
-              Cadastrar Ongs
-              </button>
+            <button className="cadastrar_ong" onClick={() => { if (!logado) { toast.error('Você precisa estar logado!'); return; } setModalOngs(true); }}>Cadastrar Ongs</button>
 
           </div>
 
@@ -155,7 +162,7 @@ export default function Ongs() {
 
             <div>
               <label>Email</label>
-              <input placeholder='Email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
+              <input name="email" type="email" placeholder='Email'  value={email} onChange={e => setEmail(e.target.value)} />
             </div>
 
             <div>
@@ -188,7 +195,6 @@ export default function Ongs() {
 
           </div>
         } />
-
 
 
       <Toaster

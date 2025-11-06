@@ -29,7 +29,7 @@ import { useEffect, useState } from 'react'
 import { FaBullseye, FaEye, FaLeaf } from 'react-icons/fa'
 
 export default function App() {
-    const [usuario, setUsuario] = useState("")
+   
     const [logado, setLogado] = useState(false)
     const navigate = useNavigate()
 
@@ -42,7 +42,6 @@ export default function App() {
 
         else {
             setLogado(true)
-            setUsuario(nomeUser)
         }
 
     }, [])
@@ -69,7 +68,7 @@ export default function App() {
 
                                 {!logado &&
                                     <div>
-                                        <Link className='doar' to={'/cadastro'}>DOAR</Link>
+                                        <Link className='doar' to={'/ongs'}>CONHEÇA ONGs</Link>
                                         <Link className='login' to={'/login'}>LOGIN</Link>
                                     </div>
                                 }
@@ -77,10 +76,10 @@ export default function App() {
 
                                 {logado &&
                                     <div>
-                                        <Link className='doar' to={'/cadastro'} style={{
+                                        <Link className='doar' to={'/ongs'} style={{
                                             width: '200px',
                                             textAlign: 'center'
-                                        }}>DOAR</Link>
+                                        }}>CONHEÇA ONGs</Link>
 
                                     </div>
                                 }

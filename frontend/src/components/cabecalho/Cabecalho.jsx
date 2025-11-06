@@ -68,7 +68,6 @@ export default function Cabecalho() {
           {logado && (
             <div>
               <Link to={'/ongs'} onClick={fecharMenu}>ONGS</Link>
-              <Link to={'/desenvolvedores'}>DEVS</Link>
               <button onClick={() => setModal(true)}>PERFIL</button>
             </div>
           )}

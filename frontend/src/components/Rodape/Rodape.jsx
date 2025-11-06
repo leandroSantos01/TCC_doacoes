@@ -22,12 +22,11 @@ export default function Rodape() {
               <h2>Início</h2>
               <Link to={"/"} >  <a>Home</a></Link>
               <Link to={"/cadastro"}><a>Cadastro</a></Link>
-              <Link><a>Sobre</a></Link>
             </div>
 
             <div className="sobre">
               <h2>Sobre Nós</h2>
-              <a>Informações do site</a>
+
               <Link to={"/desenvolvedores"}><a>Quem Somos</a></Link>
             </div>
 
