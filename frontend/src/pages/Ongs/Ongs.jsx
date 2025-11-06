@@ -27,6 +27,7 @@ export default function Ongs() {
   const [endereco, setEndereco] = useState("");
   const [cnpj, setCnpj] = useState("");
   const [categoria, setCategoria] = useState("");
+  const [contato, setContato] = useState("");
   const [listaOng, setListaOng] = useState([]);
   const [user, setUser] = useState('');
   const [logado, setLogado] = useState(false);
@@ -53,7 +54,8 @@ export default function Ongs() {
       email,
       endereco,
       cnpj,
-      categoria
+      categoria,
+      contato
     };
 
 
@@ -177,7 +179,7 @@ export default function Ongs() {
 
             <div>
               <label>Contato (telefone, email ou link do site)</label>
-              <input type="text" placeholder='Contato' value={cnpj} onChange={e => setContato(e.target.value)} />
+              <input type="text" placeholder='Contato' value={contato} onChange={e => setContato(e.target.value)} />
             </div>
 
             <div>
