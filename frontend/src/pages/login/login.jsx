@@ -57,7 +57,7 @@ export default function Login() {
         } catch (err) {
 
             console.log(err);
-            toast.error("Usruário não encontrado ")
+            toast.error("Usuário não encontrado ")
         }
     };
 
