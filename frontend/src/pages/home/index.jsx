@@ -15,6 +15,7 @@ import 'swiper/css/navigation';
 
 import Cabecalho from '../../components/cabecalho/Cabecalho.jsx'
 import Rodape from '../../components/Rodape/Rodape.jsx'
+import ongListada from '../../components/ongListada/ongListada.jsx'
 
 
 
@@ -92,6 +93,8 @@ export default function App() {
 
 
             <section>
+                
+                
 
                 <div className="carousel-container">
                     <h1>Para quem doar</h1>
@@ -148,7 +151,7 @@ export default function App() {
                             <div className="slide">
                                 <img src={crianca} alt="Slide 5" />
                                 <h3>Crianca Esperança</h3>
-                                <p>criada em 1986 para mobilizar o público em prol dos direitos da criança e do adolescente</p>
+                                <p>Criada em 1986 para mobilizar o público em prol dos direitos da criança e do adolescente</p>
                             </div>
                         </SwiperSlide>
                     </Swiper>
