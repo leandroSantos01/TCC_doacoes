@@ -5,12 +5,15 @@ import api from '../../api.js';
 import boneco from '/src/assets/images/boneco.png';
 import './cadastro.scss';
 import Rodape from "../../components/Rodape/Rodape.jsx";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
+import {Toaster,toast} from "react-hot-toast";
 
 
 export default function Cadastro() {
     const navigate = useNavigate();
+    const [check,setCheck] = useState(false)
 
+    
 
     const [formData, setFormData] = useState({
         email: '',
@@ -28,9 +31,37 @@ export default function Cadastro() {
             ...formData,
         };
         try {
+             if(formData.email.length<=1 && formData.senha.length<=1){
+                toast.error('credenciais inválidas')
+                return
+            }
+
+            if(formData.email.length<=1){
+                toast.error('Email invalido')
+                return
+            }
+            if(formData.username.length <= 1){
+                toast.error('Usuário inválido')
+                return
+            }
+
+            if(formData.senha.length<=1){
+                toast.error('Senha invalido')
+                return
+            }
+
+            if(check==false){
+                toast.error('Você deve aceitar os termos de uso!')
+                return
+            }
+
+            
+
+
             let response = await api.post('/cadastro/conta', dataToSend);
             localStorage.setItem("TOKEN",response.data.token)
             localStorage.setItem("USUARIO",response.data.usuario)
+            
             navigate('/')
             console.log(formData);
         } catch (err) {
@@ -69,11 +100,13 @@ export default function Cadastro() {
                                 </div>
 
                                 <div className="container-check">
-                                    <input type="checkbox" name="" id="" />
+                                    <input type="checkbox" checked={check} onChange={() => setCheck(!check)} />
                                     <label>Declaro que li e concordo com os <a href="">Termos de Uso.</a></label>
                                 </div>
+                                <p>Caso ja possua uma conta!<Link to={'/login'}>Entrar</Link></p>
 
-                                <button type="submit" className="cadastrar-se">CADASTRAR-SE</button>
+                                <button type="submit" className="cadastrar-se"
+                                onSubmit={!check}>CADASTRAR-SE</button>
                             </form>
 
                         </div>
@@ -90,6 +123,12 @@ export default function Cadastro() {
             </main>
 
             <Rodape />
+
+            <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
+            
         </div>
     )
 

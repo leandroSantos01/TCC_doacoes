@@ -9,7 +9,8 @@ endpoints.post('/cadastro/conta', async (req, resp) => {
 
     let id = await repo.criarCadastro(novoCadastro);
     resp.send({ usuario: novoCadastro.username,
-        token:generateToken(novoCadastro)
+        token:generateToken(novoCadastro),
+        email:novoCadastro.email
      });
 })
 
@@ -52,11 +53,5 @@ endpoints.post('/login/admin/istrador', async (req, resp) => {
     }
 })
 
-endpoints.delete('/excluir/login/:id', autenticador, async (req, resp)=> {
-    let id = req.params.id;
-
-    await repo.deletarConta(id);
-    resp.send(id+': user deleted');
-})
 
 export default endpoints;

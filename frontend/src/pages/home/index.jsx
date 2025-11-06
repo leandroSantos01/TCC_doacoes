@@ -34,17 +34,15 @@ export default function App() {
 
     useEffect(() => {
         let nomeUser = localStorage.getItem("USUARIO")
-
-
         if (nomeUser == undefined || nomeUser == null) {
             setLogado(false)
-            
-
         }
 
         else {
             setLogado(true)
+            setUsuario(nomeUser)
         }
+
     }, [])
 
 
@@ -52,6 +50,7 @@ export default function App() {
     return (
         <div>
 
+{logado ? null :null}
 
 
             <main className='container_pagPrincipal'>
@@ -63,8 +62,23 @@ export default function App() {
                             <h1><span className='destaque'>DonNet</span> faça do mundo um lugar melhor</h1>
 
                             <div className="Botoes_central">
-                                <Link className='doar' to={'/cadastro'}>CADASTRAR</Link>
+                                
+                                {!logado &&
+                                <div>
+                                <Link className='doar' to={'/cadastro'}>DOAR</Link>
                                 <Link className='login' to={'/login'}>LOGIN</Link>
+                                </div>
+                                 }
+
+                                 
+                                {logado && 
+                                <div>
+                                <Link  className='doar' to={'/cadastro'} style={{width:'200px',
+                                    textAlign:'center'
+                                }}>DOAR</Link>
+                                
+                                </div>
+                                 }
                             </div>
                         </div>
 
@@ -78,6 +92,7 @@ export default function App() {
 
 
             <section>
+
                 <div className="carousel-container">
                     <h1>Para quem doar</h1>
                     <Swiper
@@ -93,6 +108,7 @@ export default function App() {
                             480: { slidesPerView: 1 },
                             800: { slidesPerView: 2 },
                         }}
+
                     >
                         <SwiperSlide>
                             <div className="slide">

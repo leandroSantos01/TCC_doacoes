@@ -12,8 +12,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
-  margin-top: -20px;
   top: 0;
   z-index: 100;
 
@@ -57,14 +55,20 @@ header {
         transition: all 0.5s;
         font-size: 15px;
 
-
-
-
-
       }
 
       a:hover {
         color: #036bdb;
+      }
+
+      button{
+        padding: 5px 15px;
+        border-radius:20px ;
+        border-color: transparent;
+        background-color: #036bdb;
+        color: white;
+        font-weight: 800;
+        cursor: pointer;
       }
 
 
