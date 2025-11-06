@@ -21,7 +21,7 @@ export default function Dev() {
                 <CardsDev
                     imagem={cao}
                     nome={"Leandro"}
-                    desc={"Responsável pelo FrontEnd do site"}
+                    desc={"Responsável pelo FrontEnd e design do site"}
 
                 />
 
@@ -29,28 +29,28 @@ export default function Dev() {
                 <CardsDev
                     imagem={cao}
                     nome={"Livia"}
-                    desc={"Responsável pelo FrontEnd do site"}
-                    virar
+                    desc={"Responsável pelo FrontEnd e design do site"}
+             
                 />
 
                 <CardsDev
                     imagem={cao}
                     nome={"Eduardo"}
-                    desc={"Responsável pelo FrontEnd do site"}
+                    desc={"Responsável pelo FrontEnd e design do site"}
                 />
 
                 <CardsDev
                     imagem={cao}
                     nome={"Emily"}
-                    desc={"Responsável pelo BackEnd do site"}
-                    virar
+                    desc={"Responsável pelo BackEnd e Responsividade do site"}
+                
                 />
 
 
                  <CardsDev
                     imagem={cao}
                     nome={"Fabricio"}
-                    desc={"Responsável pelo BackEnd do site"}
+                    desc={"Responsável pelo BackEnd e Responsividade do site"}
 
                 />
 
