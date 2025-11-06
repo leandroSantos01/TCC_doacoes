@@ -3,32 +3,19 @@ import { connection } from "./connection.js";
 export async function cadastrarOng(novoCadastro) {
     const comando = `
         INSERT INTO
-            ongs (nome, email, senha, endereco, cnpj, categoria, dt_criacao, doacoes_recebidas) 
-                VALUES(?, ?, MD5(?), ?, ?, ?, NOW(), 0);
+            ongs (nome, email, endereco, cnpj, categoria, dt_criacao, doacoes_recebidas) 
+                VALUES(?, ?, ?, ?, ?, NOW(), 0);
     `
 
     const [info] = await connection.query(comando, [
         novoCadastro.nome,
         novoCadastro.email,
-        novoCadastro.senha,
         novoCadastro.endereco,
         novoCadastro.cnpj,
         novoCadastro.categoria,
 
     ]);
     return info.insertId;  
-}
-
-export async function consultarCredenciaisOng(email, senha) {
-    const comando = `
-    SELECT nome, email
-        FROM ongs 
-    WHERE email = ?
-        AND senha = MD5(?)
-    `;
-
-    const [registros] = await connection.query(comando, [email, senha]);
-    return registros[0];
 }
 
 export async function listarOngs() {
