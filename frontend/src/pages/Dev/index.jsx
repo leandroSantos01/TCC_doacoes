@@ -11,6 +11,7 @@ import '/src/scss/fonts.scss'
 
 import cao from '/src/assets/images/cao.png'
 
+
 export default function Dev() {
     return (
         <div>
@@ -20,29 +21,37 @@ export default function Dev() {
                 <CardsDev
                     imagem={cao}
                     nome={"Leandro"}
-                    desc={"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOloremloremlooass099999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999OOOOOOOOOOO"}
+                    desc={"Responsável pelo FrontEnd do site"}
 
                 />
 
 
                 <CardsDev
                     imagem={cao}
-                    nome={"Leandro"}
-                    desc={"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOloremloremlooass099999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999OOOOOOOOOOO"}
+                    nome={"Livia"}
+                    desc={"Responsável pelo FrontEnd do site"}
                     virar
                 />
 
                 <CardsDev
                     imagem={cao}
-                    nome={"Leandro"}
-                    desc={"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOloremloremlooass099999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999OOOOOOOOOOO"}
+                    nome={"Eduardo"}
+                    desc={"Responsável pelo FrontEnd do site"}
                 />
 
                 <CardsDev
                     imagem={cao}
-                    nome={"Leandro"}
-                    desc={"OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOloremloremlooass099999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999OOOOOOOOOOO"}
+                    nome={"Emily"}
+                    desc={"Responsável pelo BackEnd do site"}
                     virar
+                />
+
+
+                 <CardsDev
+                    imagem={cao}
+                    nome={"Fabricio"}
+                    desc={"Responsável pelo BackEnd do site"}
+
                 />
 
 
