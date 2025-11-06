@@ -11,22 +11,22 @@ import Perfil from '../perfil/perfil'
 export default function Cabecalho() {
   const [user, setUser] = useState('');
   const [logado, setLogado] = useState(false);
-  const[modal,setModal] = useState(false)
+  const [modal, setModal] = useState(false)
   const navigate = useNavigate();
 
 
 
-    function Logout(){
-        localStorage.removeItem("TOKEN")
-        localStorage.removeItem("USUARIO")
-        navigate('/login')
-        setModal(false)
-    }
-  
+  function Logout() {
+    localStorage.removeItem("TOKEN")
+    localStorage.removeItem("USUARIO")
+    navigate('/login')
+    setModal(false)
+  }
+
 
   useEffect(() => {
     let nomeUser = localStorage.getItem("USUARIO")
-   
+
     if (nomeUser == undefined || nomeUser == null) {
       setLogado(false)
 
@@ -54,13 +54,13 @@ export default function Cabecalho() {
 
         <div className="menu-icon" onClick={toggleMenu}>
 
-        <button
-          className={`menu-icon ${menuAberto ? 'aberto' : ''}`}
-          aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
-          onClick={toggleMenu}
-        >
-          {menuAberto ? <FaTimes size={26} /> : <FaBars size={26} />}
-        </button>  
+          <button
+            className={`menu-icon ${menuAberto ? 'aberto' : ''}`}
+            aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
+            onClick={toggleMenu}
+          >
+            {menuAberto ? <FaTimes size={30} /> : <FaBars size={30} />}
+          </button>
         </div>
 
         <nav className={`Area_link ${menuAberto ? 'ativo' : ''}`}>
@@ -79,7 +79,7 @@ export default function Cabecalho() {
               <Link to={'/ongs'} onClick={fecharMenu}>ONGS</Link>
               <Link to={'/login'} onClick={fecharMenu}> LOGIN </Link>
               <Link to={'/cadastro'} onClick={fecharMenu}> CADASTRO </Link>
-              
+
             </div>
 
           )}
@@ -89,10 +89,10 @@ export default function Cabecalho() {
 
       </div>
       <Perfil
-      aberto={modal}
-      fechado={() => setModal(false)}
-      conteudo={user}
-      logout={Logout}
+        aberto={modal}
+        fechado={() => setModal(false)}
+        conteudo={user}
+        logout={Logout}
       />
 
     </header>
