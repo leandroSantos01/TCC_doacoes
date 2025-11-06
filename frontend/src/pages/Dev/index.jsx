@@ -23,7 +23,11 @@ export default function Dev() {
 
             <div className="Card">
                 <CardsDev
+<<<<<<< HEAD
                     imagem={Leandro}
+=======
+                    imagem={cao}
+>>>>>>> a0af152652234ec92e54f4908c69d2977a6b135c
                     nome={"Lenadro Patricio Santos "}
                     desc={"Responsável pelo FrontEnd e design do site"}
                      conteudo1={
@@ -40,7 +44,11 @@ export default function Dev() {
 
 
                 <CardsDev
+<<<<<<< HEAD
                     imagem={Livia}
+=======
+                    imagem={cao}
+>>>>>>> a0af152652234ec92e54f4908c69d2977a6b135c
                     nome={"Livia da Silva Pererira"}
                     desc={"Responsável pelo FrontEnd e design do site"}
                     conteudo1={
