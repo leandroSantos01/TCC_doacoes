@@ -26,6 +26,15 @@ export async function criarCadastro(novoCadastro) {
     return info.insertId;
 }
 
+export async function listarUsuarios() {
+   const comando = `
+    SELECT * FROM login
+   ` 
+
+   const [ registros ] = await connection.query(comando);
+   return [ registros ];  
+}
+
 export async function consultarCredenciaisADM(email, senha) {
     const comando = `
         SELECT id_admin, email

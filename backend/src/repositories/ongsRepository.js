@@ -3,8 +3,8 @@ import { connection } from "./connection.js";
 export async function cadastrarOng(novoCadastro) {
     const comando = `
         INSERT INTO
-            ongs (nome, email, endereco, cnpj, categoria, dt_criacao, doacoes_recebidas) 
-                VALUES(?, ?, ?, ?, ?, NOW(), 0);
+            ongs (nome, email, endereco, cnpj, categoria, contato, situacao, dt_criacao, doacoes_recebidas) 
+                VALUES(?, ?, ?, ?, ?, ?, FALSE, NOW(), 0);
     `
 
     const [info] = await connection.query(comando, [
@@ -13,7 +13,7 @@ export async function cadastrarOng(novoCadastro) {
         novoCadastro.endereco,
         novoCadastro.cnpj,
         novoCadastro.categoria,
-
+        novoCadastro.contato
     ]);
     return info.insertId;  
 }

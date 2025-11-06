@@ -48,9 +48,6 @@ export default function Ongs() {
 
   async function Cadastrar() {
 
-
-
-
     let body = {
       nome,
       email,
@@ -61,43 +58,49 @@ export default function Ongs() {
 
 
     if (nome.length <= 1 && email.length <= 1 && endereco.length <= 1 && cnpj.length <= 1 && categoria.length <= 1) {
-      toast.error('Preencha todos os campos corretamente');
+      toast.error('Preencha todos os campos corretamente!');
       return;
     }
 
     if (nome.length <= 1) {
-      toast.error('Nome inválido');
+      toast.error('Nome inválido!');
       return;
     }
 
     if (email.length <= 1) {
-      toast.error('Email inválido');
+      toast.error('Email inválido!');
       return;
     }
 
     if (endereco.length <= 1) {
-      toast.error('Endereço inválido');
+      toast.error('Endereço inválido!');
       return;
     }
 
     if (cnpj.length <= 1) {
-      toast.error('CNPJ inválido');
+      toast.error('CNPJ inválido!');
       return;
     }
 
     if (categoria.length <= 1) {
-      toast.error('Categoria inválida');
+      toast.error('Categoria inválida!');
+      return;
+    }
+
+    if (categoria.length <= 1) {
+      toast.error('Contato inválida!');
       return;
     }
 
     try {
       await api.post("/cadastro/ong", body)
-      toast.success('Ong criada com sucesso')
+      toast.success('Ong criada com sucesso.')
       setNome("");
       setEmail("");
       setEndereco("");
       setCnpj("");
       setCategoria("");
+      setContato("");
       setModalOngs(false)
     }
 
@@ -105,11 +108,6 @@ export default function Ongs() {
       toast.error(e.response?.data?.error || 'Erro ao cadastrar ong ');
     }
   }
-
-
-
-
-
 
   return (
     <div>
@@ -178,9 +176,15 @@ export default function Ongs() {
           <div>
 
             <div>
-              <label>CNPJ</label>
+              <label>Contato (telefone, email ou link do site)</label>
+              <input type="text" placeholder='Contato' value={cnpj} onChange={e => setContato(e.target.value)} />
+            </div>
+
+            <div>
+              <label>CNPJ (sem pontos e barras)</label>
               <input type="text" placeholder='CNPJ' value={cnpj} onChange={e => setCnpj(e.target.value)} />
             </div>
+
             <div>
               <label>Categoria</label>
               <select value={categoria} onChange={e => setCategoria(e.target.value)}>

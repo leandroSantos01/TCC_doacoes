@@ -105,8 +105,7 @@ export default function Cadastro() {
                                 </div>
                                 <p>Caso ja possua uma conta!<Link to={'/login'}>Entrar</Link></p>
 
-                                <button type="submit" className="cadastrar-se"
-                                onSubmit={!check}>CADASTRAR-SE</button>
+                                <button type="submit" className="cadastrar-se">CADASTRAR-SE</button>
                             </form>
 
                         </div>

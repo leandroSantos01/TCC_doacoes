@@ -15,8 +15,6 @@ endpoints.post('/cadastro/conta', async (req, resp) => {
         usuario: novoCadastro.username,
         token:generateToken(novoCadastro),
      });
-
-
 })
 
 endpoints.post('/login', async (req, resp) => {
@@ -73,6 +71,12 @@ endpoints.put('/alterar/senha', autenticador, async (req, resp) => {
 
     await repo.alterarSenha(email, senha, novaSenha);
     resp.send('password changed sucessfully!');
+})
+
+endpoints.get('/listar/usuarios', autenticador, async (req, resp) => {
+    let registros = await repo.listarUsuarios();
+
+    resp.send(registros);
 })
 
 export default endpoints;

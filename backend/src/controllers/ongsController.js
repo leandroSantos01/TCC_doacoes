@@ -1,5 +1,5 @@
 import * as repo from '../repositories/ongsRepository.js';
-import { generateToken, getAuthentication } from '../utils/jwt.js';
+import { getAuthentication } from '../utils/jwt.js';
 const autenticador = getAuthentication();
 
 import multer from 'multer';
@@ -9,7 +9,7 @@ import { Router } from 'express';
 const endpoints = Router();
 
 
-endpoints.post('/cadastro/ong', autenticador, async (req, resp) => {
+endpoints.post('/cadastro/ong', async (req, resp) => {
     let novoCadastro = req.body;
 
     const id = await repo.cadastrarOng(novoCadastro);
