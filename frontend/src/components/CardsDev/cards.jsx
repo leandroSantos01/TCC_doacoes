@@ -9,9 +9,9 @@ export default function CardsDev({ imagem, desc, nome, virar }) {
             <div className="conteiner-card ">
 
                
-                    
+                      <img src={imagem} className={`img ${virar ? "virar" : ''} `}/>    
                     <div className="desc">
-                         <img src={imagem} className={`img ${virar ? "virar" : ''} `}/>
+                       
                         <h3>{nome}</h3>
                         <p>{desc}</p>
                     </div>

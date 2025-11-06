@@ -20,7 +20,7 @@ export default function Dev() {
             <div className="Card">
                 <CardsDev
                     imagem={cao}
-                    nome={"Leandro"}
+                    nome={"Lenadro Patricio Santos "}
                     desc={"Responsável pelo FrontEnd e design do site"}
 
                 />
@@ -28,7 +28,7 @@ export default function Dev() {
 
                 <CardsDev
                     imagem={cao}
-                    nome={"Livia"}
+                    nome={"Livia da Silva Pererira"}
                     desc={"Responsável pelo FrontEnd e design do site"}
              
                 />
