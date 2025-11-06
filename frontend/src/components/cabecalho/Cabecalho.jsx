@@ -76,7 +76,7 @@ export default function Cabecalho() {
           {!logado && (
 
             <div>
-              <Link to={'/desenvolvedores'}> DEVS </Link>
+              <Link to={'/ongs'} onClick={fecharMenu}>ONGS</Link>
               <Link to={'/login'} onClick={fecharMenu}> LOGIN </Link>
               <Link to={'/cadastro'} onClick={fecharMenu}> CADASTRO </Link>
               
