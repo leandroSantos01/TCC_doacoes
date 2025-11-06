@@ -14,6 +14,10 @@ import ModalOngs from "../../components/modalOng/Index"
 
 
 
+import Cao from '/src/assets/images/cao.png'
+
+
+
 export default function Ongs() {
     const [salvaongs,setSalvarongs] =useState([])
     const [modalOngs, setModalOngs] = useState(false)
@@ -66,15 +70,23 @@ export default function Ongs() {
                     <input type="text" placeholder="digite o nome ou categoria "   />
                     <hr />
                     <button className="btn_pesquisa"><FaSearch /></button>
-                    
-                    </div>
+                    </div>  
 
                     <button className="cadastrar_ong" onClick={()=>setModalOngs(true)}>Cadastrar Ongs</button>
 
                 </div>
 
+                <div className="ongs">
 
-                    
+                <img src={Cao} height={"550px"} width={"550px"} />
+                <img src={Cao} height={"550px"} width={"550px"} />
+                <img src={Cao} height={"550px"} width={"550px"} />
+                <img src={Cao} height={"550px"} width={"550px"} />
+                <img src={Cao} height={"550px"} width={"550px"} />
+                <img src={Cao} height={"550px"} width={"550px"} />
+                  
+                </div>
+
                 </div>
             </main>
            
