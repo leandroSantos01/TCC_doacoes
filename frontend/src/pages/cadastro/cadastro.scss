@@ -103,9 +103,16 @@
                 justify-self: center;
                 font-weight: 800;
                 border: none;
+                cursor: pointer;
 
+
+                
 
             }
+
+            button:hover{
+                    transform: scale(1.1);
+                }
 
         }
 

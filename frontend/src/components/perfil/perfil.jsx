@@ -1,5 +1,7 @@
 import './perfil.scss'
 
+import { FaUserCircle } from "react-icons/fa";
+
 
 export default function Perfil({fechado,aberto,conteudo,logout}){
     if(aberto) return(
@@ -7,7 +9,7 @@ export default function Perfil({fechado,aberto,conteudo,logout}){
             <div className="modal_User">
             <div className="conteudo">
 
-            <h1>👤  {conteudo}</h1>
+            <h1><FaUserCircle  size={40}/>  {conteudo}</h1>
 
              <div className="area_button">
 

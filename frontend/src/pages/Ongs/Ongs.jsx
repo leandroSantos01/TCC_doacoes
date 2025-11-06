@@ -1,17 +1,19 @@
 import Cabecalho from "../../components/cabecalho/Cabecalho"
 import Rodape from "../../components/Rodape/Rodape"
+import OngListada from "../../components/ongListada/ongListada"
 
 import './ongs.scss'
 import '/src/scss/global.scss'
 import '/src/scss/fonts.scss'
 
+import { Toaster, toast } from "react-hot-toast"
+
 import { FaSearch } from "react-icons/fa";
 
 import api from "../../api"
 
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import ModalOngs from "../../components/modalOng/Index"
-
 
 
 import Cao from '/src/assets/images/cao.png'
@@ -19,138 +21,182 @@ import Cao from '/src/assets/images/cao.png'
 
 
 export default function Ongs() {
-    const [salvaongs,setSalvarongs] =useState([])
-    const [modalOngs, setModalOngs] = useState(false)
-    const [nome, setNome] = useState("");
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
-    const [endereco, setEndereco] = useState("");
-    const [cnpj, setCnpj] = useState("");
-    const [categoria, setCategoria] = useState("");
-  
-
-    async function Cadastrar() {
-      if(!nome|| !email || !senha || !endereco || !cnpj ||!categoria){
-        alert('precisa de nome')
-      }
-
-       let body = {
-        "nome":nome,
-        "email":email,
-        "senha":senha,
-        "endereco":endereco,
-        "cnpj":cnpj,
-        "categoria":categoria
-       }
-       try {
-        const resp = await api.post("/cadastro/ong", body)
-        .then(() => alert('criado'))
-        .catch((e) => e.resp.error)
-
-        
-      } catch (e) {
-        alert(e.response?.data?.erro || "Erro ao cadastrar ONG.");
-      }
-    }
-      
-    
-      
-    
+ 
+  const [modalOngs, setModalOngs] = useState(false)
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [endereco, setEndereco] = useState("");
+  const [cnpj, setCnpj] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [listaOng, setListaOng] = useState([]);
+ const [usuario, setUsuario] = useState("")
+ const [logado, setLogado] = useState(false)
 
 
-    return (
-        <div>
-            <Cabecalho />
-            <main className="page_ongs">
-            
-                <div className="central_ongs">
 
-                <div className="btn">
-                    <div className="pesquisa">
-                    <input type="text" placeholder="digite o nome ou categoria "   />
-                    <hr />
-                    <button className="btn_pesquisa"><FaSearch /></button>
-                    </div>  
+    useEffect(() => {
+        let nomeUser = localStorage.getItem("USUARIO")
+        if (nomeUser == undefined || nomeUser == null) {
+            setLogado(false)
+        }
 
-                    <button className="cadastrar_ong" onClick={()=>setModalOngs(true)}>Cadastrar Ongs</button>
+        else {
+            setLogado(true)
+            setUsuario(nomeUser)
+        }
 
-                </div>
-
-                <div className="ongs">
-
-                <img src={Cao} height={"550px"} width={"550px"} />
-                <img src={Cao} height={"550px"} width={"550px"} />
-                <img src={Cao} height={"550px"} width={"550px"} />
-                <img src={Cao} height={"550px"} width={"550px"} />
-                <img src={Cao} height={"550px"} width={"550px"} />
-                <img src={Cao} height={"550px"} width={"550px"} />
-                  
-                </div>
-
-                </div>
-            </main>
-           
-            <Rodape/>
-
-<ModalOngs
-  aberto={modalOngs}
-  titulo={'Cadastro de Ongs'}
-  fechado={() => setModalOngs(false)}
-  cadastrar={Cadastrar}
-  conteudo={
-    <div>
-        
-      <div>
-        <label>Nome</label>
-        <input placeholder='nome' type='text' value={nome} onChange={e => setNome(e.target.value)} />
-      </div>
-
-      <div>
-        <label>Email</label>
-        <input placeholder='email' type='email' value={email} onChange={e=> setEmail(e.target.value)}/>
-      </div>
-
-      <div>
-        <label>Senha</label>
-        <input type="password" placeholder='senha' value={senha} onChange={e => setSenha(e.target.value)}/>
-      </div>
-
-       <div>
-        <label>Endereço</label>
-        <input type="text" placeholder='endereço' value={endereco} onChange={e => setEndereco(e.target.value)}/>
-      </div>
+    }, [])
 
 
-    </div>
+
+  async function Cadastrar() {
+
+   if (nome.length <= 1 && email.length <= 1 && endereco.length <= 1 && cnpj.length <= 1 && categoria.length <= 1) {
+    toast.error('Preencha todos os campos corretamente');
+    return;
   }
 
-conteudo2={
+    if (nome.length <= 1) {
+      toast.error('Nome inválido');
+      return;
+    }
+
+    if (email.length <= 1) {
+      toast.error('Email inválido');
+      return;
+    }
+
+    if (endereco.length <= 1) {
+      toast.error('Endereço inválido');
+      return;
+    }
+
+    if (cnpj.length <= 1) {
+      toast.error('CNPJ inválido');
+      return;
+    }
+
+    if (categoria.length <= 1) {
+      toast.error('Categoria inválida');
+      return;
+    }
+
+
+  try {
+    await api.post("/cadastro/ong", {
+      nome,
+      email,
+      endereco,
+      cnpj,
+      categoria
+    });
+
+    toast.success("Ong criada com sucesso");
+    setModalOngs(false);
+
+  } catch (e) {
+    toast.error(e.response?.data?.error || "Erro ao cadastrar ONG");
+  }
+}
+
+
+  return (
     <div>
-       
-      <div>
-        <label>CNPJ</label>
-        <input type="text" placeholder='CNPJ' value={cnpj} onChange={e => setCnpj(e.target.value)}/>
-      </div>
-  <div>
-        <label>Categoria</label>
-        <select value={categoria} onChange={e => setCategoria(e.target.value)}>
-          <option disabled selected hidden>Selecione uma categoria</option>
-          <option>Ambiental</option>
-          <option>Assistência social</option>
-          <option>Educação</option>
-          <option>Saúde</option>
-          <option>Causa animal</option>
-        </select>
-      </div>
 
-      </div>
-}/>
+      {logado? null :null}
 
+      <Cabecalho />
 
+      <main className="page_ongs">
 
+        <div className="central_ongs">
 
+          <div className="btn">
+            <div className="pesquisa">
+              <input type="text" placeholder="Digite o nome ou categoria " />
+              <hr />
+              <button className="btn_pesquisa"><FaSearch /></button>
+            </div>
+
+            <button className="cadastrar_ong" onClick={() => { if(!logado){ toast.error('Você precisa ser um usuário'); return} setModalOngs(true )}}>  
+              Cadastrar Ongs
+              </button>
+
+          </div>
+
+          <div className="ongs">
+
+            <ul>
+              <OngListada
+                imagem={Cao}
+              />
+
+            </ul>
+
+          </div>
 
         </div>
-    )
+      </main>
+
+      <Rodape />
+
+      <ModalOngs
+        aberto={modalOngs}
+        titulo={'Cadastro de Ongs'}
+        fechado={() => setModalOngs(false)}
+        cadastrar={Cadastrar}
+        conteudo={
+          <div>
+
+            <div>
+              <label>Nome</label>
+              <input placeholder='Nome' type='text' value={nome} onChange={e => setNome(e.target.value)} />
+            </div>
+
+            <div>
+              <label>Email</label>
+              <input placeholder='Email' type='email' value={email} onChange={e => setEmail(e.target.value)} />
+            </div>
+
+            <div>
+              <label>Endereço</label>
+              <input type="text" placeholder='Endereço' value={endereco} onChange={e => setEndereco(e.target.value)} />
+            </div>
+
+
+          </div>
+        }
+
+        conteudo2={
+          <div>
+
+            <div>
+              <label>CNPJ</label>
+              <input type="text" placeholder='CNPJ' value={cnpj} onChange={e => setCnpj(e.target.value)} />
+            </div>
+            <div>
+              <label>Categoria</label>
+              <select value={categoria} onChange={e => setCategoria(e.target.value)}>
+                <option value="" disabled hidden>Selecione uma categoria</option>
+                <option>Ambiental</option>
+                <option>Assistência social</option>
+                <option>Educação</option>
+                <option>Saúde</option>
+                <option>Causa animal</option>
+              </select>
+            </div>
+
+          </div>
+        } />
+
+
+
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
+
+    </div>
+  )
 
 }
