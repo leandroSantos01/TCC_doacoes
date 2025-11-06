@@ -16,24 +16,6 @@ endpoints.post('/cadastro/ong', autenticador, async (req, resp) => {
     resp.send({ novoId: id});
 })
 
-endpoints.post('/login/ong', async (req, resp) => {
-    let email = req.body.email;
-    let senha = req.body.senha;
-
-    const credenciais = await repo.consultarCredenciaisOng(email, senha);
-    
-    if(!credenciais) {
-        resp.status(401).send({
-            erro: "Credenciais inválidas"
-        });
-    } 
-    else {
-        resp.send({
-            token: generateToken(credenciais)
-        });
-    }
-})
-
 endpoints.get('/listar/ongs', async (req, resp) => {
     const registros = await repo.listarOngs();
 
