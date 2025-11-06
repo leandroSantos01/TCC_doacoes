@@ -64,6 +64,7 @@ export default function Cabecalho() {
           {logado && (
             <div>
               <Link to={'/ongs'} onClick={fecharMenu}>ONGS</Link>
+              <button>PERFIL</button>
             </div>
           )}
 
