@@ -67,7 +67,6 @@ export default function Login() {
 
             <Cabecalho />
 
-
             <main>
                 <div className="container-login">
                     <div className="irmas-login">
@@ -101,10 +100,7 @@ export default function Login() {
                         <div className="container-filha2-login">
                             <img src={boneco} alt="" />
                         </div>
-
-
                     </div>
-
                 </div>
 
             </main>

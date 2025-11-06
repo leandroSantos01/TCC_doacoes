@@ -15,10 +15,7 @@ import api from "../../api"
 import { useState, useEffect } from "react"
 import ModalOngs from "../../components/modalOng/Index"
 
-
 import Cao from '/src/assets/images/cao.png'
-
-
 
 export default function Ongs() {
   const [modalOngs, setModalOngs] = useState(false)
@@ -44,8 +41,6 @@ export default function Ongs() {
       setUser(nomeUser)
     }
   })
-
-
 
   async function Cadastrar() {
 
@@ -173,7 +168,6 @@ export default function Ongs() {
 
           </div>
         }
-
         conteudo2={
           <div>
 
@@ -202,13 +196,10 @@ export default function Ongs() {
           </div>
         } />
 
-
       <Toaster
         position="top-center"
         reverseOrder={false}
       />
-
     </div>
   )
-
 }

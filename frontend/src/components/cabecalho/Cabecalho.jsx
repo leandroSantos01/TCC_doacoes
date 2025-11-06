@@ -14,8 +14,6 @@ export default function Cabecalho() {
   const [modal, setModal] = useState(false)
   const navigate = useNavigate();
 
-
-
   function Logout() {
     localStorage.removeItem("TOKEN")
     localStorage.removeItem("USUARIO")
@@ -23,13 +21,11 @@ export default function Cabecalho() {
     setModal(false)
   }
 
-
   useEffect(() => {
     let nomeUser = localStorage.getItem("USUARIO")
 
     if (nomeUser == undefined || nomeUser == null) {
       setLogado(false)
-
     }
     else {
       setLogado(true)

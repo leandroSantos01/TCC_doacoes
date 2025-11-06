@@ -14,8 +14,8 @@ export async function consultarCredenciais(email, senha) {
 
 export async function criarCadastro(novoCadastro) {
     const comando = `
-    INSERT INTO login (username, email, senha, dt_criacao, nr_doacoes)
-        VALUES (?, ?, MD5(?), NOW(), 0);
+    INSERT INTO login (username, email, senha, dt_criacao)
+        VALUES (?, ?, MD5(?), NOW());
     `;
 
     const [info] = await connection.query(comando, [
@@ -28,7 +28,8 @@ export async function criarCadastro(novoCadastro) {
 
 export async function listarUsuarios() {
    const comando = `
-    SELECT * FROM login
+    SELECT id_login, email, username, dt_criacao
+         FROM login;
    ` 
 
    const [ registros ] = await connection.query(comando);

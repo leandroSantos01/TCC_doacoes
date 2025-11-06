@@ -3,8 +3,8 @@ import { connection } from "./connection.js";
 export async function cadastrarOng(novoCadastro) {
     const comando = `
         INSERT INTO
-            ongs (nome, email, endereco, cnpj, categoria, contato, situacao, dt_criacao, doacoes_recebidas) 
-                VALUES(?, ?, ?, ?, ?, ?, FALSE, NOW(), 0);
+            ongs (nome, email, endereco, cnpj, categoria, contato, situacao, dt_criacao) 
+                VALUES(?, ?, ?, ?, ?, ?, FALSE, NOW());
     `
 
     const [info] = await connection.query(comando, [
