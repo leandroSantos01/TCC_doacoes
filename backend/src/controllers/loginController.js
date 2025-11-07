@@ -12,6 +12,7 @@ endpoints.post('/cadastro/conta', async (req, resp) => {
 
     let id = await repo.criarCadastro(novoCadastro);
     resp.send({ 
+        token: generateToken(novoCadastro),
         usuario: novoCadastro.username
      });
 })
