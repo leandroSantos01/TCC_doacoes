@@ -42,9 +42,15 @@
     }
 
     .meio-contato {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 600;
       margin-top: 3vh;
+      line-height: 40px;
+
+
+      .href{
+        font-size: 20px;
+      }
     }
   }
 }
@@ -71,10 +77,40 @@
 
       .parte-direita{
         border-radius: 0px 0px 20px 20px;
+        padding: 20px;
+
+
+        .titulo{
+          font-size: 20px;
+          text-align: center;
+        }
+
+      
+
+        .descricao{
+          padding: 0px;
+          text-align: center;
+        }
+
+          .meio-contato{
+            text-align: center;
+            font-size: 16px;
+            line-height: 40px;
+
+            
+            .href{
+              font-size: 18px;
+            }
+          }
       }
+
+
 
 
     }
   }
 
 }
+
+
+
