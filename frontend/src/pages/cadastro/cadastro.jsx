@@ -1,4 +1,4 @@
-import Cabecalho from "../../components/cabecalho/Cabecalho.jsx";
+import Cabecalho from "../../components/Cabecalho/Cabecalho.jsx";
 import { useState } from "react";
 import api from '../../api.js';
 

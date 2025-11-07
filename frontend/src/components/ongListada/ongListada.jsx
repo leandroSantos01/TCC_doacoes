@@ -6,7 +6,8 @@ export default function ongListada({imagem, nome, endereço, numero}) {
     return (
         <li className='lista'>
             <div className='card'>
-                <img src={imagem}/>
+                <img src={imagem} style={{
+                    objectFit:"cover",width:'200px', height:"200px"}}/>
 
                 <div className='texto'>
                     <h2>{nome}</h2>

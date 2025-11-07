@@ -162,13 +162,15 @@
 
         .irmas-login {
             flex-direction: column;
-            width: 100%;
+            width: 90%;
             padding: 20px;
             height: auto;
             align-items: center;
 
+            .caixa_form{
+                width: 100%;
+            }
             .container-filha1-login {
-            background-color: #007aff;
             width: 100%;
                 
                 

@@ -1,10 +1,24 @@
 .card{
     display: flex;
     flex-direction: column;
-    padding: 2vh;
+    align-items: center;
+    padding: 10px;
     justify-content: center;
+    gap: 30px;
 
     background-color: white;
     border-radius: 2vh;
-    width: 20vw;
+    width: 270px;
+    height: 350px;
+}
+
+
+@media(max-width: 768px){
+    .card{
+        width: 18rem;
+        height: 350px;
+        gap: 10px;
+        align-items: center;
+        margin: 20px 0;
+    }
 }

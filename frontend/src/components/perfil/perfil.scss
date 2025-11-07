@@ -4,6 +4,7 @@
     width: 100%;
     justify-content: center;
     display: flex;
+    
     position: fixed;
     height: 100vh;
     z-index: 100;
@@ -16,7 +17,7 @@
         height: auto;
         display: flex;
         justify-self: center;
-        top: 150px;
+        top: 250px;
         position: fixed;
         flex-direction: column;
         background-color: rgb(223, 237, 255);
@@ -100,6 +101,8 @@
 
 @media (max-width: 768px) {
     .fundo_user {
+        align-items: center;
+        justify-content: center;
         .modal_User {
             width: 90%;
             top: 250px;
