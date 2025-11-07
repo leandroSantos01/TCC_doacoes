@@ -171,9 +171,7 @@
         padding: 80px;
 
 
-        p {
-            text-align: left;
-        }
+       
 
         h1 {
             font-size: 2rem;
@@ -190,7 +188,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
 
 
             .bloco {
@@ -257,8 +255,7 @@
 
 
             h1 {
-                font-size: 1.5rem;
-                line-height: 1.2;
+                font-size: 2rem;
             }
 
 
@@ -275,7 +272,7 @@
                     height: 100%;
                     z-index: 2;
                     flex-direction: column;
-                    margin: 30px 0px;
+                    margin: 50px 0px;
 
 
 
@@ -288,8 +285,9 @@
 
                     background-size: cover;
                     background-position: center;
-                    padding: 39px 50px;
+                    padding: 100px;
                     margin: 0;
+                    
 
 
 
@@ -306,8 +304,8 @@
                         .doar {
                             display: flex;
                             justify-self: flex-start;
-                            font-size: 10px;
-                            padding: 3px 15px;
+                            font-size: 0.9rem;
+                            padding: 3px 18px;
                             box-shadow: 2px 2px 15px 0px rgb(78, 78, 78);
 
 
@@ -315,8 +313,8 @@
 
                         .login {
                             display: flex;
-                            font-size: 10px;
-                            padding: 3px 15px;
+                            font-size: 0.9rem;
+                            padding: 4px 18px;
                             box-shadow: 2px 2px 15px 0px rgb(80, 80, 80);
                         }
 
@@ -351,6 +349,22 @@
         .pag_sobre {
             line-height: 0.8cm;
             box-shadow: 2px 2px 15px 0px rgb(170, 170, 170);
+            padding: 60px 50px;
+            ;
+            
+
+
+
+            
+
+            .blocos-info{
+                gap: 0;
+
+                .bloco{
+                    margin-top: 30px;
+                }
+                
+            }
 
 
 
@@ -368,20 +382,134 @@
 
 }
 
-@media (max-width: 800px) {
 
-    .container_central {
 
-        .container_infromacao {
-            width: 60%;
 
+
+@media (max-width: 440px) {
+
+    .container_pagPrincipal {
+        height: auto;
+
+
+        .container_central {
+            height: auto;
+            margin-top: 90px;
 
 
             h1 {
-                font-size: 10px;
-                line-height: 1.2;
+                font-size: 2rem;
             }
+
+
+            & div {
+                height: auto;
+
+
+
+
+
+
+                .container_infromacao {
+                    width: 100%;
+                    height: 100%;
+                    z-index: 2;
+                    flex-direction: column;
+                    margin: 50px 0px;
+
+
+
+
+                    background:
+                        linear-gradient(rgba(255, 255, 255, 0.500),
+                            rgba(255, 255, 255, 0.500)),
+
+                        url("../../assets/images/imageInfo.png");
+
+                    background-size: cover;
+                    background-position: center;
+                    padding: 100px;
+                    margin: 0;
+                    
+
+
+
+
+
+
+                    .Botoes_central {
+                        width: 100%;
+                        justify-content: center;
+                        display: flex;
+                        padding: 0;
+
+
+                        .doar {
+                            display: flex;
+                            justify-self: flex-start;
+                            font-size: 0.8rem;
+                            padding: 3px 30px;
+                            align-items: center;
+                            box-shadow: 2px 2px 15px 0px rgb(78, 78, 78);
+
+
+                        }
+
+                        .login {
+                            display: flex;
+                            font-size: 0.8rem;
+                            padding: auto ;
+                            box-shadow: 2px 2px 15px 0px rgb(80, 80, 80);
+                            align-items: center;
+
+                        }
+
+
+
+
+
+
+                    }
+
+                }
+
+            }
+
+
+            .container_img {
+                position: absolute;
+
+
+                img {
+                    opacity: 0;
+                }
+            }
+
         }
+
     }
+
+    .secao_sobre {
+        margin: 0;
+        padding: 10px;
+
+        .pag_sobre {
+            line-height: 0.8cm;
+            box-shadow: 2px 2px 15px 0px rgb(170, 170, 170);
+            margin: 0;
+            padding: 80px 30px;
+
+
+
+
+
+
+        }
+
+
+    }
+
+
+
 
 }
