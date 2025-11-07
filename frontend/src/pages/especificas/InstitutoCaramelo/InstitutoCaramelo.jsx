@@ -1,7 +1,7 @@
 import Cabecalho from "../../../components/cabecalho/Cabecalho.jsx";
 import Rodape from "../../../components/Rodape/Rodape.jsx";
 
-import "./InstitutoCaramelo.scss";
+import "/src/scss/index_Ongs.scss";
 import "/src/scss/global.scss";
 import "/src/scss/fonts.scss";
 

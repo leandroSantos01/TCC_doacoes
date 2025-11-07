@@ -1,7 +1,7 @@
 import Cabecalho from "../../../components/cabecalho/Cabecalho.jsx";
 import Rodape from "../../../components/Rodape/Rodape.jsx";
 
-import "./CriancaEsperanca.scss";
+import "/src/scss/index_Ongs.scss";
 import "/src/scss/global.scss";
 import "/src/scss/fonts.scss";
 
@@ -15,7 +15,7 @@ export default function CriancaEsperanca() {
       <div className="div-mae">
         <div className="div-card">
           <div className="img">
-            <img src={crianca} />
+            <img src={crianca}  style={{width:"250px"}} />
           </div>
           <div className="parte-direita">
             <div className="conteudo">

@@ -1,7 +1,7 @@
 import Cabecalho from "../../../components/cabecalho/Cabecalho.jsx";
 import Rodape from "../../../components/Rodape/Rodape.jsx";
 
-import "./CaoSemDono.scss";
+import "/src/scss/index_Ongs.scss";
 import "/src/scss/global.scss";
 import "/src/scss/fonts.scss";
 
@@ -25,17 +25,13 @@ export default function CaoSemDono() {
               <div className="descricao">
                 <p>
                   Fundada em 2012 por um pequeno grupo de voluntários locais, a Cão sem Dono é uma organização dedicada a resgatar, tratar e realocar cães em situação de abandono e vulnerabilidade. Nossa missão é promover bem‑estar animal por meio de resgate humanitário, atendimento veterinário, castração em massa e programas de adoção responsável.
-                </p>
-                <p>
+             
                   Desde a criação, já resgatamos mais de 4.200 animais e, em média, promovemos 350 adoções por ano. Mantemos um abrigo com capacidade para 180 cães e uma rede de mais de 120 voluntários que atuam em resgates emergenciais, transporte, acolhimento temporário (lar de passagem) e divulgação para adoção.
-                </p>
-                <p>
+      
                   Entre nossos programas permanentes estão a clínica móvel de atendimento (consultas básicas e vacinas), campanhas de castração comunitária — mais de 6.000 procedimentos realizados desde 2015 — e programas de reabilitação para animais vítimas de maus‑tratos ou acidentes. Também oferecemos acompanhamento comportamental para que os adotantes tenham sucesso na integração do animal ao novo lar.
-                </p>
-                <p>
+
                   Atuamos em parceria com escolas e creches para promover educação sobre posse responsável e respeito aos animais, e mantemos um “pet food bank” para famílias em situação de vulnerabilidade que desejam manter seus animais. Trabalhamos de forma transparente: publicamos relatórios anuais com receitas e despesas e detalhamos o destino das doações.
-                </p>
-                <p>
+
                   Toda contribuição — financeira, em ração, materiais de higiene, medicamentos ou tempo como voluntário — é usada para ampliar nossa capacidade de atendimento, custear tratamentos veterinários, transporte e infraestrutura do abrigo. Se quiser visitar, adotar, apadrinhar um animal ou doar, entre em contato: cada ajuda faz diferença para salvar vidas.
                 </p>
               </div>
