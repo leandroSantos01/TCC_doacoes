@@ -68,7 +68,12 @@ export default function App() {
 
                                 {!logado &&
                                     <div>
-                                        <Link className='doar' to={'/ongs'}>CONHEÇA ONGs</Link>
+                                        <Link className='doar'  to={'/ongs'} style={{
+                                            width: '130px',
+                                            textAlign: 'center',
+                                            justifyContent: 'center',
+                                            fontWeight: '800'
+                                        }}> CONHEÇA ONGs</Link>
                                         <Link className='login' to={'/login'}>LOGIN</Link>
                                     </div>
                                 }
@@ -78,7 +83,9 @@ export default function App() {
                                     <div>
                                         <Link className='doar' to={'/ongs'} style={{
                                             width: '200px',
-                                            textAlign: 'center'
+                                            textAlign: 'center',
+                                            justifyContent: 'center',
+                                            fontWeight: '800'
                                         }}>CONHEÇA ONGs</Link>
 
                                     </div>

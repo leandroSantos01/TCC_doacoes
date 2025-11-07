@@ -44,6 +44,7 @@ export default function Rodape() {
           }
               {!logado && 
               <div> 
+                 <Link to={"/"} > <a>Home</a></Link>
               <Link to={"/cadastro"}><a>Cadastro</a></Link>
             </div>
             }
