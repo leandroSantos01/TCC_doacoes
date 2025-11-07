@@ -145,24 +145,21 @@ export default function Ongs() {
               <OngListada
                 imagem={Cao}
                 nome="Cão sem dono"
-                endereço="Rua das Flores, 123"
-                numero="(11) 99999-0001"
+                endereço="Rua Vitor Emanuel, 200, Sacomã, SP"
+                numero="(11) 95471-2195"
               />
               </Link>
               <Link to='/criancaEsperanca' style={{ textDecoration: 'none', color: 'black' }}>
               <OngListada
                 imagem={Crianca}
                 nome="Crianca Esperança"
-                endereço="Rua do Amanhã, 50"
-                numero="(11) 99999-0005"
               />
               </Link>
               <Link to='/institutoCaramelo' style={{ textDecoration: 'none', color: 'black' }}>
               <OngListada
                 imagem={Caramelo}
                 nome="Instituto Caramelo"
-                endereço="Av. Central, 456"
-                numero="(11) 99999-0002"
+                endereço="Email para adotar: queroadotar@icaramelo.org"
               />
               </Link>
               <Link to='/amigosDoBem' style={{ textDecoration: 'none', color: 'black' }}>
@@ -177,8 +174,6 @@ export default function Ongs() {
               <OngListada
                 imagem={Doar}
                 nome="Para quem doar"
-                endereço="Travessa Solidária, 10"
-                numero="(11) 99999-0004"
               />
               </Link>
 
@@ -215,7 +210,6 @@ export default function Ongs() {
               <label>Endereço</label>
               <input type="text" placeholder='Endereço' value={endereco} onChange={e => setEndereco(e.target.value)} />
             </div>
-
 
           </div>
         }

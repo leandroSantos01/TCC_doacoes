@@ -1,9 +1,9 @@
-import Cabecalho from "../../components/Cabecalho/Cabecalho.jsx";
+import Cabecalho from "../../components/cabecalho/Cabecalho.jsx";
 import { useState } from "react";
 import api from '../../api.js';
 
-import boneco from '/src/assets/images/boneco.png';
 import './cadastro.scss';
+import boneco from '/src/assets/images/boneco.png';
 import Rodape from "../../components/Rodape/Rodape.jsx";
 import { Link, useNavigate } from "react-router";
 import { Toaster, toast } from "react-hot-toast";
