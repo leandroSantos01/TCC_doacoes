@@ -32,7 +32,7 @@ export default function Dev() {
 
 
                     nome={"Leandro Patricio Santos "}
-                    desc={"Responsável pelo FrontEnd e design do site."}
+                    desc={"Responsável pelo FrontEnd e Design do site."}
                      conteudo1={
                         <div>
 
@@ -49,8 +49,8 @@ export default function Dev() {
                 <CardsDev
                 imagem={Livia}
 
-                    nome={"Livia da Silva Pererira"}
-                    desc={"Responsável pelo FrontEnd e design do site."}
+                    nome={"Lívia da Silva Pereira"}
+                    desc={"Responsável pelo FrontEnd e Design do site."}
                     conteudo1={
                         <div>
                             <img style={{margin:"0 30px"}} src={Git} height={"50px"} width={"50px"} />
@@ -62,7 +62,7 @@ export default function Dev() {
                 <CardsDev
                     imagem={Eduardo}
                     nome={"Eduardo Luiz Oliveira"}
-                    desc={"Responsável pelo FrontEnd e design do site."}
+                    desc={"Responsável pelo FrontEnd e Design do site."}
                      conteudo1={
                         <div>
 
@@ -76,7 +76,7 @@ export default function Dev() {
 
                 <CardsDev
                     imagem={Emily}
-                    nome={"Emily Pinheiro"}
+                    nome={"Emilly Pinheiro"}
                     desc={"Responsável pelo BackEnd e Responsividade do site."}
                     conteudo1={
 
