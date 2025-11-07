@@ -32,21 +32,21 @@ export default function Cadastro() {
         };
         try {
             if (formData.email.length <= 1 && formData.senha.length <= 1) {
-                toast.error('credenciais inválidas')
+                toast.error('Credenciais inválidas')
                 return
             }
 
             if (formData.email.length <= 1) {
-                toast.error('Email invalido')
+                toast.error('Email inválido')
                 return
             }
             if (formData.username.length <= 1) {
-                toast.error('Usuário inválido')
+                toast.error('Organização inválido')
                 return
             }
 
             if (formData.senha.length <= 1) {
-                toast.error('Senha invalido')
+                toast.error('Senha inválida')
                 return
             }
 
@@ -90,8 +90,8 @@ export default function Cadastro() {
                                 </div>
 
                                 <div className="container-input">
-                                    <label>Usuário</label>
-                                    <input type="text" placeholder='Usuário' name='username' value={formData.username} onChange={handleChange} />
+                                    <label>Organização</label>
+                                    <input type="text" placeholder='Organizacao' name='username' value={formData.username} onChange={handleChange} />
                                 </div>
 
                                 <div className="container-input">

@@ -32,17 +32,17 @@ export default function Login() {
         try {
           
             if(formData.email.length<=1 && formData.senha.length<=1){
-                toast.error('credenciais inválidas')
+                toast.error('Credenciais inválidas')
                 return
             }
 
             if(formData.email.length<=1){
-                toast.error('email invalido')
+                toast.error('Email invalido')
                 return
             }
 
             if(formData.senha.length<=1){
-                toast.error('senha invalido')
+                toast.error('Senha invalida')
                 return
             }
 
