@@ -162,7 +162,7 @@
 
         .irmas-login {
             flex-direction: column;
-            width: 90%;
+            width: 80%;
             padding: 20px;
             height:500px   ;
             align-items: center;
@@ -171,36 +171,28 @@
                 margin-top: -60px;
                 width: 20rem;
                 margin-left: -20PX;
+                padding: 0;
                 justify-content: center;
                 align-items: center;
 
-                H1{
-                    font-size: 40px;
-                    margin-left: 20PX;
+
+                h1{
+                    font-size: 30px;
+                    line-height: 60px;
+                    margin-top: -30px;
+                    
                 }
                 P{
-                    font-size: 14px;
+                    font-size: 13.6px;
                     margin-left:20PX ;
 
                 }
-                
-                
 
 
             }
 
-            .container-input-login {
-                margin: 500px;
-                width: 90%;
 
-                label {
-                    font-size: 11px;
-                }
-
-                input {
-                    height: 10px;
-                }
-            }
+            
             .container-filha1-login {
             width: 100%;
                 
