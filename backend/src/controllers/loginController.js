@@ -12,8 +12,7 @@ endpoints.post('/cadastro/conta', async (req, resp) => {
 
     let id = await repo.criarCadastro(novoCadastro);
     resp.send({ 
-        usuario: novoCadastro.username,
-        token:generateToken(novoCadastro),
+        usuario: novoCadastro.username
      });
 })
 
@@ -71,6 +70,18 @@ endpoints.put('/alterar/senha', autenticador, async (req, resp) => {
 
     await repo.alterarSenha(email, senha, novaSenha);
     resp.send('password changed sucessfully!');
+})
+
+endpoints.put('/editar/perfil', autenticador, async (req, resp) => {
+    let username = req.body.username;
+    let senha = req.body.senha
+    let nomeNovo = req.body.novoNome;
+
+    await repo.editarUsuario(username, senha, nomeNovo);
+    resp.send({
+        msg: 'username changed sucessfully!',
+        novoUsuario: nomeNovo
+    });
 })
 
 endpoints.get('/listar/usuarios', autenticador, async (req, resp) => {

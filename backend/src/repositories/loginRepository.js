@@ -76,3 +76,13 @@ export async function alterarSenha(email, senha, novaSenha) {
 
     await connection.query(comando, [senha, email, novaSenha]);
 }
+
+export async function editarUsuario(novoNome, username, senha) {
+    const comando = `
+        UPDATE login
+            SET username = ?
+              WHERE username = ? AND senha = MD5(?)
+    `
+
+    await connection.query(comando, [novoNome, username, senha]);
+} 

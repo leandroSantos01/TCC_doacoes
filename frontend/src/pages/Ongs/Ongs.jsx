@@ -11,6 +11,7 @@ import { Toaster, toast } from "react-hot-toast"
 import { FaSearch } from "react-icons/fa";
 
 import api from "../../api"
+import axios from 'axios';
 
 import { useState, useEffect } from "react"
 import ModalOngs from "../../components/modalOng/Index"
@@ -30,7 +31,6 @@ export default function Ongs() {
   const [cnpj, setCnpj] = useState("");
   const [categoria, setCategoria] = useState("");
   const [contato, setContato] = useState("");
-  const [listaOng, setListaOng] = useState([]);
   const [user, setUser] = useState('');
   const [logado, setLogado] = useState(false);
 
@@ -111,6 +111,13 @@ export default function Ongs() {
     }
   }
 
+  async function buscarOng() {
+    let url = 'http://localhost:3010/listar/ongs';
+
+    let resp = await axios.get(url);
+    let dados = resp.data;
+  }
+
   return (
     <div>
       {logado ? null : null}
@@ -124,7 +131,7 @@ export default function Ongs() {
             <div className="pesquisa">
               <input type="text" placeholder="Digite o nome ou categoria " />
               <hr />
-              <button className="btn_pesquisa"><FaSearch /></button>
+              <button className="btn_pesquisa" onClick={buscarOng}><FaSearch /></button>
             </div>
 
             <button className="cadastrar_ong" onClick={() => { if (!logado) { toast.error('Você precisa estar logado!'); return; } setModalOngs(true); }}>Cadastrar Ongs</button>
@@ -163,7 +170,7 @@ export default function Ongs() {
                 imagem={Amigos}
                 nome="Amigos do bem"
                 endereço="Rua Dr. Gabriel de Resende, 122"
-                numero="(11) 3019 0107"
+                numero="(11) 3019-0107"
               />
               </Link>
               <Link to='/paraQuemDoar' style={{ textDecoration: 'none', color: 'black' }}>
