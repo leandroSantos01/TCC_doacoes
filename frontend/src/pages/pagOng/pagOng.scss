@@ -1,0 +1,21 @@
+.div-mae {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  background: linear-gradient(to top, #5aa6d8, #ffffff);
+
+  .div-card {
+    display: flex;
+    
+
+    margin: 3vh;
+    padding: 3vh;
+    background-color: #ffffff;
+
+    .descricao {
+      width: 90vh;
+      padding: 3vh;
+    }
+  }
+}
