@@ -6,12 +6,29 @@ import { FaInstagram } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 
+import { useState, useEffect } from 'react';
+
 
 export default function Rodape() {
+    const [user, setUser] = useState('');
+  const [logado, setLogado] = useState(false);
+
+  useEffect(() => {
+    let nomeUser = localStorage.getItem("USUARIO")
+
+    if (nomeUser == undefined || nomeUser == null) {
+      setLogado(false)
+    }
+    else {
+      setLogado(true)
+      setUser(nomeUser)
+    }
+  })
+
 
   return (
     <>
-
+{logado ? null : null}
 
       <footer >
         <div className="rodape">
@@ -20,9 +37,18 @@ export default function Rodape() {
 
             <div className="inicio">
               <h2>Início</h2>
+              {logado && 
+              <div> 
               <Link to={"/"} >  <a>Home</a></Link>
+              </div>
+          }
+              {!logado && 
+              <div> 
               <Link to={"/cadastro"}><a>Cadastro</a></Link>
             </div>
+            }
+            </div>
+            
 
             <div className="sobre">
               <h2>Sobre Nós</h2>
