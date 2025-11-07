@@ -153,9 +153,21 @@
             .container-filha1 {
                 width: 100%;
                 height: auto;
+                padding: 10px;
+                
+
+                p{
+                    font-size: 14px;
+
+                }
 
                 button {
                     margin-bottom: 20px;
+                }
+
+                .container-check{
+                    margin-bottom: 10px;
+                    font-size: 11PX;
                 }
             }
 
@@ -164,6 +176,24 @@
                 height: auto;
                 margin-top: 20px;
                 display: none;
+            }
+        }
+    }
+}
+
+
+@media(max-width: 480px) {
+    .container-mae {
+        padding: 20px 5px;
+
+        .irmas {
+            padding: 10px;
+
+            .container-filha1 {
+                button {
+                    padding: 10px 20px;
+                    font-size: 14px;
+                }
             }
         }
     }

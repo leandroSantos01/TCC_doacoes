@@ -32,7 +32,7 @@ export default function pagOng() {
             </div>
 
             <div className="meio-contato">
-              <a href="https://institutoamparanimal.org.br/">Site da ampara animal</a>
+              <p href="https://institutoamparanimal.org.br/">Site da ampara animal</p>
             </div>
           </div>
         </div>

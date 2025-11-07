@@ -86,8 +86,8 @@ export default function Login() {
                                     <input type="password" placeholder='Inserir senha' name='senha' value={formData.senha} onChange={handleChange} />
                                 </div>
                                 <div>
-                                    <p>Caso não tenha uma conta! <Link
-                                    to={'/cadastro'}>Cadastrar</Link>
+                                    <p>Caso não tenha uma conta!<Link
+                                    to={'/cadastro'}> Cadastrar-se</Link>
                                     </p>
                                 </div>
 

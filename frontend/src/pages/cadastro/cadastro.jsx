@@ -103,7 +103,7 @@ export default function Cadastro() {
                                     <input type="checkbox" checked={check} onChange={() => setCheck(!check)} />
                                     <label>Declaro que li e concordo com os <a href="">Termos de Uso.</a></label>
                                 </div>
-                                <p>Caso ja possua uma conta!<Link to={'/login'}>Entrar</Link></p>
+                                <p>Caso ja possua uma conta! <Link to={'/login'}> Entrar</Link></p>
 
                                 <button type="submit" className="cadastrar-se">CADASTRAR-SE</button>
                             </form>

@@ -164,15 +164,51 @@
             flex-direction: column;
             width: 90%;
             padding: 20px;
-            height: auto;
+            height:500px   ;
             align-items: center;
 
             .caixa_form{
-                width: 100%;
+                margin-top: -60px;
+                width: 20rem;
+                margin-left: -20PX;
+                justify-content: center;
+                align-items: center;
+
+                H1{
+                    font-size: 40px;
+                    margin-left: 20PX;
+                }
+                P{
+                    font-size: 14px;
+                    margin-left:20PX ;
+
+                }
+                
+                
+
+
+            }
+
+            .container-input-login {
+                margin: 500px;
+                width: 90%;
+
+                label {
+                    font-size: 11px;
+                }
+
+                input {
+                    height: 10px;
+                }
             }
             .container-filha1-login {
             width: 100%;
                 
+
+            button{
+                width: 50%;
+                margin-left: 20PX;
+            }
                 
                 
 
@@ -186,6 +222,38 @@
                 display: none;
                 
 
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .container-login {
+        padding: 20px 5px;
+
+        .irmas-login {
+            padding: 10px;
+
+            .container-filha1-login {
+                .caixa_form{width: 100%;
+                .container-input-login {
+                    margin: 5px;
+
+                    label {
+                        font-size: 10px;
+                    }
+
+                    input {
+                        height: 30px;
+                    }
+                }}
+                
+
+                button {
+                    width: 50%;
+                }
             }
         }
     }
