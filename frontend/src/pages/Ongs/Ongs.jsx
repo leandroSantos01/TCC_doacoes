@@ -121,11 +121,11 @@ export default function Ongs() {
         <div className="central_ongs">
 
           <div className="btn">
-            {/* <div className="pesquisa">
+            <div className="pesquisa">
               <input type="text" placeholder="Digite o nome ou categoria " />
               <hr />
               <button className="btn_pesquisa"><FaSearch /></button>
-            </div> */}
+            </div>
 
             <button className="cadastrar_ong" onClick={() => { if (!logado) { toast.error('Você precisa estar logado!'); return; } setModalOngs(true); }}>Cadastrar Ongs</button>
 
