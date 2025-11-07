@@ -12,9 +12,12 @@ import '/src/scss/global.scss'
 import '/src/scss/fonts.scss'
 
 import Emily from '/src/assets/images/emily.jpg'
-import Leandro from '/src/assets/images/lenandro.jpg'
+import Leandro from '/src/assets/images/leandro.jpg'
 import Livia from '/src/assets/images/livia.png'
-import Eduardo from '/src/assets/images/eu.jpg'
+import Eduardo from '/src/assets/images/eduardo.png'
+import Fabricio from '/src/assets/images/fabricio.jpg'
+
+
 
 export default function Dev() {
     return (
@@ -22,13 +25,14 @@ export default function Dev() {
             <Cabecalho />
 
             <div className="Card">
+                 <h1>DESENVOLVEDORES</h1>
                 <CardsDev
 
                     imagem={Leandro}
 
 
-                    nome={"Lenadro Patricio Santos "}
-                    desc={"Responsável pelo FrontEnd e design do site"}
+                    nome={"Leandro Patricio Santos "}
+                    desc={"Responsável pelo FrontEnd e design do site."}
                      conteudo1={
                         <div>
 
@@ -46,11 +50,10 @@ export default function Dev() {
                 imagem={Livia}
 
                     nome={"Livia da Silva Pererira"}
-                    desc={"Responsável pelo FrontEnd e design do site"}
+                    desc={"Responsável pelo FrontEnd e design do site."}
                     conteudo1={
                         <div>
                             <img style={{margin:"0 30px"}} src={Git} height={"50px"} width={"50px"} />
-                            <img src={Linkedin} height={"50px"} width={"50px"} />
                         </div>
                     }
              
@@ -59,7 +62,7 @@ export default function Dev() {
                 <CardsDev
                     imagem={Eduardo}
                     nome={"Eduardo Luiz Oliveira"}
-                    desc={"Responsável pelo FrontEnd e design do site"}
+                    desc={"Responsável pelo FrontEnd e design do site."}
                      conteudo1={
                         <div>
 
@@ -74,11 +77,11 @@ export default function Dev() {
                 <CardsDev
                     imagem={Emily}
                     nome={"Emily Pinheiro"}
-                    desc={"Responsável pelo BackEnd e Responsividade do site"}
+                    desc={"Responsável pelo BackEnd e Responsividade do site."}
                     conteudo1={
 
                         <div>
-                            <a href="https://github.com/ambrosiavortex meu"><img src={Git} height={"50px"} width={"50px"} /></a> 
+                            <a style={{margin:"0 30px"}} href="https://github.com/ambrosiavortex meu"><img src={Git} height={"50px"} width={"50px"} /></a> 
                         </div>
 
                         }
@@ -88,13 +91,13 @@ export default function Dev() {
 
 
                  <CardsDev
-                    imagem={Emily}
+                    imagem={Fabricio}
                     nome={"Fabricio Colombo"}
-                    desc={"Responsável pelo BackEnd e Responsividade do site"}
+                    desc={"Responsável pelo BackEnd e Responsividade do site."}
                     conteudo1={
 
                         <div>
-                            <a href="https://github.com/cookieceleste fabricio"><img src={Git} height={"50px"} width={"50px"} /></a>
+                            <a style={{margin:"0 30px"}} href="https://github.com/cookieceleste fabricio"><img src={Git} height={"50px"} width={"50px"} /></a>
                         </div>
 
                     }

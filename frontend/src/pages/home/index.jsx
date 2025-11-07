@@ -62,7 +62,7 @@ export default function App() {
                     <div>
 
                         <div className="container_infromacao">
-                            <h1><span className='destaque'>DonNet</span> faça do mundo um lugar melhor</h1>
+                            <h1> <span className='destaque'>DonNet</span> faça do mundo um lugar melhor</h1>
 
                             <div className="Botoes_central">
 

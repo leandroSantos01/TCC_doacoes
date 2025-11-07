@@ -102,3 +102,30 @@
         }
     }
 }
+
+@media (max-width: 768px){
+    .page_ongs{
+        .central_ongs{
+            .btn{
+                flex-direction: row;
+                gap:10px;
+                .pesquisa{
+                    width: 60%;
+                }
+                .cadastrar_ong{
+                    padding: 5px;
+                    font-size: 12px;
+                }
+            }
+        }
+        .ongs{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            ul{
+                margin: 20px;
+                gap: 15px;
+            }
+        }
+    }
+}
