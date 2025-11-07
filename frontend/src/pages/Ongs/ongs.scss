@@ -10,6 +10,7 @@
         display: flex;
         flex-direction: column;
         background-color: rgb(150, 202, 248);
+        border-radius: 30px;
 
         .btn{
             width: 100%;
@@ -87,19 +88,29 @@
 
 
 .ongs{
-
+    display: flex;
+    justify-content: center;
     ul{
         display: flex;
         list-style-type: none;
         margin: 50px;
         display: flex;
         flex-wrap: wrap;
-        gap: 25px;
+        gap: 50px;
         justify-content: center;
         width: 90%;
         img{
             border-radius: 30px;
         }
+    }
+    ul a {
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    will-change: transform;
+    cursor: pointer;
+    }
+
+    ul a:hover {
+        transform: translateY(-8px);
     }
 }
 

@@ -6,6 +6,12 @@ import Ongs from './pages/Ongs/Ongs.jsx'
 import Dev from './pages/Dev/index.jsx'
 import PaginasOngs from './pages/pagOng/pagOng.jsx'
 
+import CaoSemDono from './pages/especificas/CaoSemDono/CaoSemDono.jsx'
+import AmigosDoBem from './pages/especificas/AmigosDoBem/AmigosDoBem.jsx'
+import CriancaEsperanca from './pages/especificas/CriancaEsperanca/CriancaEsperanca.jsx'
+import InstitutoCaramelo from './pages/especificas/InstitutoCaramelo/InstitutoCaramelo.jsx'
+import ParaQuemDoar from './pages/especificas/ParaQuemDoar/ParaQuemDoar.jsx'
+
 export default function Navegacao(){
     return(
         <BrowserRouter>
@@ -16,6 +22,11 @@ export default function Navegacao(){
             <Route path='/ongs' element={<Ongs/>}/>
             <Route path='/desenvolvedores' element={<Dev/>}/>
             <Route path='/paginasOngs' element={<PaginasOngs/>}/>
+            <Route path='/caoSemDono' element={<CaoSemDono/>}/>
+            <Route path='/amigosDoBem' element={<AmigosDoBem/>}/>
+            <Route path='/criancaEsperanca' element={<CriancaEsperanca/>}/>
+            <Route path='/institutoCaramelo' element={<InstitutoCaramelo/>}/>
+            <Route path='/paraQuemDoar' element={<ParaQuemDoar/>}/>
             
         </Routes>
         </BrowserRouter>

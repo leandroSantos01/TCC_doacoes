@@ -16,6 +16,11 @@ import { useState, useEffect } from "react"
 import ModalOngs from "../../components/modalOng/Index"
 
 import Cao from '/src/assets/images/cao.png'
+import Caramelo from '/src/assets/images/caramelo.png'
+import Amigos from '/src/assets/images/amigos.png'
+import Doar from '/src/assets/images/doar.png'
+import Crianca from '/src/assets/images/crianca.png'
+import { Link } from "react-router"
 
 export default function Ongs() {
   const [modalOngs, setModalOngs] = useState(false)
@@ -129,9 +134,48 @@ export default function Ongs() {
           <div className="ongs">
 
             <ul>
+              <Link to='/caosemdono' style={{ textDecoration: 'none', color: 'black' }}>
               <OngListada
                 imagem={Cao}
+                nome="Cão sem dono"
+                endereço="Rua das Flores, 123"
+                numero="(11) 99999-0001"
               />
+              </Link>
+              <Link to='/criancaEsperanca' style={{ textDecoration: 'none', color: 'black' }}>
+              <OngListada
+                imagem={Crianca}
+                nome="Crianca Esperança"
+                endereço="Rua do Amanhã, 50"
+                numero="(11) 99999-0005"
+              />
+              </Link>
+              <Link to='/institutoCaramelo' style={{ textDecoration: 'none', color: 'black' }}>
+              <OngListada
+                imagem={Caramelo}
+                nome="Instituto Caramelo"
+                endereço="Av. Central, 456"
+                numero="(11) 99999-0002"
+              />
+              </Link>
+              <Link to='/amigosDoBem' style={{ textDecoration: 'none', color: 'black' }}>
+              <OngListada
+                imagem={Amigos}
+                nome="Amigos do bem"
+                endereço="Rua Dr. Gabriel de Resende, 122"
+                numero="(11) 3019 0107"
+              />
+              </Link>
+              <Link to='/paraQuemDoar' style={{ textDecoration: 'none', color: 'black' }}>
+              <OngListada
+                imagem={Doar}
+                nome="Para quem doar"
+                endereço="Travessa Solidária, 10"
+                numero="(11) 99999-0004"
+              />
+              </Link>
+
+              
 
             </ul>
 

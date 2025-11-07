@@ -73,7 +73,7 @@ export default function App() {
                                             textAlign: 'center',
                                             justifyContent: 'center',
                                             fontWeight: '800'
-                                        }}> CONHEÇA ONGs</Link>
+                                        }}>ONGS</Link>
                                         <Link className='login' to={'/login'}>LOGIN</Link>
                                     </div>
                                 }
@@ -86,7 +86,7 @@ export default function App() {
                                             textAlign: 'center',
                                             justifyContent: 'center',
                                             fontWeight: '800'
-                                        }}>CONHEÇA ONGs</Link>
+                                        }}>ONGS</Link>
 
                                     </div>
                                 }
