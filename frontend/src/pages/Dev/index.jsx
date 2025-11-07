@@ -25,7 +25,7 @@ export default function Dev() {
             <Cabecalho />
 
             <div className="Card">
-                 <h1>DESENVOLVEDORES</h1>
+                <h1>DESENVOLVEDORES</h1>
                 <CardsDev
 
                     imagem={Leandro}
@@ -33,13 +33,13 @@ export default function Dev() {
 
                     nome={"Leandro Patricio Santos "}
                     desc={"Responsável pelo FrontEnd e Design do site."}
-                     conteudo1={
+                    conteudo1={
                         <div>
 
-                            <a style={{margin:"0 30px"}} href="https://github.com/leandroSantos01"><img src={Git} height={"50px"} width={"50px"} /></a>
+                            <a style={{ margin: "0 30px" }} href="https://github.com/leandroSantos01"><img src={Git} height={"50px"} width={"50px"} /></a>
                             <a href="https://www.linkedin.com/in/leandro-patricio-santos-260504346/?trk=opento_sprofile_topcard"><img src={Linkedin} height={"50px"} width={"50px"} /></a>
 
-                            
+
                         </div>
                     }
 
@@ -47,29 +47,29 @@ export default function Dev() {
 
 
                 <CardsDev
-                imagem={Livia}
+                    imagem={Livia}
 
                     nome={"Lívia da Silva Pereira"}
                     desc={"Responsável pelo FrontEnd e Design do site."}
                     conteudo1={
                         <div>
-                            <img style={{margin:"0 30px"}} src={Git} height={"50px"} width={"50px"} />
+                            <img style={{ margin: "0 30px" }} src={Git} height={"50px"} width={"50px"} />
                         </div>
                     }
-             
+
                 />
 
                 <CardsDev
                     imagem={Eduardo}
                     nome={"Eduardo Luiz Oliveira"}
                     desc={"Responsável pelo FrontEnd e Design do site."}
-                     conteudo1={
+                    conteudo1={
                         <div>
 
-                            <a style={{margin:"0 30px"}} href="https://github.com/duduardim1"><img src={Git} height={"50px"} width={"50px"} /></a>
+                            <a style={{ margin: "0 30px" }} href="https://github.com/duduardim1"><img src={Git} height={"50px"} width={"50px"} /></a>
                             <a href="https://www.linkedin.com/in/eduardo-luiz-a978b82b6/"><img src={Linkedin} height={"50px"} width={"50px"} /></a>
 
-                            
+
                         </div>
                     }
                 />
@@ -81,23 +81,23 @@ export default function Dev() {
                     conteudo1={
 
                         <div>
-                            <a style={{margin:"0 30px"}} href="https://github.com/ambrosiavortex meu"><img src={Git} height={"50px"} width={"50px"} /></a> 
+                            <a style={{ margin: "0 30px" }} href="https://github.com/ambrosiavortex meu"><img src={Git} height={"50px"} width={"50px"} /></a>
                         </div>
 
-                        }
-                   
-                
+                    }
+
+
                 />
 
 
-                 <CardsDev
+                <CardsDev
                     imagem={Fabricio}
                     nome={"Fabricio Colombo"}
                     desc={"Responsável pelo BackEnd e Responsividade do site."}
                     conteudo1={
 
                         <div>
-                            <a style={{margin:"0 30px"}} href="https://github.com/cookieceleste fabricio"><img src={Git} height={"50px"} width={"50px"} /></a>
+                            <a style={{ margin: "0 30px" }} href="https://github.com/cookieceleste fabricio"><img src={Git} height={"50px"} width={"50px"} /></a>
                         </div>
 
                     }

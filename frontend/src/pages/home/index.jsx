@@ -29,7 +29,7 @@ import { useEffect, useState } from 'react'
 import { FaBullseye, FaEye, FaLeaf } from 'react-icons/fa'
 
 export default function App() {
-   
+
     const [logado, setLogado] = useState(false)
     const navigate = useNavigate()
 
@@ -68,7 +68,7 @@ export default function App() {
 
                                 {!logado &&
                                     <div>
-                                        <Link className='doar'  to={'/ongs'} style={{
+                                        <Link className='doar' to={'/ongs'} style={{
                                             width: '130px',
                                             textAlign: 'center',
                                             justifyContent: 'center',

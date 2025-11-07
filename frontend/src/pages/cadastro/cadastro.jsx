@@ -6,14 +6,14 @@ import boneco from '/src/assets/images/boneco.png';
 import './cadastro.scss';
 import Rodape from "../../components/Rodape/Rodape.jsx";
 import { Link, useNavigate } from "react-router";
-import {Toaster,toast} from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 
 
 export default function Cadastro() {
     const navigate = useNavigate();
-    const [check,setCheck] = useState(false)
+    const [check, setCheck] = useState(false)
 
-    
+
 
     const [formData, setFormData] = useState({
         email: '',
@@ -31,37 +31,37 @@ export default function Cadastro() {
             ...formData,
         };
         try {
-             if(formData.email.length<=1 && formData.senha.length<=1){
+            if (formData.email.length <= 1 && formData.senha.length <= 1) {
                 toast.error('credenciais inválidas')
                 return
             }
 
-            if(formData.email.length<=1){
+            if (formData.email.length <= 1) {
                 toast.error('Email invalido')
                 return
             }
-            if(formData.username.length <= 1){
+            if (formData.username.length <= 1) {
                 toast.error('Usuário inválido')
                 return
             }
 
-            if(formData.senha.length<=1){
+            if (formData.senha.length <= 1) {
                 toast.error('Senha invalido')
                 return
             }
 
-            if(check==false){
+            if (check == false) {
                 toast.error('Você deve aceitar os termos de uso!')
                 return
             }
 
-            
+
 
 
             let response = await api.post('/cadastro/conta', dataToSend);
-            localStorage.setItem("TOKEN",response.data.token)
-            localStorage.setItem("USUARIO",response.data.usuario)
-            
+            localStorage.setItem("TOKEN", response.data.token)
+            localStorage.setItem("USUARIO", response.data.usuario)
+
             navigate('/')
             console.log(formData);
         } catch (err) {
@@ -124,10 +124,10 @@ export default function Cadastro() {
             <Rodape />
 
             <Toaster
-  position="top-center"
-  reverseOrder={false}
-/>
-            
+                position="top-center"
+                reverseOrder={false}
+            />
+
         </div>
     )
 

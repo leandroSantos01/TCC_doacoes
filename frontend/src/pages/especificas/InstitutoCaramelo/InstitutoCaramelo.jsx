@@ -15,7 +15,7 @@ export default function InstitutoCaramelo() {
       <div className="div-mae">
         <div className="div-card">
           <div className="img">
-            <img src={caramelo} style={{width: '30vh'}} />
+            <img src={caramelo} style={{ width: '30vh' }} />
           </div>
           <div className="parte-direita">
             <div className="conteudo">

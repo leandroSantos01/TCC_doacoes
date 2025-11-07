@@ -12,7 +12,7 @@
     background-color: #d2ecfd;
     max-width: 1400px;
 
-    img{
+    img {
       border-radius: 20px;
       margin: 20px;
     }
@@ -25,7 +25,7 @@
       height: auto;
       padding: 30px;
     }
-    
+
     .titulo {
       font-size: 30px;
       font-weight: 700;
@@ -48,7 +48,7 @@
       line-height: 40px;
 
 
-      .href{
+      .href {
         font-size: 20px;
       }
     }
@@ -58,50 +58,50 @@
 
 
 @media(max-width: 768px) {
-  .div-mae{
+  .div-mae {
 
-    .div-card{
+    .div-card {
       flex-direction: column;
 
-      .img{
+      .img {
         background-color: #ffffff;
         width: 100%;
         display: flex;
         justify-content: center;
         border-radius: 20px 20px 0px 0px;
 
-        img{
+        img {
           width: 300px;
         }
       }
 
-      .parte-direita{
+      .parte-direita {
         border-radius: 0px 0px 20px 20px;
         padding: 20px;
 
 
-        .titulo{
+        .titulo {
           font-size: 20px;
           text-align: center;
         }
 
-      
 
-        .descricao{
+
+        .descricao {
           padding: 0px;
           text-align: center;
         }
 
-          .meio-contato{
-            text-align: center;
-            font-size: 16px;
-            line-height: 40px;
+        .meio-contato {
+          text-align: center;
+          font-size: 16px;
+          line-height: 40px;
 
-            
-            .href{
-              font-size: 18px;
-            }
+
+          .href {
+            font-size: 18px;
           }
+        }
       }
 
 
@@ -111,6 +111,3 @@
   }
 
 }
-
-
-

@@ -15,7 +15,7 @@ export default function CriancaEsperanca() {
       <div className="div-mae">
         <div className="div-card">
           <div className="img">
-            <img src={crianca}  style={{width:"250px"}} />
+            <img src={crianca} style={{ width: "250px" }} />
           </div>
           <div className="parte-direita">
             <div className="conteudo">

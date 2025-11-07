@@ -66,7 +66,6 @@
 
             .destaque {
                 font-weight: bold;
-                font-family: "Archivo Black", sans-serif;
                 color: #007aff;
 
             }
@@ -243,7 +242,7 @@
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 700px ),(min-width: 440px) {
 
     .container_pagPrincipal {
         height: auto;
