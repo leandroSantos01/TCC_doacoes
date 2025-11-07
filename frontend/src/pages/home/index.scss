@@ -243,7 +243,7 @@
 
 
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
     .container_pagPrincipal {
         height: auto;
@@ -280,13 +280,14 @@
                     background:
                         linear-gradient(rgba(255, 255, 255, 0.500),
                             rgba(255, 255, 255, 0.500)),
+
                         url("../../assets/images/imageInfo.png");
 
                     background-size: cover;
                     background-position: center;
                     padding: 100px;
                     margin: 0;
-
+                    
 
 
 
@@ -344,25 +345,32 @@
 
     .secao_sobre {
         margin: 0;
+        padding: 10px;
+        
 
         .pag_sobre {
             line-height: 0.8cm;
             box-shadow: 2px 2px 15px 0px rgb(170, 170, 170);
-            padding: 60px 50px;
-            ;
+            padding: 50px 35px;
+            
+            
 
 
 
+            
 
+            .blocos-info{
+                gap: 20px;
+                margin-top: 50px;
 
-
-            .blocos-info {
-                gap: 0;
-
-                .bloco {
+                .bloco{
                     margin-top: 30px;
+                    margin: 0;
+                    padding: 8px 6px;
+                    
+                    
                 }
-
+                
             }
 
 
@@ -429,7 +437,7 @@
                     background-position: center;
                     padding: 100px;
                     margin: 0;
-
+                    
 
 
 
@@ -457,7 +465,7 @@
                         .login {
                             display: flex;
                             font-size: 0.8rem;
-                            padding: auto;
+                            padding: auto ;
                             box-shadow: 2px 2px 15px 0px rgb(80, 80, 80);
                             align-items: center;
 
