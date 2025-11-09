@@ -14,6 +14,16 @@ import './login.scss';
 
 export default function Login() {
     const navigate = useNavigate()
+    const [usuario, setUsuario] = useState("");
+
+    useEffect(() => {
+        const usuarioLogado = localStorage.getItem("USUARIO");  
+        if (usuarioLogado != null|| usuarioLogado != undefined) {
+            setUsuario(usuarioLogado);
+            navigate('/');
+        }
+    }, []);
+
 
     useEffect(() => {
         window.scrollTo(0, 0)

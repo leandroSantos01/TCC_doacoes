@@ -37,17 +37,10 @@ export default function Rodape() {
 
             <div className="inicio">
               <h2>Início</h2>
-              {logado && 
-              <div> 
-              <Link to={"/"} >  <a>Home</a></Link>
-              </div>
-          }
-              {!logado && 
-              <div> 
+
                  <Link to={"/"} > <a>Home</a></Link>
               <Link to={"/cadastro"}><a>Cadastro</a></Link>
-            </div>
-            }
+          
             </div>
             
 

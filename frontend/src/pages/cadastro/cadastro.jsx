@@ -13,6 +13,17 @@ import { Toaster, toast } from "react-hot-toast";
 export default function Cadastro() {
     const navigate = useNavigate();
     const [check, setCheck] = useState(false)
+    const [usuario, setUsuario] = useState("");
+
+    useEffect(() => {
+        const usuarioLogado = localStorage.getItem("USUARIO");  
+        if (usuarioLogado != null|| usuarioLogado != undefined) {
+            setUsuario(usuarioLogado);
+            navigate('/');
+        }
+    }, []);
+
+    
 
     useEffect(() => {
         window.scrollTo(0, 0)
