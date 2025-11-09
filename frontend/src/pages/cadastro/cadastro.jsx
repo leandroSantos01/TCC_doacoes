@@ -6,6 +6,7 @@ import './cadastro.scss';
 import boneco from '/src/assets/images/boneco.png';
 import Rodape from "../../components/Rodape/Rodape.jsx";
 import { Link, useNavigate } from "react-router";
+import { useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
 
 

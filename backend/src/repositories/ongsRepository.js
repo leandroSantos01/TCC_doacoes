@@ -39,14 +39,15 @@ export async function buscaPorId(id) {
     return registros;
 }
 
+
 export async function buscaPorCategoria(categoria) {
    const comando = `
         SELECT nome, endereco, categoria
-            FROM ongs
-                WHERE categoria = ?;
-   `
+        FROM ongs
+        WHERE categoria LIKE ?;
+   `;
 
-   const [registros] = await connection.query(comando,[categoria]);
+   const [registros] = await connection.query(comando, [`%${categoria}%`]);
    return registros;
 }
 

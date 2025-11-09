@@ -29,12 +29,17 @@ endpoints.get('/listar/ongs/:id', async (req, resp) => {
     resp.send(registros);
 })
 
-endpoints.get('/listar/ongs/categoria', async (req, resp) => {
-    let categoria = req.body.categoria;
+endpoints.get('/listar/ongs/categoria/:categoria', async (req, resp) => {
+  const categoria = req.params.categoria;
 
+  try {
     const registros = await repo.buscaPorCategoria(categoria);
     resp.send(registros);
-})
+  } catch (e) {
+    console.error(e);
+    resp.status(500).send({ erro: 'Erro ao buscar ONGs por categoria' });
+  }
+});
 
 endpoints.get('/listar/ongs/nome', async (req, resp) => {
     let nome = req.body.nome;

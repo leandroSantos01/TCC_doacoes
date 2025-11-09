@@ -14,7 +14,6 @@ import api from "../../api"
 import { useState, useEffect } from "react"
 import ModalOngs from "../../components/modalOng/Index"
 import OngListada from "../../components/ongListada/ongListada"
-
 import Cao from '/src/assets/images/cao.png'
 import Caramelo from '/src/assets/images/caramelo.png'
 import Amigos from '/src/assets/images/amigos.png'
@@ -32,18 +31,43 @@ export default function Ongs() {
   const [contato, setContato] = useState("");
   const [user, setUser] = useState('');
   const [logado, setLogado] = useState(false);
+  const [pesquisa, setPesquisa] = useState('');
 
   const [ongs, setOngs] = useState([]);
+  
+
+
+
+   async function acharCate() {
+
+  try {
+    const resp = await api.get(`/listar/ongs/nome /${pesquisa}`);
+    setOngs(resp.data);
+    console.log(resp.data);
+    
+
+  } catch (error) {
+    console.error(error);
+ 
+  }
+}
+
+
+  
 
   async function listar() {
     try {
       const resp = await api.get('/listar/ongs');
-      setOngs(resp.data || []);
+      setOngs(resp.data);
     } catch (e) {
       console.error('Erro ao listar ongs', e);
       setOngs([]);
     }
   }
+
+ useEffect(() => {
+  listar();
+}, []);
 
 
   useEffect(() => {
@@ -137,9 +161,9 @@ export default function Ongs() {
 
           <div className="btn">
             <div className="pesquisa">
-              <input type="text" placeholder="Digite o nome ou categoria " />
+              <input type="text" placeholder="Digite o nome ou categoria " value={pesquisa} onChange={e=>setPesquisa(e.target.value)} />
               <hr />
-              <button className="btn_pesquisa"><FaSearch /></button>
+              <button onClick={acharCate} className="btn_pesquisa"><FaSearch /></button>
             </div>
 
             <button className="cadastrar_ong" onClick={() => { if (!logado) { toast.error('Você precisa estar logado!'); return; } setModalOngs(true); }}>Cadastrar Ongs</button>
