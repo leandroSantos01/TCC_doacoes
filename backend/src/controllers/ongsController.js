@@ -22,6 +22,13 @@ endpoints.get('/listar/ongs', async (req, resp) => {
     resp.send(registros);
 })
 
+endpoints.get('/listar/ongs/:id', async (req, resp) => {
+    let id = req.params.id;
+
+    const registros = await repo.listarOngs();
+    resp.send(registros);
+})
+
 endpoints.get('/listar/ongs/categoria', async (req, resp) => {
     let categoria = req.body.categoria;
 

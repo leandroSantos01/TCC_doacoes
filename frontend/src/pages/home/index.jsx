@@ -35,6 +35,7 @@ export default function App() {
 
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         let nomeUser = localStorage.getItem("USUARIO")
         if (nomeUser == undefined || nomeUser == null) {
             setLogado(false)
@@ -109,6 +110,7 @@ export default function App() {
 
                 <div className="carousel-container">
                     <h1>Para quem doar</h1>
+                    
                     <Swiper
                         modules={[Navigation]}
                         navigation
@@ -146,7 +148,7 @@ export default function App() {
                             <div className="slide">
                                 <img src={amigos} alt="Slide 3" />
                                 <h3>Amigos do bem</h3>
-                                <p>SO Amigos do Bem é uma ONG brasileira que combate a fome e a miséria no sertão nordestino por meio de projetos contínuos de educação, geração de renda e saúde. </p>
+                                <p>SO Amigos do Bem é uma ONG brasileira que combate a fome e a miséria no sertão nordestino por meio de projetos de educação, geração de renda e saúde. </p>
                             </div>
                         </SwiperSlide>
 
@@ -166,6 +168,9 @@ export default function App() {
                             </div>
                         </SwiperSlide>
                     </Swiper>
+                    <Link className="doar" to='/ongs' style={{ textDecoration: 'none', color: 'white'}}>
+                        <p className="doar">Ver todas &gt;</p>
+                    </Link>
                 </div>
 
 

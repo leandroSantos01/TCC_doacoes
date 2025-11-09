@@ -13,7 +13,9 @@ export default function Cadastro() {
     const navigate = useNavigate();
     const [check, setCheck] = useState(false)
 
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     const [formData, setFormData] = useState({
         email: '',

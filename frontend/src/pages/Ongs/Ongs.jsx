@@ -1,6 +1,5 @@
 import Cabecalho from "../../components/cabecalho/Cabecalho"
 import Rodape from "../../components/Rodape/Rodape"
-import OngListada from "../../components/ongListada/ongListada"
 
 import './ongs.scss'
 import '/src/scss/global.scss'
@@ -11,10 +10,10 @@ import { Toaster, toast } from "react-hot-toast"
 import { FaSearch } from "react-icons/fa";
 
 import api from "../../api"
-import axios from 'axios';
 
 import { useState, useEffect } from "react"
 import ModalOngs from "../../components/modalOng/Index"
+import OngListada from "../../components/ongListada/ongListada"
 
 import Cao from '/src/assets/images/cao.png'
 import Caramelo from '/src/assets/images/caramelo.png'
@@ -34,7 +33,21 @@ export default function Ongs() {
   const [user, setUser] = useState('');
   const [logado, setLogado] = useState(false);
 
+  const [ongs, setOngs] = useState([]);
+
+  async function listar() {
+    try {
+      const resp = await api.get('/listar/ongs');
+      setOngs(resp.data || []);
+    } catch (e) {
+      console.error('Erro ao listar ongs', e);
+      setOngs([]);
+    }
+  }
+
+
   useEffect(() => {
+    
     let nomeUser = localStorage.getItem("USUARIO")
 
     if (nomeUser == undefined || nomeUser == null) {
@@ -45,6 +58,8 @@ export default function Ongs() {
       setLogado(true)
       setUser(nomeUser)
     }
+
+    listar();
   })
 
   async function Cadastrar() {
@@ -111,13 +126,6 @@ export default function Ongs() {
     }
   }
 
-  async function buscarOng() {
-    let url = 'http://localhost:3010/listar/ongs';
-
-    let resp = await axios.get(url);
-    let dados = resp.data;
-  }
-
   return (
     <div>
       {logado ? null : null}
@@ -131,7 +139,7 @@ export default function Ongs() {
             <div className="pesquisa">
               <input type="text" placeholder="Digite o nome ou categoria " />
               <hr />
-              <button className="btn_pesquisa" onClick={buscarOng}><FaSearch /></button>
+              <button className="btn_pesquisa"><FaSearch /></button>
             </div>
 
             <button className="cadastrar_ong" onClick={() => { if (!logado) { toast.error('Você precisa estar logado!'); return; } setModalOngs(true); }}>Cadastrar Ongs</button>
@@ -146,7 +154,7 @@ export default function Ongs() {
                 imagem={Cao}
                 nome="Cão sem dono"
                 endereço="Rua Vitor Emanuel, 200, Sacomã, SP"
-                numero="(11) 95471-2195"
+                contato="(11) 95471-2195"
               />
               </Link>
               <Link to='/criancaEsperanca' style={{ textDecoration: 'none', color: 'black' }}>
@@ -167,7 +175,7 @@ export default function Ongs() {
                 imagem={Amigos}
                 nome="Amigos do bem"
                 endereço="Rua Dr. Gabriel de Resende, 122"
-                numero="(11) 3019-0107"
+                contato="(11) 3019-0107"
               />
               </Link>
               <Link to='/paraQuemDoar' style={{ textDecoration: 'none', color: 'black' }}>
@@ -176,9 +184,21 @@ export default function Ongs() {
                 nome="Para quem doar"
               />
               </Link>
-
+              {ongs.map((registros, id) => (
+                <Link
+                  key={id}
+                  to={`/ongs/${registros.nome}`}
+                  style={{ textDecoration: 'none', color: 'black' }}
+                >
+                  <OngListada
+                    imagem={'https://cdn.vectorstock.com/i/500p/33/47/no-photo-available-icon-vector-40343347.jpg'}
+                    nome={registros.nome}
+                    endereço={registros.endereco}
+                    contato={registros.contato}
+                  />
+                </Link>
+              ))}
               
-
             </ul>
 
           </div>

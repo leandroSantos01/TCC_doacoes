@@ -2,7 +2,7 @@ import Cabecalho from '../../components/cabecalho/Cabecalho'
 import CardsDev from '../../components/CardsDev/cards'
 import Rodape from '../../components/Rodape/Rodape'
 
-
+import { useEffect } from "react"
 
 import Git from '/src/assets/images/github.png'
 import Linkedin from '/src/assets/images/linkedin.png'
@@ -20,6 +20,11 @@ import Fabricio from '/src/assets/images/fabricio.jpg'
 
 
 export default function Dev() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <div>
             <Cabecalho />
@@ -31,7 +36,7 @@ export default function Dev() {
                     imagem={Leandro}
 
 
-                    nome={"Leandro Patricio Santos "}
+                    nome={"Leandro Patricio "}
                     desc={"Responsável pelo FrontEnd e Design do site."}
                     conteudo1={
                         <div>
@@ -92,7 +97,7 @@ export default function Dev() {
 
                 <CardsDev
                     imagem={Fabricio}
-                    nome={"Fabricio Colombo"}
+                    nome={"Fabricio Henry"}
                     desc={"Responsável pelo BackEnd e Responsividade do site."}
                     conteudo1={
 

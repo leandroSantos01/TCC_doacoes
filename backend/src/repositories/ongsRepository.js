@@ -28,6 +28,17 @@ export async function listarOngs() {
     return registros;
 }
 
+export async function buscaPorId(id) {
+    const comando = `
+          SELECT *
+            FROM ongs
+                WHERE id_ong = ?;
+    `
+
+    const [registros] = await connection.query(comando);
+    return registros;
+}
+
 export async function buscaPorCategoria(categoria) {
    const comando = `
         SELECT nome, endereco, categoria

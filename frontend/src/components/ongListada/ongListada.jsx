@@ -2,7 +2,7 @@ import './ongListada.scss';
 
 import Cao from '/src/assets/images/cao.png'
 
-export default function ongListada({imagem, nome, endereço, numero}) {
+export default function ongListada({imagem, nome, endereço, contato}) {
     return (
         <li className='lista'>
             <div className='card'>
@@ -12,7 +12,7 @@ export default function ongListada({imagem, nome, endereço, numero}) {
                 <div className='texto'>
                     <h2>{nome}</h2>
                     <p>{endereço}</p>
-                    <p>{numero}</p>
+                    <p>{contato}</p>
                 </div>
             </div>
         </li>

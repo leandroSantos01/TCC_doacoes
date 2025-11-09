@@ -15,6 +15,10 @@ import './login.scss';
 export default function Login() {
     const navigate = useNavigate()
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
 
     const [formData, setFormData] = useState({
         email: '',
