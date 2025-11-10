@@ -246,6 +246,11 @@ export default function Ongs() {
               <input type="text" placeholder='Endereço' value={endereco} onChange={e => setEndereco(e.target.value)} />
             </div>
 
+            <div>
+              <label>Imagem de exibição</label>
+              <input type="file" value={endereco} onChange={e => setEndereco(e.target.value)} />
+            </div>
+
           </div>
         }
         conteudo2={
