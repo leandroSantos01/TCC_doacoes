@@ -1,18 +1,17 @@
 import './ongListada.scss';
 
-import Cao from '/src/assets/images/cao.png'
 
-export default function ongListada({imagem, nome, endereço, contato}) {
+export default function ongListada({imagem, nome, endereço, contato, mensagem}) {
     return (
         <li className='lista'>
             <div className='card'>
-                <img src={imagem} style={{
-                    objectFit:"cover",width:'200px', height:"200px"}}/>
+                <img src={imagem}/>
 
                 <div className='texto'>
                     <h2>{nome}</h2>
                     <p>{endereço}</p>
                     <p>{contato}</p>
+                    <p style={{fontSize:"13px"}}>{mensagem}</p>
                 </div>
             </div>
         </li>

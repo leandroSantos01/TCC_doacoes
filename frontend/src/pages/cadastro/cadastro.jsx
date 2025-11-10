@@ -16,18 +16,14 @@ export default function Cadastro() {
     const [usuario, setUsuario] = useState("");
 
     useEffect(() => {
+        window.scrollTo(0, 0)
+        
         const usuarioLogado = localStorage.getItem("USUARIO");  
         if (usuarioLogado != null|| usuarioLogado != undefined) {
             setUsuario(usuarioLogado);
             navigate('/');
         }
     }, []);
-
-    
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
 
     const [formData, setFormData] = useState({
         email: '',

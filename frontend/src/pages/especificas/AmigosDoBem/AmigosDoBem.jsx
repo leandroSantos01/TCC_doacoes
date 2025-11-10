@@ -5,9 +5,16 @@ import "/src/scss/index_Ongs.scss";
 import "/src/scss/global.scss";
 import "/src/scss/fonts.scss";
 
+import { useEffect } from "react";
+
 import amigosdobem from "../../../assets/images/amigos.png";
 
 export default function AmigosDoBem() {
+
+  useEffect(() => {
+      window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div>
       <Cabecalho />

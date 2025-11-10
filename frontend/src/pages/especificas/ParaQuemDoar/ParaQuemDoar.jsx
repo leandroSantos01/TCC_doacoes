@@ -5,9 +5,16 @@ import "/src/scss/index_Ongs.scss";
 import "/src/scss/global.scss";
 import "/src/scss/fonts.scss";
 
+import { useEffect } from "react";
+
 import doar from "../../../assets/images/doar.png";
 
 export default function ParaQuemDoar() {
+
+  useEffect(() => {
+      window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div>
       <Cabecalho />

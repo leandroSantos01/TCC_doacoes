@@ -1,0 +1,31 @@
+DROP DATABASE IF EXISTS donnet_db;
+CREATE DATABASE donnet_db;
+USE donnet_db;
+
+CREATE TABLE login (
+    id_login             INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    email                VARCHAR(50) NOT NULL,
+    username             VARCHAR(50) NOT NULL,
+    senha                VARCHAR(50) NOT NULL,
+    dt_criacao           DATETIME
+);
+
+CREATE TABLE ongs (
+    id_ong              INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nome                VARCHAR(50),
+    email               VARCHAR(50),
+    endereco            VARCHAR(100),
+    cnpj                VARCHAR(14),
+    categoria           VARCHAR(50),
+    url_image           VARCHAR(400),
+    contato             VARCHAR(100),
+    cadastro_ativo      BOOLEAN,
+    dt_criacao          DATETIME
+);
+
+CREATE TABLE loginADM (
+    id_admin             INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    email                VARCHAR(50),
+    senha                VARCHAR(50)
+);
+

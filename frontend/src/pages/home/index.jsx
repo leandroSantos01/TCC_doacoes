@@ -15,18 +15,19 @@ import 'swiper/css/navigation';
 
 import Cabecalho from '../../components/cabecalho/Cabecalho.jsx'
 import Rodape from '../../components/Rodape/Rodape.jsx'
-import ongListada from '../../components/ongListada/ongListada.jsx'
+import OngListada from '../../components/ongListada/ongListada.jsx'
 
 
 
-import informacao from '/src/assets/images/imageInfo.png'
-import cao from '/src/assets/images/cao.png'
-import doar from '/src/assets/images/doar.png'
-import caramelo from '/src/assets/images/caramelo.png'
-import crianca from '/src/assets/images/crianca.png'
-import amigos from '/src/assets/images/amigos.png'
+import Informacao from '/src/assets/images/imageInfo.png'
+import Cao from '/src/assets/images/cao.png'
+import Doar from '/src/assets/images/doar.png'
+import Caramelo from '/src/assets/images/caramelo.png'
+import Crianca from '/src/assets/images/crianca.png'
+import Amigos from '/src/assets/images/amigos.png'
 import { useEffect, useState } from 'react'
 import { FaBullseye, FaEye, FaLeaf } from 'react-icons/fa'
+import Ongs from '../Ongs/Ongs.jsx'
 
 export default function App() {
 
@@ -95,7 +96,7 @@ export default function App() {
                         </div>
 
                         <div className="container_img">
-                            <img src={informacao} alt="Informação" />
+                            <img src={Informacao} alt="Informação" />
                         </div>
 
                     </div>
@@ -109,66 +110,108 @@ export default function App() {
 
 
                 <div className="carousel-container">
-                    <h1>Para quem doar</h1>
+                    <h1 style={{textShadow:" -1px 1px 1px rgb(129, 129, 224)"}}>Para quem doar</h1>
                     
                     <Swiper
                         modules={[Navigation]}
                         navigation
-                        spaceBetween={-20}
-                        slidesPerView={3.8}
                         loop
                         breakpoints={{
-                            1024: { slidesPerView: 3.6 },
-                            768: { slidesPerView: 2 },
-                            300: { slidesPerView: 1 },
-                            480: { slidesPerView: 1 },
-                            800: { slidesPerView: 2 },
+                            2040: { slidesPerView: 5, spaceBetween: 20 },
+                            1280: { slidesPerView: 4, spaceBetween: 20 },
+                            940: { slidesPerView: 3, spaceBetween: 20 },
+                            740: { slidesPerView: 2, spaceBetween: 20 },
+                            1: { slidesPerView: 1, spaceBetween: 2000 },
                         }}
 
                     >
                         <SwiperSlide>
-                            <div className="slide">
+                            {/* <div className="slide">
                                 <img src={cao} alt="Slide 1" />
                                 <h3>Cão sem dono</h3>
                                 <p>Criada com o incentivo de tirar o maximo de animais das ruas</p>
+                            </div> */}
+                            <div className='slide'>
+                                <Link to='/caosemdono' style={{ textDecoration: 'none', color: 'black' }}>
+                                <OngListada
+                                imagem={Cao}
+                                nome="Cão sem dono"
+                                mensagem="Criada com o incentivo de tirar o maximo de animais das ruas."
+                                />
+                                </Link>
                             </div>
                         </SwiperSlide>
 
                         <SwiperSlide>
-                            <div className="slide">
+                            {/* <div className="slide">
                                 <img src={caramelo} alt="Slide 2" />
                                 <h3>Instituto Caramelo</h3>
                                 <p>Instituto Caramelo: ONG brasileira que resgata, trata e disponibiliza animais em situação de risco para adoção.
-
                                 </p>
+                            </div> */}
+                            <div className='slide'>
+                                <Link to='/institutoCaramelo' style={{ textDecoration: 'none', color: 'black' }}>
+                                <OngListada
+                                imagem={Caramelo}
+                                nome="Instituto Caramelo"
+                                mensagem="Instituto Caramelo: ONG brasileira que resgata, trata e disponibiliza animais em situação de risco para adoção."
+                                />
+                                </Link>
                             </div>
                         </SwiperSlide>
 
                         <SwiperSlide>
-                            <div className="slide">
-                                <img src={amigos} alt="Slide 3" />
+                            {/* <div className="slide">
+                                <img src={Amigos} alt="Slide 3" />
                                 <h3>Amigos do bem</h3>
                                 <p>SO Amigos do Bem é uma ONG brasileira que combate a fome e a miséria no sertão nordestino por meio de projetos de educação, geração de renda e saúde. </p>
+                            </div> */}
+                            <div className='slide'>
+                                <Link to='/amigosDoBem' style={{ textDecoration: 'none', color: 'black' }}>
+                                <OngListada
+                                imagem={Amigos}
+                                nome="Amigos do bem"
+                                mensagem="SO Amigos do Bem é uma ONG brasileira que combate a fome e a miséria no sertão nordestino por meio de projetos de educação, geração de renda e saúde."
+                                />
+                                </Link>
                             </div>
                         </SwiperSlide>
 
                         <SwiperSlide>
-                            <div className="slide">
-                                <img src={doar} alt="Slide 4" />
+                            {/* <div className="slide">
+                                <img src={Doar} alt="Slide 4" />
                                 <h3>Para quem doar</h3>
                                 <p>é uma plataforma que conecta doadores a diversas iniciativas checadas</p>
+                            </div> */}
+                            <div className='slide'>
+                                <Link to='/paraQuemDoar' style={{ textDecoration: 'none', color: 'black' }}>
+                                <OngListada
+                                imagem={Doar}
+                                nome="Para quem doar"
+                                mensagem="é uma plataforma que conecta doadores a diversas iniciativas checadasé uma plataforma que conecta doadores a diversas iniciativas checadas."
+                                />
+                                </Link>
                             </div>
                         </SwiperSlide>
 
                         <SwiperSlide>
-                            <div className="slide">
-                                <img src={crianca} alt="Slide 5" />
+                            {/* <div className="slide">
+                                <img src={Crianca} alt="Slide 5" />
                                 <h3>Crianca Esperança</h3>
                                 <p>Criada em 1986 para mobilizar o público em prol dos direitos da criança e do adolescente</p>
+                            </div> */}
+                            <div className='slide'>
+                                <Link to='/criancaEsperanca' style={{ textDecoration: 'none', color: 'black' }}>
+                                <OngListada
+                                imagem={Crianca}
+                                nome="Crianca Esperança"
+                                mensagem="Criada em 1986 para mobilizar o público em prol dos direitos da criança e do adolescente"
+                                />
+                                </Link>
                             </div>
                         </SwiperSlide>
                     </Swiper>
-                    <Link className="doar" to='/ongs' style={{ textDecoration: 'none', color: 'white'}}>
+                    <Link className="doar" to='/ongs' style={{ textDecoration: 'none', color: 'white', fontWeight:"bold", textShadow:" -1px 1px 1px rgb(129, 129, 224)"}}>
                         <p className="doar">Ver todas &gt;</p>
                     </Link>
                 </div>
