@@ -65,10 +65,6 @@ export default function Ongs() {
     }
   }
 
- useEffect(() => {
-  listar();
-}, []);
-
 
   useEffect(() => {
     
@@ -118,18 +114,13 @@ export default function Ongs() {
       return;
     }
 
-    if (cnpj.length <= 1) {
+    if (cnpj.length != 14) {
       toast.error('CNPJ inválido!');
       return;
     }
 
     if (categoria.length <= 1) {
       toast.error('Categoria inválida!');
-      return;
-    }
-
-    if (categoria.length <= 1) {
-      toast.error('Contato inválida!');
       return;
     }
 

@@ -38,8 +38,8 @@ export default function Rodape() {
             <div className="inicio">
               <h2>Início</h2>
 
-                 <Link to={"/"} > <a>Home</a></Link>
-              <Link to={"/cadastro"}><a>Cadastro</a></Link>
+                 <Link to={"/"}>Home</Link>
+              <Link to={"/cadastro"}>Cadastro</Link>
           
             </div>
             
@@ -47,7 +47,7 @@ export default function Rodape() {
             <div className="sobre">
               <h2>Sobre Nós</h2>
 
-              <Link to={"/desenvolvedores"}><a>Quem Somos</a></Link>
+              <Link to={"/desenvolvedores"}>Quem Somos</Link>
             </div>
 
             <div className="contatos">

@@ -5,9 +5,16 @@ import "/src/scss/index_Ongs.scss";
 import "/src/scss/global.scss";
 import "/src/scss/fonts.scss";
 
+import { useEffect } from "react";
+
 import cao from "../../../assets/images/cao.png";
 
 export default function CaoSemDono() {
+
+  useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
   return (
     <div>
       <Cabecalho />
