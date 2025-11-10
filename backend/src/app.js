@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { adicionarRotas } from './rotas.js';
 import express from 'express';
 import cors from 'cors';
@@ -7,5 +8,6 @@ api.use(express.json());
 api.use(cors());
 
 adicionarRotas(api);
+const porta = process.env.PORTA;
 
-api.listen(3010, () => console.log('A api subiu na porta 3010!'));
+api.listen(porta, () => console.log('A api subiu na porta '+ porta));
