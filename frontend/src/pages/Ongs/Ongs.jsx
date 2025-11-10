@@ -11,7 +11,7 @@ import { FaSearch } from "react-icons/fa";
 
 import api from "../../api"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, use } from "react"
 import ModalOngs from "../../components/modalOng/Index"
 import OngListada from "../../components/ongListada/ongListada"
 import Cao from '/src/assets/images/cao.png'
@@ -41,9 +41,11 @@ export default function Ongs() {
    async function acharCate() {
 
   try {
-    const resp = await api.get(`/listar/ongs/nome /${pesquisa}`);
-    setOngs(resp.data);
+    const resp = await api.get(`/listar/ongs/categoria/${pesquisa}`);
     console.log(resp.data);
+    setOngs(resp.data);
+
+
     
 
   } catch (error) {
@@ -79,8 +81,13 @@ export default function Ongs() {
       setUser(nomeUser)
     }
 
-    listar();
+
   })
+
+
+  useEffect(() => {
+    listar();
+  }, []);
 
   async function Cadastrar() {
 
