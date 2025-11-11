@@ -189,7 +189,7 @@ export default function Ongs() {
               <OngListada
                 imagem={Caramelo}
                 nome="Instituto Caramelo"
-                endereço="Email para adotar: queroadotar@icaramelo.org"
+                contato="Email para adotar: queroadotar@icaramelo.org"
               />
               </Link>
               <Link to='/amigosDoBem' style={{ textDecoration: 'none', color: 'black' }}>
@@ -217,6 +217,7 @@ export default function Ongs() {
                     nome={registros.nome}
                     endereço={registros.endereco}
                     contato={registros.contato}
+                    descricao={registros.descricao}
                   />
                 </Link>
               ))}
