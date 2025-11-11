@@ -12,6 +12,10 @@ import CriancaEsperanca from './pages/especificas/CriancaEsperanca/CriancaEspera
 import InstitutoCaramelo from './pages/especificas/InstitutoCaramelo/InstitutoCaramelo.jsx'
 import ParaQuemDoar from './pages/especificas/ParaQuemDoar/ParaQuemDoar.jsx'
 
+
+import LoginDevs from './pages/LoginDevs/index.jsx'
+
+
 export default function Navegacao(){
     return(
         <BrowserRouter>
@@ -28,6 +32,9 @@ export default function Navegacao(){
             <Route path='/criancaEsperanca' element={<CriancaEsperanca/>}/>
             <Route path='/institutoCaramelo' element={<InstitutoCaramelo/>}/>
             <Route path='/paraQuemDoar' element={<ParaQuemDoar/>}/>
+
+
+            <Route path='/LoginDev' element={<LoginDevs/>}/>
             
         </Routes>
         </BrowserRouter>

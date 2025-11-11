@@ -46,6 +46,8 @@ export default function Cadastro() {
                 return
             }
 
+            
+
             if (formData.email.length <= 1) {
                 toast.error('Email inválido')
                 return
