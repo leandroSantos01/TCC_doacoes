@@ -1,6 +1,8 @@
 import './index.scss'
 import Cabecalho from '../../components/cabecalho/Cabecalho.jsx'
 import Boneco from '../../assets/images/boneco.png'
+import Rodape from '../../components/Rodape/Rodape.jsx'
+
 export default function LoginDevs(){
 
 return(
@@ -34,6 +36,8 @@ return(
 
 
 </div>
+
+<Rodape/>
 
 </div>
 )
