@@ -35,10 +35,10 @@ export default function Ongs() {
 
   const [ongs, setOngs] = useState([]);
   
+  const [paginaAtual, setPaginaAtual] = useState(1);
+  const [postPorPagina, setPostPorPagina] = useState(8);
 
-
-
-   async function acharCate() {
+  async function acharCate() {
 
   try {
     const resp = await api.get(`/listar/ongs/categoria/${pesquisa}`);
@@ -132,21 +132,25 @@ export default function Ongs() {
     }
 
     try {
-      await api.post("/cadastro/ong", body)
-      toast.success('Ong criada com sucesso.')
+      await api.post("/cadastro/ong", body);
+      toast.success('Ong criada com sucesso.');
       setNome("");
       setEmail("");
       setEndereco("");
       setCnpj("");
       setCategoria("");
       setContato("");
-      setModalOngs(false)
+      setModalOngs(false);
     }
 
     catch (e) {
       toast.error(e.response?.data?.error || 'Erro ao cadastrar ong ');
     }
   }
+
+  const lastPostIndex = paginaAtual * postPorPagina;
+  const firstPostIndex = lastPostIndex - postPorPagina;
+  const currentPosts = ongs.slice(firstPostIndex, lastPostIndex);
 
   return (
     <div>
@@ -256,7 +260,7 @@ export default function Ongs() {
 
             <div>
               <label>Imagem de exibição</label>
-              <input type="file" value={endereco} onChange={e => setEndereco(e.target.value)} />
+              <input type="file" value={''} onChange={''} />
             </div>
 
           </div>

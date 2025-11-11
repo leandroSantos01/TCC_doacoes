@@ -13,9 +13,10 @@ export async function cadastrarOng(novoCadastro) {
         novoCadastro.endereco,
         novoCadastro.cnpj,
         novoCadastro.categoria,
-        novoCadastro.contato
+        novoCadastro.contato,
+        novoCadastro.descricao
     ]);
-    return info.insertId;  
+    return info.insertId;
 }
 
 export async function listarOngs() {
