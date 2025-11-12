@@ -22,13 +22,17 @@ import Crianca from '/src/assets/images/crianca.png'
 import { Link } from "react-router"
 
 export default function Ongs() {
+  listar();
   const [modalOngs, setModalOngs] = useState(false)
+  
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [endereco, setEndereco] = useState("");
   const [cnpj, setCnpj] = useState("");
   const [categoria, setCategoria] = useState("");
   const [contato, setContato] = useState("");
+  const [arquivoSelecionado, setArquivoSelecionado] = useState(null);
+
   const [user, setUser] = useState('');
   const [logado, setLogado] = useState(false);
   const [pesquisa, setPesquisa] = useState('');
@@ -39,20 +43,20 @@ export default function Ongs() {
   const [postPorPagina, setPostPorPagina] = useState(8);
 
   async function acharCate() {
-
-  try {
-    const resp = await api.get(`/listar/ongs/categoria/${pesquisa}`);
-    console.log(resp.data);
-    setOngs(resp.data);
-
-
     
+    try {
+      const resp = await api.get(`/listar/ongs/categoria/${pesquisa}`);
+      console.log(resp.data);
+      setOngs(resp.data);
 
-  } catch (error) {
-    console.error(error);
- 
+
+      
+
+    } catch (error) {
+      console.error(error);
+  
+    }
   }
-}
 
 
   
@@ -81,13 +85,9 @@ export default function Ongs() {
       setUser(nomeUser)
     }
 
+    
 
   })
-
-
-  useEffect(() => {
-    listar();
-  }, []);
 
   async function Cadastrar() {
 
@@ -132,7 +132,17 @@ export default function Ongs() {
     }
 
     try {
-      await api.post("/cadastro/ong", body);
+      const resp = await api.post("/cadastro/ong", body);
+      const novoId = resp.data?.novoId;
+
+      if (novoId && arquivoSelecionado) {
+        const form = new FormData();
+        form.append('file', arquivoSelecionado);
+        await api.put(`/upload/${novoId}/image`, form, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        });
+      }
+
       toast.success('Ong criada com sucesso.');
       setNome("");
       setEmail("");
@@ -141,6 +151,9 @@ export default function Ongs() {
       setCategoria("");
       setContato("");
       setModalOngs(false);
+      setArquivoSelecionado(null);
+
+      listar();
     }
 
     catch (e) {
@@ -175,56 +188,36 @@ export default function Ongs() {
           <div className="ongs">
 
             <ul>
-              <Link to='/caosemdono' style={{ textDecoration: 'none', color: 'black' }}>
-              <OngListada
-                imagem={Cao}
-                nome="Cão sem dono"
-                endereço="Rua Vitor Emanuel, 200, Sacomã, SP"
-                contato="(11) 95471-2195"
-              />
-              </Link>
-              <Link to='/criancaEsperanca' style={{ textDecoration: 'none', color: 'black' }}>
-              <OngListada
-                imagem={Crianca}
-                nome="Crianca Esperança"
-              />
-              </Link>
-              <Link to='/institutoCaramelo' style={{ textDecoration: 'none', color: 'black' }}>
-              <OngListada
-                imagem={Caramelo}
-                nome="Instituto Caramelo"
-                contato="Email para adotar: queroadotar@icaramelo.org"
-              />
-              </Link>
-              <Link to='/amigosDoBem' style={{ textDecoration: 'none', color: 'black' }}>
-              <OngListada
-                imagem={Amigos}
-                nome="Amigos do bem"
-                endereço="Rua Dr. Gabriel de Resende, 122"
-                contato="(11) 3019-0107"
-              />
-              </Link>
-              <Link to='/paraQuemDoar' style={{ textDecoration: 'none', color: 'black' }}>
-              <OngListada
-                imagem={Doar}
-                nome="Para quem doar"
-              />
-              </Link>
-              {ongs.map((registros, id) => (
-                <Link
-                  key={id}
-                  to={`/ongs/${registros.nome}`}
-                  style={{ textDecoration: 'none', color: 'black' }}
-                >
-                  <OngListada
-                    imagem={'https://cdn.vectorstock.com/i/500p/33/47/no-photo-available-icon-vector-40343347.jpg'}
-                    nome={registros.nome}
-                    endereço={registros.endereco}
-                    contato={registros.contato}
-                    descricao={registros.descricao}
-                  />
-                </Link>
-              ))}
+              
+              {ongs.map((registros, id) => {
+                const fallback = 'https://cdn.vectorstock.com/i/500p/33/47/no-photo-available-icon-vector-40343347.jpg';
+                let imageUrl = fallback;
+
+                if (registros.url_image) {
+                  if (/^https?:\/\//.test(registros.url_image)) {
+                    imageUrl = registros.url_image;
+                  } else {
+                    const apiBase = (api && api.defaults && api.defaults.baseURL) ? api.defaults.baseURL.replace(/\/$/, '') : window.location.origin;
+                    imageUrl = `${apiBase}${registros.url_image}`;
+                  }
+                }
+
+                return (
+                  <Link
+                    key={id}
+                    to={`/ongs/${registros.nome}`}
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
+                    <OngListada
+                      imagem={imageUrl}
+                      nome={registros.nome}
+                      endereço={registros.endereco}
+                      contato={registros.contato}
+                      descricao={registros.descricao}
+                    />
+                  </Link>
+                )
+              })}
               
             </ul>
 
@@ -260,7 +253,7 @@ export default function Ongs() {
 
             <div>
               <label>Imagem de exibição</label>
-              <input type="file" value={''} onChange={''} />
+              <input type="file" accept="image/*" onChange={e => setArquivoSelecionado(e.target.files?.[0] ?? null)}/>
             </div>
 
           </div>

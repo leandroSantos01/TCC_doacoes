@@ -3,7 +3,19 @@ import { getAuthentication } from '../utils/jwt.js';
 const autenticador = getAuthentication();
 
 import multer from 'multer';
-const upload = multer({ dest: 'public/storage '});
+import path from 'path';
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(process.cwd(), 'public', 'storage'));
+  },
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname) || '';
+    const unique = `${Date.now()}-${Math.round(Math.random() * 1e9)}${ext}`;
+    cb(null, unique);
+  }
+});
+
+const upload = multer({ storage });
 
 import { Router } from 'express';
 const endpoints = Router();
@@ -57,12 +69,16 @@ endpoints.get('/listar/ongs/cnpj', async (req, resp) => {
 
 
 endpoints.put('/upload/:id/image', autenticador,upload.single('file'), async (req, resp) =>{
-    let caminho = req.file.path;
-
-    let id = req.params.id;
-
-    await repo.alterarImagem(caminho, id);
-    resp.send();
+    try {
+    const id = req.params.id;
+    if (!req.file) return resp.status(400).send({ error: 'Arquivo não enviado' });
+    const urlPath = `/storage/${req.file.filename}`;
+    await repo.alterarImagem(urlPath, id);
+    return resp.send({ url: urlPath });
+  } catch (e) {
+    console.error(e);
+    return resp.status(500).send({ error: 'Erro ao salvar imagem' });
+  }
 })
 
 

@@ -21,7 +21,7 @@ export async function cadastrarOng(novoCadastro) {
 
 export async function listarOngs() {
     const comando = `
-          SELECT nome, endereco, contato, descricao
+          SELECT id_ong, nome, endereco, contato, descricao, url_image
             FROM ongs; 
     `
 
@@ -81,5 +81,6 @@ export async function alterarImagem(caminho, id) {
         WHERE id_ong = ?
   `
 
-    const [info] = await connection.query(comando, [caminho, id])
+    const [info] = await connection.query(comando, [caminho, id]);
+    return info;
 }
