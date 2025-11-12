@@ -3,7 +3,7 @@ import Rodape from '../../components/Rodape/Rodape'
 
 import { Link } from 'react-router'
 
-import './PagAdm.scss'
+import './pagAdm.scss'
 import '/src/scss/global.scss'
 import '/src/scss/fonts.scss'
 
@@ -15,11 +15,6 @@ import { useState } from 'react'
 
 
 export default function PagAdm() {
-
-
-
-
-
 
 
     return (

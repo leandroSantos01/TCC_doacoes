@@ -6,7 +6,7 @@ import '/src/scss/global.scss'
 import '/src/scss/fonts.scss'
 
 import { Toaster, toast } from "react-hot-toast"
-
+import axios from "axios"
 import { FaSearch } from "react-icons/fa";
 
 import api from "../../api"
@@ -14,10 +14,10 @@ import api from "../../api"
 import { useState, useEffect, use } from "react"
 import ModalOngs from "../../components/modalOng/Index"
 import OngListada from "../../components/ongListada/ongListada"
-import { Link } from "react-router"
+import { Link, unstable_setDevServerHooks } from "react-router"
 
 export default function Ongs() {
-  listar();
+  
   const [modalOngs, setModalOngs] = useState(false)
   
   const [nome, setNome] = useState("");
@@ -26,39 +26,33 @@ export default function Ongs() {
   const [cnpj, setCnpj] = useState("");
   const [categoria, setCategoria] = useState("");
   const [contato, setContato] = useState("");
+  const [descricao, setDescricao] = useState("");
+
   const [arquivoSelecionado, setArquivoSelecionado] = useState(null);
 
   const [user, setUser] = useState('');
   const [logado, setLogado] = useState(false);
-  const [pesquisa, setPesquisa] = useState('');
 
   const [ongs, setOngs] = useState([]);
-  
+  const [buscarOngs, setBuscarOngs] = useState('');
+
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [postPorPagina, setPostPorPagina] = useState(8);
 
-  async function acharCategoria() {
+  // async function acharCategoria() {
     
-    try {
-      const resp = await api.get(`/listar/ongs/categoria/${pesquisa}`);
-      console.log(resp.data);
-      setOngs(resp.data);
-    } 
-    catch (error) {
-      console.error(error);
+  //   try {
+  //     const resp = await api.get(`/listar/ongs/categoria/${pesquisa}`);
+  //     console.log(resp.data);
+  //     setOngs(resp.data);
+  //   } 
+  //   catch (error) {
+  //     console.error(error);
   
-    }
-  }
+  //   }
+  // }
 
-  async function listar() {
-    try {
-      const resp = await api.get('/listar/ongs');
-      setOngs(resp.data);
-    } catch (e) {
-      console.error('Erro ao listar ongs', e);
-      setOngs([]);
-    }
-  }
+  
 
   useEffect(() => {
     
@@ -73,7 +67,17 @@ export default function Ongs() {
       setUser(nomeUser)
     } 
 
-  })
+    async function listar() {
+      try {
+        const resp = await api.get('/listar/ongs');
+        setOngs(resp.data);
+      } catch (e) {
+        console.error('Erro ao listar ongs', e);
+        setOngs([]);
+      }
+    }
+    listar();
+  }, []);
 
   async function Cadastrar() {
 
@@ -83,7 +87,8 @@ export default function Ongs() {
       endereco,
       cnpj,
       categoria,
-      contato
+      contato,
+      descricao
     };
 
     if (nome.length <= 1 && email.length <= 1 && endereco.length <= 1 && cnpj.length <= 1 && categoria.length <= 1) {
@@ -116,6 +121,11 @@ export default function Ongs() {
       return;
     }
 
+    if (descricao.length > 200) {
+      toast.error('Descrição muito grande!');
+      return;
+    }
+
     try {
       const resp = await api.post("/cadastro/ong", body);
       const novoId = resp.data?.novoId;
@@ -135,6 +145,7 @@ export default function Ongs() {
       setCnpj("");
       setCategoria("");
       setContato("");
+      setDescricao("");
       setModalOngs(false);
       setArquivoSelecionado(null);
 
@@ -144,6 +155,14 @@ export default function Ongs() {
     catch (e) {
       toast.error(e.response?.data?.error || 'Erro ao cadastrar ong ');
     }
+  }
+
+  async function pesquisarOng() {
+    let url = 'http://localhost:3010/listar/ongs';
+
+    let resp = await axios.get(url);
+    let ongsEncontradas = resp.data;
+    setOngs(ongsEncontradas);
   }
 
   const lastPostIndex = paginaAtual * postPorPagina;
@@ -161,9 +180,9 @@ export default function Ongs() {
 
           <div className="btn">
             <div className="pesquisa">
-              <input type="text" placeholder="Digite o nome ou categoria " value={pesquisa} onChange={e=>setPesquisa(e.target.value)} />
+              <input type="text" placeholder="Digite o nome ou categoria " value={buscarOngs} onChange={e=>setBuscarOngs(e.target.value)} />
               <hr />
-              <button onClick={acharCategoria} className="btn_pesquisa"><FaSearch /></button>
+              <button onClick={pesquisarOng} className="btn_pesquisa"><FaSearch /></button>
             </div>
 
             <button className="cadastrar_ong" onClick={() => { if (!logado) { toast.error('Você precisa estar logado!'); return; } setModalOngs(true); }}>Cadastrar Ongs</button>
@@ -266,6 +285,11 @@ export default function Ongs() {
                 <option>Saúde</option>
                 <option>Causa animal</option>
               </select>
+            </div>
+
+            <div>
+              <label>Breve descrição sobre a ONG:</label>
+              <input type="text" placeholder='Descrição' value={descricao} onChange={e => setDescricao(e.target.value)} />
             </div>
 
           </div>
