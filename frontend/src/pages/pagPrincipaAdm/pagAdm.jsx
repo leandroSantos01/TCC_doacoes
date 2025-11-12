@@ -33,11 +33,11 @@ export default function PagAdm() {
 
                     <div>
 
-                        <Link><GrOrganization /> Ongs Cadastradas</Link>
+                        <Link to={'/orgsDev'}><GrOrganization /> Ongs Cadastradas</Link>
 
 
 
-                        <Link><FaUser/> Usuarios Logados</Link>
+                        <Link to={'/usersDev'}><FaUser/> Usuarios Logados</Link>
                     </div>
 
                 </section>

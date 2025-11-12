@@ -6,7 +6,7 @@ import { Link, Navigate } from 'react-router'
 import { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router'
 
-import './orgsAdm.scss'
+import './usersAdm.scss'
 import '/src/scss/global.scss'
 import '/src/scss/fonts.scss'
 import api from '../../api'
@@ -16,35 +16,16 @@ import api from '../../api'
 
 
 
-export default function OrgsAdmin(){
-    const navigate = useNavigate()
-    const [lista,setLista] = useState([])
-
-
-   
-
-
-
-    async function ListarOngs() {
-        try{
-        let resp = await api.get('/listar/ongs')
-        setLista(resp.data)}
-        catch(err){
-            console.log(err);
-            
-        }
-        
-    }
-
+export default function UsersAdmin(){
 
 
     return(
         <div>
             <Cabecalho/>
 
-            <main className="Orgs_admin">
+            <main className="users_admin">
 
-                    <div className="central_aprovar">
+                    <div className="central_users">
                         
 
 

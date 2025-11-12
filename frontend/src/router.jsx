@@ -18,6 +18,10 @@ import PagAdm from './pages/pagPrincipaAdm/pagAdm.jsx'
 import OrgsAdmin from './pages/OrgsAdm/orgsAdm.jsx'
 
 
+import NaoPagina from './pages/pagNaoEncontrada/pagNaoEncontrada.jsx'
+import UsersAdmin from './pages/usersAdm/userAdm.jsx'
+
+
 export default function Navegacao(){
     return(
         <BrowserRouter>
@@ -39,6 +43,10 @@ export default function Navegacao(){
             <Route path='/LoginDev' element={<LoginDevs/>}/>
             <Route path='/pageDev' element={<PagAdm/>}/>
             <Route path='/orgsDev' element={<OrgsAdmin/>}/>
+            <Route path='/usersDev' element={<UsersAdmin/>}/>
+
+            <Route path='*' element={<NaoPagina/>}/>
+
             
 
 
