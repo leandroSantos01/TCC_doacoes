@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react';
 
 
 export default function Rodape() {
-    const [user, setUser] = useState('');
+  const [user, setUser] = useState('');
   const [logado, setLogado] = useState(false);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Rodape() {
 
   return (
     <>
-{logado ? null : null}
+      {logado ? null : null}
 
       <footer >
         <div className="rodape">
@@ -38,17 +38,18 @@ export default function Rodape() {
             <div className="inicio">
               <h2>Início</h2>
 
-                 <Link to={"/"}>Home</Link>
+              <Link to={"/"}>Home</Link>
               <Link to={"/cadastro"}>Cadastro</Link>
-          
+
             </div>
             <hr />
-            
+
 
             <div className="sobre">
               <h2>Sobre Nós</h2>
 
               <Link to={"/desenvolvedores"}>Quem Somos</Link>
+              <Link to={'/loginDev'}>Area Admin</Link>
             </div>
             <hr />
             <div className="contatos">

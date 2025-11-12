@@ -39,22 +39,22 @@ endpoints.post('/login', async (req, resp) => {
 });
 
 endpoints.post('/login/administrador', async (req, resp) => {
-    let email = req.body.email;
-    let senha = req.body.senha;                                                          
+    let admin = req.body                                                          
 
-    let credenciais = await repo.consultarCredenciaisADM(email, senha);
+    let credenciais = await repo.consultarCredenciaisADM(admin);
 
     if (!credenciais) {
         resp.status(401).send({
             erro: 'Credenciais inválidas!'
         });
     }
-    else {
+ 
         resp.send({
+            admin:admin.email,
             token: generateToken(credenciais)
         });
-    }
-})
+    
+})  
 
 
 endpoints.delete('/excluir/login/:id', autenticador, async (req, resp) => {

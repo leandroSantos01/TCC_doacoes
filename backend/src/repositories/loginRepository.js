@@ -36,7 +36,7 @@ export async function listarUsuarios() {
    return [ registros ];  
 }
 
-export async function consultarCredenciaisADM(email, senha) {
+export async function consultarCredenciaisADM(admin) {
     const comando = `
         SELECT id_admin, email
             FROM loginADM
@@ -44,7 +44,7 @@ export async function consultarCredenciaisADM(email, senha) {
             AND senha = MD5(?)
     `;
 
-    const [registros] = await connection.query(comando, [email, senha]);
+    const [registros] = await connection.query(comando, [admin.email, admin.senha]);
     return registros[0];    
 }
 

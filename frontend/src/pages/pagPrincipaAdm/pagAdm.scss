@@ -1,0 +1,64 @@
+.pag_devsInicio{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    height: 900px;
+    
+
+    .area_Devs{
+        width: 90%;
+        max-width: 1500px;
+        height: 500px;
+        border-radius: 20px;
+        background-image: url('../../assets/images/CordeFundo.jpg');
+        background-size: cover;
+        display: flex;
+        background-repeat: no-repeat;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #B2EBF2;
+        gap: 150px;
+        
+    }
+
+    h1{
+        font-size: 70px;
+        
+        background-clip: text;
+        color: white;
+    }
+
+    & div{
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+
+        a {
+            text-decoration: none;
+            color: #111111;
+            padding: 15px 30px;
+            border-radius: 20px;
+            font-weight: bolder;
+            transition: all 0.5s;
+            font-size: 15px;
+
+            background: transparent;
+
+            color: #4A90E2;
+            background: #ffffff;
+            color: rgb(20, 20, 20);
+    
+    
+          }
+    
+          a:hover {
+            background: #4A90E2;
+            color: white;
+            transform: scale(1.1);
+          }
+    }
+
+
+}

@@ -14,6 +14,8 @@ import ParaQuemDoar from './pages/especificas/ParaQuemDoar/ParaQuemDoar.jsx'
 
 
 import LoginDevs from './pages/LoginDevs/index.jsx'
+import PagAdm from './pages/pagPrincipaAdm/pagAdm.jsx'
+import OrgsAdmin from './pages/OrgsAdm/orgsAdm.jsx'
 
 
 export default function Navegacao(){
@@ -35,6 +37,12 @@ export default function Navegacao(){
 
 
             <Route path='/LoginDev' element={<LoginDevs/>}/>
+            <Route path='/pageDev' element={<PagAdm/>}/>
+            <Route path='/orgsDev' element={<OrgsAdmin/>}/>
+            
+
+
+
             
         </Routes>
         </BrowserRouter>
