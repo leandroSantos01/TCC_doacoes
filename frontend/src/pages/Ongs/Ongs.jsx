@@ -14,11 +14,6 @@ import api from "../../api"
 import { useState, useEffect, use } from "react"
 import ModalOngs from "../../components/modalOng/Index"
 import OngListada from "../../components/ongListada/ongListada"
-import Cao from '/src/assets/images/cao.png'
-import Caramelo from '/src/assets/images/caramelo.png'
-import Amigos from '/src/assets/images/amigos.png'
-import Doar from '/src/assets/images/doar.png'
-import Crianca from '/src/assets/images/crianca.png'
 import { Link } from "react-router"
 
 export default function Ongs() {
@@ -42,24 +37,18 @@ export default function Ongs() {
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [postPorPagina, setPostPorPagina] = useState(8);
 
-  async function acharCate() {
+  async function acharCategoria() {
     
     try {
       const resp = await api.get(`/listar/ongs/categoria/${pesquisa}`);
       console.log(resp.data);
       setOngs(resp.data);
-
-
-      
-
-    } catch (error) {
+    } 
+    catch (error) {
       console.error(error);
   
     }
   }
-
-
-  
 
   async function listar() {
     try {
@@ -70,7 +59,6 @@ export default function Ongs() {
       setOngs([]);
     }
   }
-
 
   useEffect(() => {
     
@@ -83,9 +71,7 @@ export default function Ongs() {
     else {
       setLogado(true)
       setUser(nomeUser)
-    }
-
-    
+    } 
 
   })
 
@@ -99,7 +85,6 @@ export default function Ongs() {
       categoria,
       contato
     };
-
 
     if (nome.length <= 1 && email.length <= 1 && endereco.length <= 1 && cnpj.length <= 1 && categoria.length <= 1) {
       toast.error('Preencha todos os campos corretamente!');
@@ -178,7 +163,7 @@ export default function Ongs() {
             <div className="pesquisa">
               <input type="text" placeholder="Digite o nome ou categoria " value={pesquisa} onChange={e=>setPesquisa(e.target.value)} />
               <hr />
-              <button onClick={acharCate} className="btn_pesquisa"><FaSearch /></button>
+              <button onClick={acharCategoria} className="btn_pesquisa"><FaSearch /></button>
             </div>
 
             <button className="cadastrar_ong" onClick={() => { if (!logado) { toast.error('Você precisa estar logado!'); return; } setModalOngs(true); }}>Cadastrar Ongs</button>
