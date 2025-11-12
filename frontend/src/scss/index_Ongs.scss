@@ -11,10 +11,16 @@
     background-color: #d2ecfd;
     max-width: 1400px;
 
+    .img{
+      width: 100%;
+      display: flex;
+      justify-content: center;
     img {
+
+      height: 250px;
       border-radius: 20px;
       margin: 20px;
-    }
+    }}
 
 
     .parte-direita {
@@ -29,7 +35,7 @@
       font-size: 30px;
       font-weight: 700;
       margin-bottom: 2vh;
-
+      text-align: center;
     }
 
     .descricao {

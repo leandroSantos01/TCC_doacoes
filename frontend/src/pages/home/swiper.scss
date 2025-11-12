@@ -7,9 +7,9 @@ section {
 
     .carousel-container {
         width: 100%;
-        max-width: 1400px;
         height: 580px;
         margin: 80px auto;
+        max-width: 1900PX;
 
         overflow: hidden;
         padding: 40px 200px 0 200px;
@@ -18,9 +18,7 @@ section {
 
 
         h1 {
-            width: 100%;
-            display: flex;
-            justify-content: center;
+            text-align: center;
             margin-bottom: 20px;
             color: #ffffff;
         }
@@ -96,8 +94,7 @@ section {
     }
 
     .swiper-button-prev {
-        
-        left: 10px;
+    left: 10px;
     }
 
     .swiper-button-next {

@@ -25,6 +25,7 @@
     .container_central {
         width: 100%;
         background: linear-gradient(to top, #5AA6D8, #ffffff);
+        max-width: 1900px;
         height: 725px;
         display: flex;
         align-items: center;
@@ -48,7 +49,8 @@
 
 
         .container_infromacao {
-            width: 50%;
+            width: 60%;
+
             height: 400px;
             display: flex;
             flex-direction: column;
@@ -58,8 +60,19 @@
             justify-content: center;
             gap: 100px;
 
-            h1 {
-                line-height: 1.5cm;
+            .text_princi{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: flex-start;
+
+
+
+                 h1 {
+                font-size: 23px;
+                padding-left: 6px;
+                
+            
 
             }
 
@@ -70,6 +83,9 @@
                 font-size: 100px;
 
             }
+            }
+
+           
 
             .Botoes_central {
                 width: 100%;
@@ -127,7 +143,7 @@
 
 
     .container_img {
-        width: 50%;
+        width: 40%;
         height: 400px;
         object-fit: cover;
         display: flex;
@@ -160,7 +176,7 @@
 
     .pag_sobre {
         width: 100%;
-        max-width: 1400px;
+        max-width: 1900px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -189,6 +205,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            text-align: justify;
             gap: 1.5rem;
 
 
@@ -196,7 +213,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                text-align: center;
+                text-align: justify;
                 width: 30%;
                 min-width: 280px;
                 border-radius: 20px;
@@ -207,7 +224,7 @@
                 line-height: 0.8cm;
 
                 p {
-                    text-align: center;
+                    text-align: justify;
                 }
 
 
@@ -219,6 +236,7 @@
                     color: #2a68d8;
                     font-size: 50px;
                     margin-bottom: 1rem;
+                    text-align: justify;
                 }
 
                 h3 {
@@ -230,6 +248,8 @@
                 ul {
                     list-style: none;
                     padding: 0;
+                    text-align: justify;
+                
 
                     li {
                         margin: 6px 0;

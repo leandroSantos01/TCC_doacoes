@@ -65,7 +65,10 @@ export default function App() {
                     <div>
 
                         <div className="container_infromacao">
-                            <h1> <span className='destaque'>DonNet</span> <br />     faça do mundo um lugar melhor</h1>
+                            <div className='text_princi'>
+                            <h2><span className='destaque'>DoNNet</span></h2>
+                            <h1>     faça do mundo um lugar melhor</h1>
+                            </div>
 
                             <div className="Botoes_central">
 
