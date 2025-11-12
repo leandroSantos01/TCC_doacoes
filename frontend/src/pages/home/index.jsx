@@ -54,17 +54,18 @@ export default function App() {
         <div>
 
             {logado ? null : null}
+             <Cabecalho />
 
 
             <main className='container_pagPrincipal'>
 
                 <div className="container_central">
-                    <Cabecalho />
+                   
 
                     <div>
 
                         <div className="container_infromacao">
-                            <h1> <span className='destaque'>DonNet</span> faça do mundo um lugar melhor</h1>
+                            <h1> <span className='destaque'>DonNet</span> <br />     faça do mundo um lugar melhor</h1>
 
                             <div className="Botoes_central">
 
@@ -117,8 +118,8 @@ export default function App() {
                         navigation
                         loop
                         breakpoints={{
-                            2040: { slidesPerView: 5, spaceBetween: 20 },
-                            1280: { slidesPerView: 4, spaceBetween: 20 },
+                            2040: { slidesPerView: 3, spaceBetween: 20 },
+                            1280: { slidesPerView: 3, spaceBetween: 20 },
                             940: { slidesPerView: 3, spaceBetween: 20 },
                             740: { slidesPerView: 2, spaceBetween: 20 },
                             1: { slidesPerView: 1, spaceBetween: 2000 },

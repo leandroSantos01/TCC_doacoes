@@ -6,9 +6,10 @@
 }
 
 .container_pagPrincipal {
-    padding: 10px 0;
+
     width: 100%;
     height: auto;
+    display: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,6 +67,7 @@
             .destaque {
                 font-weight: bold;
                 color: #007aff;
+                font-size: 100px;
 
             }
 
@@ -167,6 +169,7 @@
         box-shadow: 2px 2px 15px 4px rgb(170, 170, 170);
         line-height: 1cm;
         padding: 80px;
+        background-color: white;
 
 
 
@@ -344,6 +347,7 @@
     .secao_sobre {
         margin: 0;
         padding: 10px;
+    
         
 
         .pag_sobre {

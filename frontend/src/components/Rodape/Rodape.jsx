@@ -42,6 +42,7 @@ export default function Rodape() {
               <Link to={"/cadastro"}>Cadastro</Link>
           
             </div>
+            <hr />
             
 
             <div className="sobre">
@@ -49,7 +50,7 @@ export default function Rodape() {
 
               <Link to={"/desenvolvedores"}>Quem Somos</Link>
             </div>
-
+            <hr />
             <div className="contatos">
               <h2>Contato</h2>
               <a>Telefone/WhatsApp: (11) 91234-5678</a>
