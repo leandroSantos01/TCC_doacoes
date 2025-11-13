@@ -235,10 +235,9 @@ export default function Ongs() {
                 }
 
                 return (
-                  <div
+                  <a
                     key={id}
                     onClick={()=>handleCLick(registros)}
-                    style={{ textDecoration: "none", color: "black" }}
                   >
                     <OngListada
                       imagem={imageUrl}
@@ -247,7 +246,7 @@ export default function Ongs() {
                       contato={registros.contato}
                       descricao={registros.descricao}
                     />
-                  </div>
+                  </a>
                 );
               })}
             </ul>
