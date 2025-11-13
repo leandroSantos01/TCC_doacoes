@@ -17,11 +17,26 @@ import api from '../../api'
 
 
 export default function UsersAdmin(){
+     const navigate = useNavigate()
+  
+       
+
+    useEffect(() => {
+        const ADM = localStorage.getItem("ADMIN");
+        if (ADM != null || ADM != undefined) {
+
+            navigate("/");
+
+        }
+    
+    }, []);
+
+   
 
 
     return(
         <div>
-            <Cabecalho/>
+
 
             <main className="users_admin">
 
@@ -33,7 +48,7 @@ export default function UsersAdmin(){
 
             </main>
 
-            <Rodape/>
+
         </div>
     )
 }

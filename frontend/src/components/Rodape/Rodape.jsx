@@ -49,7 +49,6 @@ export default function Rodape() {
               <h2>Sobre Nós</h2>
 
               <Link to={"/desenvolvedores"}>Quem Somos</Link>
-              <Link to={'/loginDev'}>Area Admin</Link>
             </div>
             <hr />
             <div className="contatos">
