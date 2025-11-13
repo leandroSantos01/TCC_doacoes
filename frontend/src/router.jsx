@@ -29,7 +29,7 @@ export default function Navegacao() {
         <Route path="/ongs" element={<Ongs />} />
         <Route path="/desenvolvedores" element={<Dev />} />
 
-        <Route path="/:paginasOngs" element={<PaginaOng />} />
+        <Route path="/:paginasOngs" element={<PaginasOngs />} />
 
         <Route path="/caoSemDono" element={<CaoSemDono />} />
         <Route path="/amigosDoBem" element={<AmigosDoBem />} />

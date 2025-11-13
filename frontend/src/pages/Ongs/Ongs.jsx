@@ -7,6 +7,7 @@ import "/src/scss/fonts.scss";
 
 import { Toaster, toast } from "react-hot-toast";
 import axios from "axios";
+import { useNavigate } from "react-router";
 import { FaSearch } from "react-icons/fa";
 
 import api from "../../api";
@@ -29,6 +30,7 @@ export default function Ongs() {
 
   const [arquivoSelecionado, setArquivoSelecionado] = useState(null);
 
+  const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [logado, setLogado] = useState(false);
 
@@ -72,6 +74,11 @@ export default function Ongs() {
     }
     listar();
   }, []);
+
+  const handleCLick=(value)=>{
+    console.log(value);
+    navigate(`/${value.nome}`,{state: value});
+  }
 
   async function Cadastrar() {
     let body = {
@@ -228,9 +235,9 @@ export default function Ongs() {
                 }
 
                 return (
-                  <Link
+                  <div
                     key={id}
-                    to={`/ongs/${registros.nome}`}
+                    onClick={()=>handleCLick(registros)}
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <OngListada
@@ -240,7 +247,7 @@ export default function Ongs() {
                       contato={registros.contato}
                       descricao={registros.descricao}
                     />
-                  </Link>
+                  </div>
                 );
               })}
             </ul>

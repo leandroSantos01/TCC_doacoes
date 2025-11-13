@@ -21,7 +21,7 @@ export default function CaoSemDono() {
       <div className="div-mae">
         <div className="div-card">
           <div className="img">
-            <img src={cao} />
+            <img src={'http://localhost:3010'+ location.state.url_image} />
           </div>
           <div className="parte-direita">
             <div className="conteudo">
