@@ -1,49 +1,43 @@
-import './rodape.scss'
-import logo from '/src/assets/images/logo.png'
+import "./rodape.scss";
+import logo from "/src/assets/images/logo.png";
 
-import { Link } from 'react-router';
+import { Link } from "react-router";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect } from "react";
 
 export default function Rodape() {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState("");
   const [logado, setLogado] = useState(false);
 
   useEffect(() => {
-    let nomeUser = localStorage.getItem("USUARIO")
+    let nomeUser = localStorage.getItem("USUARIO");
 
     if (nomeUser == undefined || nomeUser == null) {
-      setLogado(false)
+      setLogado(false);
+    } else {
+      setLogado(true);
+      setUser(nomeUser);
     }
-    else {
-      setLogado(true)
-      setUser(nomeUser)
-    }
-  })
-
+  });
 
   return (
     <>
       {logado ? null : null}
 
-      <footer >
+      <footer>
         <div className="rodape">
           <img src={logo} />
           <nav>
-
             <div className="inicio">
               <h2>Início</h2>
 
               <Link to={"/"}>Home</Link>
               <Link to={"/cadastro"}>Cadastro</Link>
-
             </div>
             <hr />
-
 
             <div className="sobre">
               <h2>Sobre Nós</h2>
@@ -55,22 +49,16 @@ export default function Rodape() {
               <h2>Contato</h2>
               <a>Telefone/WhatsApp: (11) 91234-5678</a>
               <a>E-mail: contato@seuprojeto.org</a>
-              <div className='contatos_imgs'>
-
+              <div className="contatos_imgs">
                 <FaInstagram size={30} />
                 <FaFacebookSquare size={30} />
                 <FaSquareXTwitter size={30} />
               </div>
-
             </div>
           </nav>
-
-
         </div>
         <p>© 2025 Curso Info. Todos os direitos reservados.</p>
-
       </footer>
-
     </>
-  )
+  );
 }

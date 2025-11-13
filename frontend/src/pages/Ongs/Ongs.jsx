@@ -1,25 +1,24 @@
-import Cabecalho from "../../components/cabecalho/Cabecalho"
-import Rodape from "../../components/Rodape/Rodape"
+import Cabecalho from "../../components/cabecalho/Cabecalho";
+import Rodape from "../../components/Rodape/Rodape";
 
-import './ongs.scss'
-import '/src/scss/global.scss'
-import '/src/scss/fonts.scss'
+import "./ongs.scss";
+import "/src/scss/global.scss";
+import "/src/scss/fonts.scss";
 
-import { Toaster, toast } from "react-hot-toast"
-import axios from "axios"
+import { Toaster, toast } from "react-hot-toast";
+import axios from "axios";
 import { FaSearch } from "react-icons/fa";
 
-import api from "../../api"
+import api from "../../api";
 
-import { useState, useEffect, use } from "react"
-import ModalOngs from "../../components/modalOng/Index"
-import OngListada from "../../components/ongListada/ongListada"
-import { Link, unstable_setDevServerHooks } from "react-router"
+import { useState, useEffect, use } from "react";
+import ModalOngs from "../../components/modalOng/Index";
+import OngListada from "../../components/ongListada/ongListada";
+import { Link, unstable_setDevServerHooks } from "react-router";
 
 export default function Ongs() {
-  
-  const [modalOngs, setModalOngs] = useState(false)
-  
+  const [modalOngs, setModalOngs] = useState(false);
+
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [endereco, setEndereco] = useState("");
@@ -30,49 +29,44 @@ export default function Ongs() {
 
   const [arquivoSelecionado, setArquivoSelecionado] = useState(null);
 
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState("");
   const [logado, setLogado] = useState(false);
 
   const [ongs, setOngs] = useState([]);
-  const [buscarOngs, setBuscarOngs] = useState('');
+  const [buscarOngs, setBuscarOngs] = useState("");
 
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [postPorPagina, setPostPorPagina] = useState(8);
 
   // async function acharCategoria() {
-    
+
   //   try {
   //     const resp = await api.get(`/listar/ongs/categoria/${pesquisa}`);
   //     console.log(resp.data);
   //     setOngs(resp.data);
-  //   } 
+  //   }
   //   catch (error) {
   //     console.error(error);
-  
+
   //   }
   // }
 
-  
-
   useEffect(() => {
-    
-    let nomeUser = localStorage.getItem("USUARIO")
+    let nomeUser = localStorage.getItem("USUARIO");
 
     if (nomeUser == undefined || nomeUser == null) {
-      setLogado(false)
-
+      setLogado(false);
+    } else {
+      setLogado(true);
+      setUser(nomeUser);
     }
-    else {
-      setLogado(true)
-      setUser(nomeUser)
-    } 
 
     async function listar() {
       try {
-        const resp = await api.get('/listar/ongs');
+        const resp = await api.get("/listar/ongs");
         setOngs(resp.data);
       } catch (e) {
-        console.error('Erro ao listar ongs', e);
+        console.error("Erro ao listar ongs", e);
         setOngs([]);
       }
     }
@@ -80,7 +74,6 @@ export default function Ongs() {
   }, []);
 
   async function Cadastrar() {
-
     let body = {
       nome,
       email,
@@ -88,41 +81,47 @@ export default function Ongs() {
       cnpj,
       categoria,
       contato,
-      descricao
+      descricao,
     };
 
-    if (nome.length <= 1 && email.length <= 1 && endereco.length <= 1 && cnpj.length <= 1 && categoria.length <= 1) {
-      toast.error('Preencha todos os campos corretamente!');
+    if (
+      nome.length <= 1 &&
+      email.length <= 1 &&
+      endereco.length <= 1 &&
+      cnpj.length <= 1 &&
+      categoria.length <= 1
+    ) {
+      toast.error("Preencha todos os campos corretamente!");
       return;
     }
 
     if (nome.length <= 1) {
-      toast.error('Nome inválido!');
+      toast.error("Nome inválido!");
       return;
     }
 
     if (email.length <= 1) {
-      toast.error('Email inválido!');
+      toast.error("Email inválido!");
       return;
     }
 
     if (endereco.length <= 1) {
-      toast.error('Endereço inválido!');
+      toast.error("Endereço inválido!");
       return;
     }
 
     if (cnpj.length != 14) {
-      toast.error('CNPJ inválido!');
+      toast.error("CNPJ inválido!");
       return;
     }
 
     if (categoria.length <= 1) {
-      toast.error('Categoria inválida!');
+      toast.error("Categoria inválida!");
       return;
     }
 
     if (descricao.length > 200) {
-      toast.error('Descrição muito grande!');
+      toast.error("Descrição muito grande!");
       return;
     }
 
@@ -132,13 +131,13 @@ export default function Ongs() {
 
       if (novoId && arquivoSelecionado) {
         const form = new FormData();
-        form.append('file', arquivoSelecionado);
+        form.append("file", arquivoSelecionado);
         await api.put(`/upload/${novoId}/image`, form, {
-          headers: { 'Content-Type': 'multipart/form-data' }
+          headers: { "Content-Type": "multipart/form-data" },
         });
       }
 
-      toast.success('Ong criada com sucesso.');
+      toast.success("Ong criada com sucesso.");
       setNome("");
       setEmail("");
       setEndereco("");
@@ -150,15 +149,13 @@ export default function Ongs() {
       setArquivoSelecionado(null);
 
       listar();
-    }
-
-    catch (e) {
-      toast.error(e.response?.data?.error || 'Erro ao cadastrar ong ');
+    } catch (e) {
+      toast.error(e.response?.data?.error || "Erro ao cadastrar ong ");
     }
   }
 
   async function pesquisarOng() {
-    let url = 'http://localhost:3010/listar/ongs';
+    let url = "http://localhost:3010/listar/ongs";
 
     let resp = await axios.get(url);
     let ongsEncontradas = resp.data;
@@ -175,33 +172,50 @@ export default function Ongs() {
       <Cabecalho />
 
       <main className="page_ongs">
-
         <div className="central_ongs">
-
           <div className="btn">
             <div className="pesquisa">
-              <input type="text" placeholder="Digite o nome ou categoria " value={buscarOngs} onChange={e=>setBuscarOngs(e.target.value)} />
+              <input
+                type="text"
+                placeholder="Digite o nome ou categoria "
+                value={buscarOngs}
+                onChange={(e) => setBuscarOngs(e.target.value)}
+              />
               <hr />
-              <button onClick={pesquisarOng} className="btn_pesquisa"><FaSearch /></button>
+              <button onClick={pesquisarOng} className="btn_pesquisa">
+                <FaSearch />
+              </button>
             </div>
 
-            <button className="cadastrar_ong" onClick={() => { if (!logado) { toast.error('Você precisa estar logado!'); return; } setModalOngs(true); }}>Cadastrar Ongs</button>
-
+            <button
+              className="cadastrar_ong"
+              onClick={() => {
+                if (!logado) {
+                  toast.error("Você precisa estar logado!");
+                  return;
+                }
+                setModalOngs(true);
+              }}
+            >
+              Cadastrar Ongs
+            </button>
           </div>
 
           <div className="ongs">
-
             <ul>
-              
               {ongs.map((registros, id) => {
-                const fallback = 'https://cdn.vectorstock.com/i/500p/33/47/no-photo-available-icon-vector-40343347.jpg';
+                const fallback =
+                  "https://cdn.vectorstock.com/i/500p/33/47/no-photo-available-icon-vector-40343347.jpg";
                 let imageUrl = fallback;
 
                 if (registros.url_image) {
                   if (/^https?:\/\//.test(registros.url_image)) {
                     imageUrl = registros.url_image;
                   } else {
-                    const apiBase = (api && api.defaults && api.defaults.baseURL) ? api.defaults.baseURL.replace(/\/$/, '') : window.location.origin;
+                    const apiBase =
+                      api && api.defaults && api.defaults.baseURL
+                        ? api.defaults.baseURL.replace(/\/$/, "")
+                        : window.location.origin;
                     imageUrl = `${apiBase}${registros.url_image}`;
                   }
                 }
@@ -210,7 +224,7 @@ export default function Ongs() {
                   <Link
                     key={id}
                     to={`/ongs/${registros.nome}`}
-                    style={{ textDecoration: 'none', color: 'black' }}
+                    style={{ textDecoration: "none", color: "black" }}
                   >
                     <OngListada
                       imagem={imageUrl}
@@ -220,13 +234,10 @@ export default function Ongs() {
                       descricao={registros.descricao}
                     />
                   </Link>
-                )
+                );
               })}
-              
             </ul>
-
           </div>
-
         </div>
       </main>
 
@@ -234,51 +245,85 @@ export default function Ongs() {
 
       <ModalOngs
         aberto={modalOngs}
-        titulo={'Cadastro de Ongs'}
+        titulo={"Cadastro de Ongs"}
         fechado={() => setModalOngs(false)}
         cadastrar={Cadastrar}
         conteudo={
           <div>
-
             <div>
               <label>Nome</label>
-              <input placeholder='Nome' type='text' value={nome} onChange={e => setNome(e.target.value)} />
+              <input
+                placeholder="Nome"
+                type="text"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+              />
             </div>
 
             <div>
               <label>Email</label>
-              <input name="email" type="email" placeholder='Email'  value={email} onChange={e => setEmail(e.target.value)} />
+              <input
+                name="email"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
 
             <div>
               <label>Endereço</label>
-              <input type="text" placeholder='Endereço' value={endereco} onChange={e => setEndereco(e.target.value)} />
+              <input
+                type="text"
+                placeholder="Endereço"
+                value={endereco}
+                onChange={(e) => setEndereco(e.target.value)}
+              />
             </div>
 
             <div>
               <label>Imagem de exibição</label>
-              <input type="file" accept="image/*" onChange={e => setArquivoSelecionado(e.target.files?.[0] ?? null)}/>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) =>
+                  setArquivoSelecionado(e.target.files?.[0] ?? null)
+                }
+              />
             </div>
-
           </div>
         }
         conteudo2={
           <div>
-
             <div>
               <label>Contato (telefone, email ou link do site)</label>
-              <input type="text" placeholder='Contato' value={contato} onChange={e => setContato(e.target.value)} />
+              <input
+                type="text"
+                placeholder="Contato"
+                value={contato}
+                onChange={(e) => setContato(e.target.value)}
+              />
             </div>
 
             <div>
               <label>CNPJ (sem pontos e barras)</label>
-              <input type="text" placeholder='CNPJ' value={cnpj} onChange={e => setCnpj(e.target.value)} />
+              <input
+                type="text"
+                placeholder="CNPJ"
+                value={cnpj}
+                onChange={(e) => setCnpj(e.target.value)}
+              />
             </div>
 
             <div>
               <label>Categoria</label>
-              <select value={categoria} onChange={e => setCategoria(e.target.value)}>
-                <option value="" disabled hidden>Selecione uma categoria</option>
+              <select
+                value={categoria}
+                onChange={(e) => setCategoria(e.target.value)}
+              >
+                <option value="" disabled hidden>
+                  Selecione uma categoria
+                </option>
                 <option>Ambiental</option>
                 <option>Assistência social</option>
                 <option>Educação</option>
@@ -289,16 +334,18 @@ export default function Ongs() {
 
             <div>
               <label>Breve descrição sobre a ONG:</label>
-              <input type="text" placeholder='Descrição' value={descricao} onChange={e => setDescricao(e.target.value)} />
+              <input
+                type="text"
+                placeholder="Descrição"
+                value={descricao}
+                onChange={(e) => setDescricao(e.target.value)}
+              />
             </div>
-
           </div>
-        } />
-
-      <Toaster
-        position="top-center"
-        reverseOrder={false}
+        }
       />
+
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
-  )
+  );
 }

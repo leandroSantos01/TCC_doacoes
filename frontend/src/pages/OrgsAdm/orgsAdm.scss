@@ -1,24 +1,21 @@
-.Orgs_admin{
+.Orgs_admin {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+
+  .central_aprovar {
     width: 100%;
+    max-width: 1900px;
+    min-height: 900px;
+    border-radius: 20px;
+    background-size: cover;
     display: flex;
-    justify-content: center;
-    padding: 40px;
-
-    .central_aprovar{
-        width: 100%;
-        max-width: 1900px;
-        min-height: 900px;
-        border-radius: 20px;
-        background-size: cover;
-        display: flex;
-        background-repeat: no-repeat;
-        align-items: center;
-       flex-wrap: wrap;
-        justify-content: flex-start;
-        background-color: rgb(150, 202, 248);
-        gap: 150px;
-
-    }
-    
-    
+    background-repeat: no-repeat;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: rgb(150, 202, 248);
+    gap: 150px;
+  }
 }

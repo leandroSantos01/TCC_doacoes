@@ -1,174 +1,173 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 .Container-Mae {
-    height: auto;
-    width: 100%;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #5aa6d8;
+  padding: 40px;
+
+  .Container-Cards {
+    width: 90%;
+    max-width: 1500px;
+    background: #ffffff;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
-    background-color: #5AA6D8;
-    padding: 40px;
+    gap: 30px;
+    padding: 50px;
 
-    .Container-Cards {
-        width: 90%;
-        max-width: 1500px;
-        background: #ffffff;
-        border-radius: 20px;
+    .filha1 {
+      display: flex;
+      width: 45%;
+      height: 600px;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      align-items: center;
+      color: black;
+
+      h1 {
+        color: #5aa6d8;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      & div {
         display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
         justify-content: center;
-        gap: 30px;
-        padding: 50px;
+      }
 
-        .filha1 {
-            display: flex;
-            width: 45%;
-            height: 600px;
-            flex-direction: column;
-            justify-content: center;
-            gap: 10px;
-            padding: 10px;
-            align-items: center;
-            color: black;
+      label {
+        width: 90%;
+        padding-left: 10px;
+        font-size: 17px;
+      }
 
-            h1 {
-                color: #5AA6D8;
-                margin-bottom: 10px;
-                text-align: center;
-            }
+      input {
+        height: 35px;
+        width: 90%;
+        border-radius: 20px;
+        padding: 0 10px;
+        border: 2px solid rgba(0, 0, 0, 0.467);
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 15px;
+        transition: all 0.5s ease-in-out;
 
-            p {
-                text-align: center;
-                margin-bottom: 10px;
-            }
-
-            & div{
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                align-items: center;
-                justify-content: center;    
-            }
-
-            label {
-                width: 90%;
-                padding-left: 10px;
-                font-size: 17px;
-            }
-
-            input {
-                height: 35px;
-                width: 90%;
-                border-radius: 20px;
-                padding: 0 10px;
-                border: 2px solid rgba(0, 0, 0, 0.467);
-                font-family: Arial, Helvetica, sans-serif;
-                margin-bottom: 15px;
-                transition: all 0.5s ease-in-out;
-
-                &:focus {
-                    border-color: #007bff97;
-                    outline: none;
-                }
-            }
-
-            button {
-                padding: 10px 40px;
-                border-radius: 20px;
-                color: aliceblue;
-                background: #007aff;
-                transition: all 0.4s ease-in-out;
-                display: flex;      
-                align-self: center;
-                justify-content: center;
-                font-weight: 800;
-                border: none;
-                width: 35%;
-                cursor: pointer;
-                margin-top: 15px;
-            }
-
-            button:hover{
-                transform: scale(1.1);
-            }
+        &:focus {
+          border-color: #007bff97;
+          outline: none;
         }
+      }
 
-        .filha2 {
-            width: 55%;
-            height: 600px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+      button {
+        padding: 10px 40px;
+        border-radius: 20px;
+        color: aliceblue;
+        background: #007aff;
+        transition: all 0.4s ease-in-out;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        font-weight: 800;
+        border: none;
+        width: 35%;
+        cursor: pointer;
+        margin-top: 15px;
+      }
 
-            img {
-                width: 380px;
-                height: 500px;
-            }
-        }
+      button:hover {
+        transform: scale(1.1);
+      }
     }
-}
 
+    .filha2 {
+      width: 55%;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 380px;
+        height: 500px;
+      }
+    }
+  }
+}
 
 /***** RESPONSIVIDADE IGUAL AO PRIMEIRO *****/
 
 @media (max-width: 768px) {
-    .Container-Mae {
-        padding: 30px;
+  .Container-Mae {
+    padding: 30px;
 
-        .Container-Cards {
-            flex-direction: column;
-            width: 80%;
-            padding: 20px;
-            align-items: center;
-            height: auto;
+    .Container-Cards {
+      flex-direction: column;
+      width: 80%;
+      padding: 20px;
+      align-items: center;
+      height: auto;
 
-            .filha1 {
-                width: 100%;
-                align-items: center;
+      .filha1 {
+        width: 100%;
+        align-items: center;
 
-                h1 {
-                    font-size: 30px;
-                }
-
-                button {
-                    width: 50%;
-                }
-            }
-
-            .filha2 {
-                width: 100%;
-                height: auto;
-                margin-top: 20px;
-                display: none;
-            }
+        h1 {
+          font-size: 30px;
         }
+
+        button {
+          width: 50%;
+        }
+      }
+
+      .filha2 {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        display: none;
+      }
     }
+  }
 }
 
 @media (max-width: 480px) {
-    .Container-Mae {
-        padding: 10px;
+  .Container-Mae {
+    padding: 10px;
 
-        .Container-Cards {
-            padding: 10px;
+    .Container-Cards {
+      padding: 10px;
 
-            .filha1 {
-                width: 100%;
+      .filha1 {
+        width: 100%;
 
-                label {
-                    font-size: 12px;
-                }
-
-                input {
-                    height: 30px;
-                }
-
-                button {
-                    width: 60%;
-                }
-            }
+        label {
+          font-size: 12px;
         }
+
+        input {
+          height: 30px;
+        }
+
+        button {
+          width: 60%;
+        }
+      }
     }
+  }
 }

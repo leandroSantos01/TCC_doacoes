@@ -10,9 +10,6 @@
   box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.285);
   justify-content: center;
 
-
-
-
   .fotos {
     border-radius: 50%;
     object-fit: cover;
@@ -20,15 +17,9 @@
     width: 250px;
   }
 
-
-
-
-
-
   img {
     border-radius: 100%;
   }
-
 
   .desc {
     display: flex;
@@ -46,28 +37,12 @@
     color: rgb(0, 0, 0);
     margin: 10px;
 
-
-
-
     .links {
       display: flex;
       width: 89%;
       height: 100px;
       margin-left: 10px;
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
     h3 {
       font-size: 50px;
@@ -99,21 +74,14 @@
       font-family: sans-serif;
       margin-bottom: 30px;
       margin-top: 30px;
-
     }
-
   }
-
-
-
 }
-
-
 
 @media (max-width: 700px) {
   .conteiner-card {
     flex-direction: column;
-    width: 23REM;
+    width: 23rem;
     height: auto;
     padding: 10px;
     align-items: center;
@@ -128,8 +96,6 @@
       width: 100%;
       text-align: center;
       justify-content: center;
-
-
 
       h3 {
         font-size: 25px;
@@ -155,20 +121,13 @@
         justify-content: center;
         margin-left: 0;
         padding-right: 10px;
-
-
       }
-
-
     }
-
   }
-
-
 }
 
 @media (max-width: 400px) {
   .conteiner-card {
-    width: 18REM;
+    width: 18rem;
   }
 }

@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 /* Header */
 header {
   width: 100%;
@@ -15,9 +14,6 @@ header {
   top: 0;
   z-index: 100;
 
-
-
-
   .cabecalho {
     display: flex;
     width: 100%;
@@ -27,21 +23,14 @@ header {
     justify-content: space-between;
     z-index: 10;
 
-
-
-
-
     .logo {
       height: 60px;
-
-
     }
 
     .Area_link {
       width: auto;
       display: flex;
       gap: 30px;
-
 
       .pintar {
         background-color: black;
@@ -57,14 +46,12 @@ header {
         font-size: 15px;
         margin: 0 10px;
         background: transparent;
-        border: 2px solid #4A90E2;
-        color: #4A90E2;
-
-
+        border: 2px solid #4a90e2;
+        color: #4a90e2;
       }
 
       a:hover {
-        background: #4A90E2;
+        background: #4a90e2;
         color: white;
       }
 
@@ -77,16 +64,9 @@ header {
         font-weight: 800;
         cursor: pointer;
       }
-
-
-
-
     }
-
-
   }
 }
-
 
 .menu-icon {
   display: none;
@@ -95,7 +75,6 @@ header {
   cursor: pointer;
   color: #036bdb;
   z-index: 1001;
-
 }
 
 .menu-icon.aberto {
@@ -105,20 +84,15 @@ header {
   right: 35px;
 }
 
-
 @media (max-width: 700px) {
   .cabecalho {
-
     .menu-icon {
       display: block;
-
     }
 
     img {
       width: auto;
     }
-
-
 
     nav.Area_link {
       position: fixed;
@@ -134,36 +108,22 @@ header {
       z-index: 1000;
       border-radius: 0 0 0 20px;
 
-
       & div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 20px;
-
-
       }
-
-
-
     }
-
 
     .Area_link.ativo {
       right: 0;
-
     }
-
-
 
     nav.Area_link a {
       color: #ffffff;
       font-size: 100%;
-
-
     }
-
   }
-
 }

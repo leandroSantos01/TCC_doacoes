@@ -11,17 +11,16 @@
     background-color: #d2ecfd;
     max-width: 1400px;
 
-    .img{
+    .img {
       width: 100%;
       display: flex;
       justify-content: center;
-    img {
-
-      height: 250px;
-      border-radius: 20px;
-      margin: 20px;
-    }}
-
+      img {
+        height: 250px;
+        border-radius: 20px;
+        margin: 20px;
+      }
+    }
 
     .parte-direita {
       background-color: #ffffff;
@@ -41,9 +40,6 @@
     .descricao {
       width: 100%;
       flex-wrap: wrap;
-
-
-
     }
 
     .meio-contato {
@@ -52,7 +48,6 @@
       margin-top: 3vh;
       line-height: 40px;
 
-
       .href {
         font-size: 20px;
       }
@@ -60,11 +55,8 @@
   }
 }
 
-
-
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .div-mae {
-
     .div-card {
       flex-direction: column;
 
@@ -84,13 +76,10 @@
         border-radius: 0px 0px 20px 20px;
         padding: 20px;
 
-
         .titulo {
           font-size: 20px;
           text-align: center;
         }
-
-
 
         .descricao {
           padding: 0px;
@@ -102,17 +91,11 @@
           font-size: 16px;
           line-height: 40px;
 
-
           .href {
             font-size: 18px;
           }
         }
       }
-
-
-
-
     }
   }
-
 }

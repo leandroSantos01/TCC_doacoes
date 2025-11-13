@@ -1,48 +1,45 @@
-import { Link } from 'react-router'
-import './cabecalho.scss'
-import logo from '/src/assets/images/logo.png'
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router'
-import { FaBars, FaTimes } from 'react-icons/fa'
-import Perfil from '../perfil/perfil'
-
-
+import { Link } from "react-router";
+import "./cabecalho.scss";
+import logo from "/src/assets/images/logo.png";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
+import { FaBars, FaTimes } from "react-icons/fa";
+import Perfil from "../perfil/perfil";
 
 export default function Cabecalho() {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState("");
   const [logado, setLogado] = useState(false);
-  const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState(false);
   const navigate = useNavigate();
 
   function Logout() {
-    localStorage.removeItem("TOKEN")
-    localStorage.removeItem("USUARIO")
-    localStorage.removeItem("ADMIN")
-    navigate('/login')
-    setModal(false)
+    localStorage.removeItem("TOKEN");
+    localStorage.removeItem("USUARIO");
+    localStorage.removeItem("ADMIN");
+    navigate("/login");
+    setModal(false);
   }
 
   useEffect(() => {
-    let nomeUser = localStorage.getItem("USUARIO")
+    let nomeUser = localStorage.getItem("USUARIO");
 
     if (nomeUser == undefined || nomeUser == null) {
-      setLogado(false)
+      setLogado(false);
+    } else {
+      setLogado(true);
+      setUser(nomeUser);
     }
-    else {
-      setLogado(true)
-      setUser(nomeUser)
-    }
-  })
-
-
+  });
 
   const [menuAberto, setMenuAberto] = useState(false);
-  const toggleMenu = () => { setMenuAberto(!menuAberto) }
-  const fecharMenu = () => { setMenuAberto(false) }
-
+  const toggleMenu = () => {
+    setMenuAberto(!menuAberto);
+  };
+  const fecharMenu = () => {
+    setMenuAberto(false);
+  };
 
   return (
-
     <header>
       <div className="cabecalho">
         <Link to={"/"}>
@@ -50,9 +47,8 @@ export default function Cabecalho() {
         </Link>
 
         <div className="menu-icon" onClick={toggleMenu}>
-
           <button
-            className={`menu-icon ${menuAberto ? 'aberto' : ''}`}
+            className={`menu-icon ${menuAberto ? "aberto" : ""}`}
             aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
             onClick={toggleMenu}
           >
@@ -60,31 +56,32 @@ export default function Cabecalho() {
           </button>
         </div>
 
-        <nav className={`Area_link ${menuAberto ? 'ativo' : ''}`}>
-
+        <nav className={`Area_link ${menuAberto ? "ativo" : ""}`}>
           {logado && (
             <div>
-              <Link to={'/ongs'} onClick={fecharMenu}>ONGS</Link>
+              <Link to={"/ongs"} onClick={fecharMenu}>
+                ONGS
+              </Link>
               <button onClick={() => setModal(true)}>PERFIL</button>
             </div>
           )}
 
           {!logado && (
-
             <div>
-              <Link to={'/ongs'} onClick={fecharMenu}>ONGS</Link>
-              <Link to={'/login'} onClick={fecharMenu}> LOGIN </Link>
-              <Link to={'/cadastro'} onClick={fecharMenu}> CADASTRO </Link>
-
-              
-
+              <Link to={"/ongs"} onClick={fecharMenu}>
+                ONGS
+              </Link>
+              <Link to={"/login"} onClick={fecharMenu}>
+                {" "}
+                LOGIN{" "}
+              </Link>
+              <Link to={"/cadastro"} onClick={fecharMenu}>
+                {" "}
+                CADASTRO{" "}
+              </Link>
             </div>
-
           )}
-
-
         </nav>
-
       </div>
       <Perfil
         aberto={modal}
@@ -92,7 +89,6 @@ export default function Cabecalho() {
         conteudo={user}
         logout={Logout}
       />
-
     </header>
-  )
+  );
 }

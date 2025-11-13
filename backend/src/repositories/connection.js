@@ -1,10 +1,10 @@
-import mysql from 'mysql2/promise.js';
+import mysql from "mysql2/promise.js";
 
 const connection = await mysql.createConnection({
-    hest: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE,
+  hest: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
 });
 
 export { connection };
