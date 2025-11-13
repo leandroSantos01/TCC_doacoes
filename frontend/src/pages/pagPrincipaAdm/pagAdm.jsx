@@ -10,7 +10,7 @@ import '/src/scss/fonts.scss'
 import { GrOrganization } from "react-icons/gr";
 import { FaUser } from "react-icons/fa";
 import api from '../../api'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router'
 
 
@@ -22,7 +22,7 @@ export default function PagAdm() {
 
     useEffect(() => {
         const ADM = localStorage.getItem("ADMIN");
-        if (ADM != null || ADM != undefined) {
+        if (ADM == null || ADM == undefined) {
 
             navigate("/");
 
