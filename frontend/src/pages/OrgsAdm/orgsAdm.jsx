@@ -19,7 +19,17 @@ import api from '../../api'
 export default function OrgsAdmin(){
     const navigate = useNavigate()
     const [lista,setLista] = useState([])
+       
 
+    useEffect(() => {
+        const ADM = localStorage.getItem("ADMIN");
+        if (ADM != null || ADM != undefined) {
+
+            navigate("/");
+
+        }
+    
+    }, []);
 
    
 
@@ -40,7 +50,7 @@ export default function OrgsAdmin(){
 
     return(
         <div>
-            <Cabecalho/>
+
 
             <main className="Orgs_admin">
 
@@ -52,7 +62,7 @@ export default function OrgsAdmin(){
 
             </main>
 
-            <Rodape/>
+
         </div>
     )
 }

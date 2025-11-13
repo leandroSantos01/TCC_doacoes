@@ -15,16 +15,21 @@ export default function LoginDevs() {
     const navigate = useNavigate();
     const [usuario, setUsuario] = useState("");
 
-    // Verifica se já há usuário logado
+
     useEffect(() => {
         const usuarioLogado = localStorage.getItem("USUARIO");
         if (usuarioLogado != null || usuarioLogado != undefined) {
             setUsuario(usuarioLogado);
             navigate("/");
         }
+    
     }, []);
 
-    // Faz o scroll pro topo ao carregar
+
+
+
+
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -65,7 +70,7 @@ export default function LoginDevs() {
             console.log(response.data)
             localStorage.setItem("TOKEN", response.data.token);
             localStorage.setItem("ADMIN", response.data.admin);
-            navigate("/");
+            navigate("/pageDev");
 
         } catch (err) {
             console.log(err);
@@ -76,7 +81,7 @@ export default function LoginDevs() {
     return (
         <div className="maior">
             <div className="Container-Cabecalho">
-                <Cabecalho />
+
             </div>
 
             <div className="Container-Mae">
@@ -122,7 +127,7 @@ export default function LoginDevs() {
                 </div>
             </div>
 
-            <Rodape />
+
 
             <Toaster position="top-center" reverseOrder={false} />
         </div>

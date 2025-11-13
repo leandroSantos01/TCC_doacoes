@@ -11,15 +11,31 @@ import { GrOrganization } from "react-icons/gr";
 import { FaUser } from "react-icons/fa";
 import api from '../../api'
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 
 
 
 export default function PagAdm() {
+     const navigate = useNavigate()
+
+       
+
+    useEffect(() => {
+        const ADM = localStorage.getItem("ADMIN");
+        if (ADM != null || ADM != undefined) {
+
+            navigate("/");
+
+        }
+    
+    }, []);
+
+   
 
 
     return (
         <div>
-            <Cabecalho />
+
             <main className='pag_devsInicio'>
 
                 <section className='area_Devs'>
@@ -40,7 +56,6 @@ export default function PagAdm() {
 
             </main>
 
-            <Rodape />
         </div>
     )
 }
