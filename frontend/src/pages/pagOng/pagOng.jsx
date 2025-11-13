@@ -7,11 +7,29 @@ import "/src/scss/fonts.scss";
 
 import amparaanimal from "../../assets/images/animal.png";
 import { useLocation } from "react-router";
+import { useEffect } from "react";
+
+useEffect => {
+  window.scrollTo(0, 0);
+  console.log(location.state.url_website);
+}
+
+// function temSite(){
+//   if (!location.state.urlWebsite){
+//     return;
+//   }
+//   else {
+//     return (
+//       <a className="href" href={location.state.urlWebsite}>
+//         Website: {location.state.nome}
+//       </a>
+//     );
+//   }
+// }
 
 export default function pagOng() {
 
   const location = useLocation();
-  console.log(location, 'tem dado')
 
   return (
     <div>
@@ -71,8 +89,9 @@ export default function pagOng() {
                   </div>
     
                   <div className="meio-contato">
-                    <a className="href" href="https://www.caosemdono.com.br/">
-                      Website Cão sem Dono
+                    
+                    <a className="href" target="_blank" href={location.state.url_website}>
+                      Website: {location.state.nome}
                     </a>
                     <p>Telefone: (11) 95471-2195</p>
                     <p>Pix: 10.157.938/0001-73 </p>

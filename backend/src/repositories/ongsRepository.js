@@ -21,7 +21,7 @@ export async function cadastrarOng(novoCadastro) {
 
 export async function listarOngs() {
   const comando = `
-          SELECT id_ong, nome, endereco, contato, descricao, url_image
+          SELECT id_ong, nome, endereco, contato, descricao, url_image, url_website
             FROM ongs; 
     `;
 
