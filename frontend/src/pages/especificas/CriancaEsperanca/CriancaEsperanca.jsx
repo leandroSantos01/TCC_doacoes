@@ -22,12 +22,13 @@ export default function CriancaEsperanca() {
 
       <div className="div-mae">
         <div className="div-card">
+          <div className="img">
+            <img src={crianca} style={{ width: "250px" }} />
+          </div>
         
           <div className="parte-direita">
             <div className="conteudo">
-                <div className="img">
-            <img src={crianca} style={{ width: "250px" }} />
-          </div>
+                
               <div className="titulo">
                 <h1>Criança Esperança</h1>
               </div>
