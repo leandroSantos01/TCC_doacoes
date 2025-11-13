@@ -27,6 +27,7 @@ export default function Ongs() {
   const [categoria, setCategoria] = useState("");
   const [contato, setContato] = useState("");
   const [descricao, setDescricao] = useState("");
+  const [urlWebsite, setUrlWebsite] = useState("");
 
   const [arquivoSelecionado, setArquivoSelecionado] = useState(null);
 
@@ -89,6 +90,7 @@ export default function Ongs() {
       categoria,
       contato,
       descricao,
+      urlWebsite
     };
 
     if (
@@ -131,7 +133,12 @@ export default function Ongs() {
       toast.error("Descrição muito grande!");
       return;
     }
-
+    
+    if (urlWebsite.length > 200) {
+      toast.error("URL muito grande!");
+      return;
+    }
+    
     try {
       const resp = await api.post("/cadastro/ong", body);
       const novoId = resp.data?.novoId;
@@ -152,6 +159,7 @@ export default function Ongs() {
       setCategoria("");
       setContato("");
       setDescricao("");
+      setUrlWebsite("");
       setModalOngs(false);
       setArquivoSelecionado(null);
 
@@ -291,6 +299,16 @@ export default function Ongs() {
                 placeholder="Endereço"
                 value={endereco}
                 onChange={(e) => setEndereco(e.target.value)}
+              />
+            </div>
+
+            <div>
+              <label>Link do seu website </label>
+              <input
+                type="text"
+                placeholder="Endereço"
+                value={urlWebsite}
+                onChange={(e) => setUrlWebsite(e.target.value)}
               />
             </div>
 
