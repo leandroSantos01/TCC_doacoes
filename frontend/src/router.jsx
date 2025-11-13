@@ -29,7 +29,11 @@ export default function Navegacao() {
         <Route path="/ongs" element={<Ongs />} />
         <Route path="/desenvolvedores" element={<Dev />} />
 
+<<<<<<< Updated upstream
         <Route path="/:paginasOngs" element={<PaginasOngs />} />
+=======
+        <Route path="/:paginasOngs" element={<PaginaOng />} />
+>>>>>>> Stashed changes
 
         <Route path="/caoSemDono" element={<CaoSemDono />} />
         <Route path="/amigosDoBem" element={<AmigosDoBem />} />
