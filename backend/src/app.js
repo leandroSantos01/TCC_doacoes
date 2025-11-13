@@ -15,4 +15,6 @@ api.use('/storage', express.static(path.join(__dirname, '..', 'public', 'storage
 adicionarRotas(api);
 const porta = process.env.PORTA;
 
-api.listen(porta, () => console.log('A api subiu na porta '+ porta));
+api.listen(
+    porta, 
+    () => console.log('A api subiu na porta '+ porta + '!'));
