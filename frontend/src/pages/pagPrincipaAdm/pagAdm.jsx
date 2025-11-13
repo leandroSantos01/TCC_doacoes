@@ -16,18 +16,18 @@ import { useNavigate } from "react-router";
 export default function PagAdm() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const ADM = localStorage.getItem("ADMIN");
-    if (ADM == null || ADM == undefined) {
-      navigate("/");
-    }
-  }, []);
+  // useEffect(() => {
+  //   const ADM = localStorage.getItem("ADMIN");
+  //   if (ADM == null || ADM == undefined) {
+  //     navigate("/");
+  //   }
+  // }, []);
 
   return (
     <div>
       <main className="pag_devsInicio">
         <section className="area_Devs">
-          <h1>Ola admin seja bem Vindo</h1>
+          <h1>Olá admin, seja bem vindo!</h1>
 
           <div>
             <Link to={"/orgsDev"}>

@@ -56,3 +56,21 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .pag_devsInicio {
+    .area_Devs {
+      height: 600px;
+      gap: 50px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    & div {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
