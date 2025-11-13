@@ -52,7 +52,7 @@ export default function App() {
                 <h2>
                   <span className="destaque">DoNNet</span>
                 </h2>
-                <h1> faça do mundo um lugar melhor</h1>
+                <h1> Faça do mundo um lugar melhor.</h1>
               </div>
 
               <div className="Botoes_central">
@@ -231,7 +231,7 @@ export default function App() {
               textShadow: " -1px 1px 1px rgb(129, 129, 224)",
             }}
           >
-            <p className="doar">Ver todas &gt;</p>
+            <p className="doar">Ver lista &gt;</p>
           </Link>
         </div>
       </section>
