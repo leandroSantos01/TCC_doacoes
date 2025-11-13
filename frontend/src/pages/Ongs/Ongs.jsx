@@ -155,16 +155,23 @@ export default function Ongs() {
   }
 
   async function pesquisarOng() {
-    let url = "http://localhost:3010/listar/ongs";
+    let url = "http://localhost:3010/listar/ongs/nome";
 
     let resp = await axios.get(url);
     let ongsEncontradas = resp.data;
+
+    if (!ongsEncontradas){
+      alert('Nenhuma ONG encontrada');
+      return;
+    }
+
     setOngs(ongsEncontradas);
+    console.log('pesquisa ativada')
   }
 
-  const lastPostIndex = paginaAtual * postPorPagina;
-  const firstPostIndex = lastPostIndex - postPorPagina;
-  const currentPosts = ongs.slice(firstPostIndex, lastPostIndex);
+  // const lastPostIndex = paginaAtual * postPorPagina;
+  // const firstPostIndex = lastPostIndex - postPorPagina;
+  // const currentPosts = ongs.slice(firstPostIndex, lastPostIndex);
 
   return (
     <div>
@@ -174,7 +181,7 @@ export default function Ongs() {
       <main className="page_ongs">
         <div className="central_ongs">
           <div className="btn">
-            <div className="pesquisa">
+            {/* <div className="pesquisa">
               <input
                 type="text"
                 placeholder="Digite o nome ou categoria "
@@ -185,7 +192,7 @@ export default function Ongs() {
               <button onClick={pesquisarOng} className="btn_pesquisa">
                 <FaSearch />
               </button>
-            </div>
+            </div> */}
 
             <button
               className="cadastrar_ong"

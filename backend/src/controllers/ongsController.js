@@ -52,7 +52,7 @@ endpoints.get("/listar/ongs/categoria/:categoria", async (req, resp) => {
   }
 });
 
-endpoints.get("/listar/ongs/nome", async (req, resp) => {
+endpoints.get("/listar/ongs/nome/:nome", async (req, resp) => {
   let nome = req.body.nome;
 
   const registros = await repo.buscaPorNome(nome);
