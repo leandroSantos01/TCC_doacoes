@@ -128,7 +128,7 @@ export default function App() {
                             </div> */}
               <div className="slide">
                 <Link
-                  to="/caosemdono"
+                  to="/caoSemDono"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <OngListada

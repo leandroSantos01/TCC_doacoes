@@ -216,9 +216,6 @@
       height: auto;
       margin-top: 90px;
 
-      h1 {
-        font-size: 2rem;
-      }
 
       & div {
         height: auto;
@@ -230,16 +227,32 @@
           flex-direction: column;
           margin: 50px 0px;
 
-          background: linear-gradient(
-              rgba(255, 255, 255, 0.5),
-              rgba(255, 255, 255, 0.5)
-            ),
+          background: linear-gradient(rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.5)),
             url("../../assets/images/imageInfo.png");
 
           background-size: cover;
           background-position: center;
           padding: 100px;
           margin: 0;
+
+          .text_princi {
+
+
+            h1 {
+              font-size: 1.6rem;
+              text-align: center;
+
+            }
+            .destaque{
+              font-size: 5.4rem;
+              text-align: center;
+
+            }
+
+       
+          }
+
 
           .Botoes_central {
             width: 100%;
@@ -320,10 +333,8 @@
           flex-direction: column;
           margin: 50px 0px;
 
-          background: linear-gradient(
-              rgba(255, 255, 255, 0.5),
-              rgba(255, 255, 255, 0.5)
-            ),
+          background: linear-gradient(rgba(255, 255, 255, 0.5),
+              rgba(255, 255, 255, 0.5)),
             url("../../assets/images/imageInfo.png");
 
           background-size: cover;
