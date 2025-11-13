@@ -23,7 +23,7 @@ export default function OrgsAdmin(){
 
     useEffect(() => {
         const ADM = localStorage.getItem("ADMIN");
-        if (ADM != null || ADM != undefined) {
+        if (ADM == null || ADM == undefined) {
 
             navigate("/");
 
