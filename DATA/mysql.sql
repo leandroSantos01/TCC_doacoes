@@ -20,6 +20,7 @@ CREATE TABLE
         cnpj                VARCHAR(14),
         categoria           VARCHAR(50),
         url_image           VARCHAR(500),
+        url_website			VARCHAR(500),
         contato             VARCHAR(100),
         descricao           VARCHAR(200),
         cadastro_ativo      BOOLEAN,
@@ -34,8 +35,8 @@ CREATE TABLE loginADM (
 
 
 INSERT INTO ongs VALUES
-    (1,'Cão Sem Dono',null,'Rua Vitor Emanuel, 200, Sacomã, SP',null,'Causa animal','/storage/cao.png','(11) 95471-2195','Criada com o incentivo de tirar o maximo de animais das ruas.',true,null),
-    (2,'Instituto Caramelo',null,null,null,'Causa animal','/storage/caramelo.png','Email para adotar: queroadotar@icaramelo.org','ONG brasileira que resgata, trata e disponibiliza animais em situação de risco para adoção.',true,null),
-    (3,'Criança Esperanca',null,null,null,'Assistência social','/storage/crianca.png',null,'Criada em 1986 para mobilizar o público em prol dos direitos da criança e do adolescente',true,null),
-    (4,'Amigos do Bem',null,'Rua Dr. Gabriel de Resende, 122',null,'Assistência social','/storage/amigos.png','(11) 3019-0107','SO Amigos do Bem é uma ONG brasileira que combate a fome e a miséria no sertão nordestino por meio de projetos de educação, geração de renda e saúde.',true,null),
-	(5,'Para Quem Doar',null,null,null,'Assistência social','/storage/doar.png',null,'Uma plataforma que conecta doadores a diversas iniciativas checadas.',true,null);
+    (1,'Cão Sem Dono',null,'Rua Vitor Emanuel, 200, Sacomã, SP',null,'Causa animal','/storage/cao.png','https://www.caosemdono.com.br/','(11) 95471-2195','Criada com o incentivo de tirar o maximo de animais das ruas.',true,null),
+    (2,'Instituto Caramelo',null,null,null,'Causa animal','/storage/caramelo.png','https://institutocaramelo.org/','Email para adotar: queroadotar@icaramelo.org','ONG brasileira que resgata, trata e disponibiliza animais em situação de risco para adoção.',true,null),
+    (3,'Criança Esperanca',null,null,null,'Assistência social','/storage/crianca.png','https://doacoes.criancaesperanca.unesco.org/',null,'Criada em 1986 para mobilizar o público em prol dos direitos da criança e do adolescente',true,null),
+    (4,'Amigos do Bem',null,'Rua Dr. Gabriel de Resende, 122',null,'Assistência social','/storage/amigos.png','https://www.amigosdobem.org/','(11) 3019-0107','SO Amigos do Bem é uma ONG brasileira que combate a fome e a miséria no sertão nordestino por meio de projetos de educação, geração de renda e saúde.',true,null),
+	(5,'Casa 1',null,'R. Adoniran Barbosa, 151 - Bela Vista, 01318-020',null,'Assistência social','/storage/casa1.png','https://www.casaum.org/','contato@casaum.org','Fundada em 2017, a Casa 1 é um projeto da sociedade civil. Somos uma Republica de Acolhida, um Centro Cultural e uma Clínica Social. Tudo junto, pela comunidade LGBTQIAPN+!',true,null);
