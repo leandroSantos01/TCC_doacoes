@@ -11,7 +11,7 @@ export async function cadastrarOng(novoCadastro) {
     novoCadastro.nome,
     novoCadastro.email,
     novoCadastro.endereco,
-    novoCadastro.url_website,
+    novoCadastro.urlWebsite,
     novoCadastro.cnpj,
     novoCadastro.categoria,
     novoCadastro.contato,
