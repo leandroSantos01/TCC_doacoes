@@ -303,10 +303,10 @@ export default function Ongs() {
             </div>
 
             <div>
-              <label>Link do seu website </label>
+              <label>URL do website (completa)</label>
               <input
                 type="text"
-                placeholder="Endereço"
+                placeholder="Link"
                 value={urlWebsite}
                 onChange={(e) => setUrlWebsite(e.target.value)}
               />
