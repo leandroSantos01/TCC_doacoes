@@ -4,7 +4,7 @@ import Cadastro from "./pages/cadastro/cadastro.jsx";
 import Login from "./pages/login/login.jsx";
 import Ongs from "./pages/Ongs/Ongs.jsx";
 import Dev from "./pages/Dev/index.jsx";
-import PaginasOngs from "./pages/pagOng/pagOng.jsx";
+import PaginasOngs from "./pages/pagOng/pagOng.jsx";    
 
 import CaoSemDono from "./pages/especificas/CaoSemDono/CaoSemDono.jsx";
 import AmigosDoBem from "./pages/especificas/AmigosDoBem/AmigosDoBem.jsx";

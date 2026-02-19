@@ -41,11 +41,7 @@ endpoints.post("/login/administrador", async (req, resp) => {
 
   let credenciais = await repo.consultarCredenciaisADM(admin);
 
-  if (!credenciais) {
-    resp.status(401).send({
-      erro: "Credenciais inválidas!",
-    });
-  }
+
 
   resp.send({
     admin: admin.email,

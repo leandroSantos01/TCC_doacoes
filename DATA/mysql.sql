@@ -33,6 +33,8 @@ CREATE TABLE loginADM (
     senha                VARCHAR(50)
 );
 
+INSERT INTO loginADM VALUES (1,'admdonnet@donnet.org',MD5('admdonnet123'));
+
 
 INSERT INTO ongs VALUES
     (1,'Cão Sem Dono',null,'Rua Vitor Emanuel, 200, Sacomã, SP',null,'Causa animal','/storage/cao.png','https://www.caosemdono.com.br/','(11) 95471-2195','Criada com o incentivo de tirar o maximo de animais das ruas.',true,null),
